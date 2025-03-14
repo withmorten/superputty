@@ -40,18 +40,19 @@ namespace SuperPutty.Utils
         public VNCStartInfo(SessionData session)
         {
             this.session = session;
-            this.Args = "-scale=auto ";
+
+            this.Args = "-host=\"" + session.Host + "\"";
 
             if (session.Port != 0)
-                this.Args += "-port=" + session.Port.ToString() + " ";
+                this.Args += " -port=" + session.Port.ToString();
 
             if (!String.IsNullOrEmpty(session.Password))
-                this.Args += "-password=\"" + session.Password + "\" ";
+                this.Args += " -password=\"" + session.Password + "\"";
+
+            this.Args += " -scale=auto";
 
             if (!String.IsNullOrEmpty(session.ExtraArgs))
-                this.Args += session.ExtraArgs + " ";
-
-            this.Args += "\"" + session.Host + "\"";
+                this.Args += " " + session.ExtraArgs;
 
             this.StartingDir = "%userprofile%\\Desktop";
         }
