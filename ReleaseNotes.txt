@@ -1,3 +1,11 @@
+1.5.1
+ - Reworked UI for Edit Session window
+ - Fix TightVNC does not open host error
+ - Upgrade Installer to Wix 5
+ - Upgrade DockPanelSuite to 3.1.1
+ - Upgrade SSH.NET to 2024.2.0
+ - Upgrade log4net to 3.0.4
+
 1.5.0
  - Minor changes Fixes version issue with SuperPuTTY Update Checker Fixes Issues #887, #888, #889
  - Children attach improvement by @vityank in https://github.com/jimradford/superputty/pull/851
