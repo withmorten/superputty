@@ -321,7 +321,7 @@ namespace SuperPutty
                 {
                     session = new SessionData();
                     nodeRef = isFolderNode ? treeView1.SelectedNode : treeView1.SelectedNode.Parent;
-                    title = "Create New Session";
+                    title = "Create new session";
                 }
                 else if (menuItem == this.createLikeToolStripMenuItem)
                 {
@@ -330,7 +330,7 @@ namespace SuperPutty
                     session.SessionId = SuperPuTTY.MakeUniqueSessionId(session.SessionId);
                     session.SessionName = SessionData.GetSessionNameFromId(session.SessionId);
                     nodeRef = treeView1.SelectedNode.Parent;
-                    title = "Create New Session Like " + session.OldName;
+                    title = "Create new session like " + session.OldName;
                 }
                 else
                 {
@@ -339,7 +339,7 @@ namespace SuperPutty
                     session = (SessionData)((SessionData)treeView1.SelectedNode.Tag).Clone();
                     node = treeView1.SelectedNode;
                     nodeRef = node.Parent;
-                    title = "Edit Session: " + session.SessionName;
+                    title = "Edit session: " + session.SessionName;
                 }
             }
 
