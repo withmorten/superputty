@@ -1797,7 +1797,7 @@ namespace SuperPutty
             Log.Info("Checking for application update");
             try {
                 httpRequest httpUpdateRequest = new httpRequest();
-                httpUpdateRequest.MakeRequest("https://api.github.com/repos/jimradford/superputty/releases/latest", delegate (bool success, string content)
+                httpUpdateRequest.MakeRequest("https://api.github.com/repos/SilverGreen93/superputty/releases/latest", delegate (bool success, string content)
                 {
                     if (success)
                     {
