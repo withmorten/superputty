@@ -1820,7 +1820,7 @@ namespace SuperPutty
                         GitRelease latest = (GitRelease)js.ReadObject(ms);
                         ms.Close();
 
-                        Version latest_version = new Version(latest.version.Trim());
+                        Version latest_version = new Version(latest.version.Trim().Substring(1)); // skip the 'v' in front of v1.6.0.0
                         Version SuperPuTTY_version = new Version(SuperPuTTY.Version);
 
                         if (latest_version.CompareTo(SuperPuTTY_version) > 0)
