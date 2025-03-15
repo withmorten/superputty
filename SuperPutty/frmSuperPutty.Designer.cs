@@ -87,15 +87,6 @@ namespace SuperPutty
             this.toolStripStatusLabelMessage = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelVersion = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelLayout = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tsCommands = new System.Windows.Forms.ToolStrip();
-            this.tbTextSendCommands = new System.Windows.Forms.ToolStripLabel();
-            this.tsSendCommandCombo = new System.Windows.Forms.ToolStripComboBox();
-            this.tbBtnSendCommand = new System.Windows.Forms.ToolStripButton();
-            this.tbBtnMaskText = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonRunScript = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparatorSendCommands = new System.Windows.Forms.ToolStripSeparator();
-            this.tbBtnSelectDocs = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonChooseIconGroup = new System.Windows.Forms.ToolStripButton();
             this.tsConnect = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.tbComboProtocol = new System.Windows.Forms.ToolStripComboBox();
@@ -109,18 +100,28 @@ namespace SuperPutty
             this.tbComboSession = new System.Windows.Forms.ToolStripComboBox();
             this.tbBtnConnect = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonClearFields = new System.Windows.Forms.ToolStripButton();
+            this.tsCommands = new System.Windows.Forms.ToolStrip();
+            this.tbTextSendCommands = new System.Windows.Forms.ToolStripLabel();
+            this.tsSendCommandCombo = new System.Windows.Forms.ToolStripComboBox();
+            this.tbBtnSendCommand = new System.Windows.Forms.ToolStripButton();
+            this.tbBtnMaskText = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonRunScript = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparatorSendCommands = new System.Windows.Forms.ToolStripSeparator();
+            this.tbBtnSelectDocs = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonChooseIconGroup = new System.Windows.Forms.ToolStripButton();
             this.openFileDialogLayout = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialogLayout = new System.Windows.Forms.SaveFileDialog();
             this.notifyicon = new System.Windows.Forms.NotifyIcon(this.components);
             this.notifyIconContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.exitSuperPuTTYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fromMobaXtermToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            this.tsCommands.SuspendLayout();
             this.tsConnect.SuspendLayout();
+            this.tsCommands.SuspendLayout();
             this.notifyIconContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -167,7 +168,8 @@ namespace SuperPutty
             this.fromPuTTYSettingsToolStripMenuItem,
             this.fromPuTTYPortableSettingsToolStripMenuItem,
             this.fromPuTTYCMExportToolStripMenuItem,
-            this.fromWinRDPRegToolStripMenuItem});
+            this.fromWinRDPRegToolStripMenuItem,
+            this.fromMobaXtermToolStripMenuItem});
             this.importSettingsToolStripMenuItem.Name = "importSettingsToolStripMenuItem";
             this.importSettingsToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.importSettingsToolStripMenuItem.Text = "&Import Sessions";
@@ -175,36 +177,36 @@ namespace SuperPutty
             // fromFileToolStripMenuItem
             // 
             this.fromFileToolStripMenuItem.Name = "fromFileToolStripMenuItem";
-            this.fromFileToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
-            this.fromFileToolStripMenuItem.Text = "From &File";
+            this.fromFileToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.fromFileToolStripMenuItem.Text = "From &SuperPuTTY XML file...";
             this.fromFileToolStripMenuItem.Click += new System.EventHandler(this.fromFileToolStripMenuItem_Click);
             // 
             // fromPuTTYSettingsToolStripMenuItem
             // 
             this.fromPuTTYSettingsToolStripMenuItem.Name = "fromPuTTYSettingsToolStripMenuItem";
-            this.fromPuTTYSettingsToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
-            this.fromPuTTYSettingsToolStripMenuItem.Text = "From PuTTY &Settings";
+            this.fromPuTTYSettingsToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.fromPuTTYSettingsToolStripMenuItem.Text = "From PuTTY/&KiTTY (Registry)";
             this.fromPuTTYSettingsToolStripMenuItem.Click += new System.EventHandler(this.fromPuTTYSettingsToolStripMenuItem_Click);
             // 
             // fromPuTTYPortableSettingsToolStripMenuItem
             // 
             this.fromPuTTYPortableSettingsToolStripMenuItem.Name = "fromPuTTYPortableSettingsToolStripMenuItem";
-            this.fromPuTTYPortableSettingsToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
-            this.fromPuTTYPortableSettingsToolStripMenuItem.Text = "From PuTTY &Portable Settings";
+            this.fromPuTTYPortableSettingsToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.fromPuTTYPortableSettingsToolStripMenuItem.Text = "From PuTTY &Portable settings...";
             this.fromPuTTYPortableSettingsToolStripMenuItem.Click += new System.EventHandler(this.fromPuTTYPortableSettingsToolStripMenuItem_Click);
             // 
             // fromPuTTYCMExportToolStripMenuItem
             // 
             this.fromPuTTYCMExportToolStripMenuItem.Name = "fromPuTTYCMExportToolStripMenuItem";
-            this.fromPuTTYCMExportToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
-            this.fromPuTTYCMExportToolStripMenuItem.Text = "From PuTTY &CM Export";
+            this.fromPuTTYCMExportToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.fromPuTTYCMExportToolStripMenuItem.Text = "From PuTTY &CM Export...";
             this.fromPuTTYCMExportToolStripMenuItem.Click += new System.EventHandler(this.fromPuTTYCMExportToolStripMenuItem_Click);
             // 
             // fromWinRDPRegToolStripMenuItem
             // 
             this.fromWinRDPRegToolStripMenuItem.Name = "fromWinRDPRegToolStripMenuItem";
-            this.fromWinRDPRegToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
-            this.fromWinRDPRegToolStripMenuItem.Text = "RDP - From Win &Registry";
+            this.fromWinRDPRegToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.fromWinRDPRegToolStripMenuItem.Text = "From &RDP (Registry)";
             this.fromWinRDPRegToolStripMenuItem.Click += new System.EventHandler(this.fromWinRDPRegToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
@@ -586,99 +588,6 @@ namespace SuperPutty
             this.toolStripStatusLabelLayout.Size = new System.Drawing.Size(91, 17);
             this.toolStripStatusLabelLayout.Text = "<LayoutName>";
             // 
-            // tsCommands
-            // 
-            this.tsCommands.Dock = System.Windows.Forms.DockStyle.None;
-            this.tsCommands.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.tsCommands.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tbTextSendCommands,
-            this.tsSendCommandCombo,
-            this.tbBtnSendCommand,
-            this.tbBtnMaskText,
-            this.toolStripButtonRunScript,
-            this.toolStripSeparatorSendCommands,
-            this.tbBtnSelectDocs,
-            this.toolStripButtonChooseIconGroup});
-            this.tsCommands.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.tsCommands.Location = new System.Drawing.Point(0, 51);
-            this.tsCommands.Name = "tsCommands";
-            this.tsCommands.Size = new System.Drawing.Size(1008, 27);
-            this.tsCommands.Stretch = true;
-            this.tsCommands.TabIndex = 6;
-            // 
-            // tbTextSendCommands
-            // 
-            this.tbTextSendCommands.Image = global::SuperPutty.Properties.Resources.application_xp_terminal;
-            this.tbTextSendCommands.Name = "tbTextSendCommands";
-            this.tbTextSendCommands.Size = new System.Drawing.Size(84, 24);
-            this.tbTextSendCommands.Text = "Command";
-            // 
-            // tsSendCommandCombo
-            // 
-            this.tsSendCommandCombo.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsSendCommandCombo.Name = "tsSendCommandCombo";
-            this.tsSendCommandCombo.Size = new System.Drawing.Size(400, 27);
-            this.tsSendCommandCombo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tsSendCommandCombo_KeyDown);
-            // 
-            // tbBtnSendCommand
-            // 
-            this.tbBtnSendCommand.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbBtnSendCommand.Image = global::SuperPutty.Properties.Resources.accept;
-            this.tbBtnSendCommand.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbBtnSendCommand.Name = "tbBtnSendCommand";
-            this.tbBtnSendCommand.Size = new System.Drawing.Size(24, 24);
-            this.tbBtnSendCommand.Text = "Send Command";
-            this.tbBtnSendCommand.Click += new System.EventHandler(this.tbBtnSendCommand_Click);
-            // 
-            // tbBtnMaskText
-            // 
-            this.tbBtnMaskText.CheckOnClick = true;
-            this.tbBtnMaskText.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbBtnMaskText.Image = global::SuperPutty.Properties.Resources.asterisk_gray;
-            this.tbBtnMaskText.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbBtnMaskText.Name = "tbBtnMaskText";
-            this.tbBtnMaskText.Size = new System.Drawing.Size(24, 24);
-            this.tbBtnMaskText.Text = "Mask Text";
-            this.tbBtnMaskText.ToolTipText = "Mask text when typing";
-            this.tbBtnMaskText.Click += new System.EventHandler(this.tbBtnMaskText_Click);
-            // 
-            // toolStripButtonRunScript
-            // 
-            this.toolStripButtonRunScript.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonRunScript.Image = global::SuperPutty.Properties.Resources.script_code;
-            this.toolStripButtonRunScript.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonRunScript.Name = "toolStripButtonRunScript";
-            this.toolStripButtonRunScript.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButtonRunScript.Text = "toolStripButtonScript";
-            this.toolStripButtonRunScript.ToolTipText = "Run Script";
-            this.toolStripButtonRunScript.Click += new System.EventHandler(this.toolStripButtonRunScript_Click);
-            // 
-            // toolStripSeparatorSendCommands
-            // 
-            this.toolStripSeparatorSendCommands.Name = "toolStripSeparatorSendCommands";
-            this.toolStripSeparatorSendCommands.Size = new System.Drawing.Size(6, 27);
-            // 
-            // tbBtnSelectDocs
-            // 
-            this.tbBtnSelectDocs.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbBtnSelectDocs.Image = global::SuperPutty.Properties.Resources.application_edit;
-            this.tbBtnSelectDocs.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbBtnSelectDocs.Name = "tbBtnSelectDocs";
-            this.tbBtnSelectDocs.Size = new System.Drawing.Size(24, 24);
-            this.tbBtnSelectDocs.Text = "Select Documents";
-            this.tbBtnSelectDocs.Click += new System.EventHandler(this.tsBtnSelectDocs_Click);
-            // 
-            // toolStripButtonChooseIconGroup
-            // 
-            this.toolStripButtonChooseIconGroup.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonChooseIconGroup.Image = global::SuperPutty.Properties.Resources.stop;
-            this.toolStripButtonChooseIconGroup.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonChooseIconGroup.Name = "toolStripButtonChooseIconGroup";
-            this.toolStripButtonChooseIconGroup.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButtonChooseIconGroup.Text = "toolStripButtonScript";
-            this.toolStripButtonChooseIconGroup.ToolTipText = "Select target icon-group";
-            this.toolStripButtonChooseIconGroup.Click += new System.EventHandler(this.toolStripButtonChooseIconGroup_Click);
-            // 
             // tsConnect
             // 
             this.tsConnect.Dock = System.Windows.Forms.DockStyle.None;
@@ -792,6 +701,99 @@ namespace SuperPutty
             this.toolStripButtonClearFields.Text = "Clear Fields";
             this.toolStripButtonClearFields.Click += new System.EventHandler(this.toolStripButtonClearFields_Click);
             // 
+            // tsCommands
+            // 
+            this.tsCommands.Dock = System.Windows.Forms.DockStyle.None;
+            this.tsCommands.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.tsCommands.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tbTextSendCommands,
+            this.tsSendCommandCombo,
+            this.tbBtnSendCommand,
+            this.tbBtnMaskText,
+            this.toolStripButtonRunScript,
+            this.toolStripSeparatorSendCommands,
+            this.tbBtnSelectDocs,
+            this.toolStripButtonChooseIconGroup});
+            this.tsCommands.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.tsCommands.Location = new System.Drawing.Point(0, 51);
+            this.tsCommands.Name = "tsCommands";
+            this.tsCommands.Size = new System.Drawing.Size(1008, 27);
+            this.tsCommands.Stretch = true;
+            this.tsCommands.TabIndex = 6;
+            // 
+            // tbTextSendCommands
+            // 
+            this.tbTextSendCommands.Image = global::SuperPutty.Properties.Resources.application_xp_terminal;
+            this.tbTextSendCommands.Name = "tbTextSendCommands";
+            this.tbTextSendCommands.Size = new System.Drawing.Size(84, 24);
+            this.tbTextSendCommands.Text = "Command";
+            // 
+            // tsSendCommandCombo
+            // 
+            this.tsSendCommandCombo.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsSendCommandCombo.Name = "tsSendCommandCombo";
+            this.tsSendCommandCombo.Size = new System.Drawing.Size(400, 27);
+            this.tsSendCommandCombo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tsSendCommandCombo_KeyDown);
+            // 
+            // tbBtnSendCommand
+            // 
+            this.tbBtnSendCommand.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbBtnSendCommand.Image = global::SuperPutty.Properties.Resources.accept;
+            this.tbBtnSendCommand.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbBtnSendCommand.Name = "tbBtnSendCommand";
+            this.tbBtnSendCommand.Size = new System.Drawing.Size(24, 24);
+            this.tbBtnSendCommand.Text = "Send Command";
+            this.tbBtnSendCommand.Click += new System.EventHandler(this.tbBtnSendCommand_Click);
+            // 
+            // tbBtnMaskText
+            // 
+            this.tbBtnMaskText.CheckOnClick = true;
+            this.tbBtnMaskText.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbBtnMaskText.Image = global::SuperPutty.Properties.Resources.asterisk_gray;
+            this.tbBtnMaskText.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbBtnMaskText.Name = "tbBtnMaskText";
+            this.tbBtnMaskText.Size = new System.Drawing.Size(24, 24);
+            this.tbBtnMaskText.Text = "Mask Text";
+            this.tbBtnMaskText.ToolTipText = "Mask text when typing";
+            this.tbBtnMaskText.Click += new System.EventHandler(this.tbBtnMaskText_Click);
+            // 
+            // toolStripButtonRunScript
+            // 
+            this.toolStripButtonRunScript.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonRunScript.Image = global::SuperPutty.Properties.Resources.script_code;
+            this.toolStripButtonRunScript.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonRunScript.Name = "toolStripButtonRunScript";
+            this.toolStripButtonRunScript.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonRunScript.Text = "toolStripButtonScript";
+            this.toolStripButtonRunScript.ToolTipText = "Run Script";
+            this.toolStripButtonRunScript.Click += new System.EventHandler(this.toolStripButtonRunScript_Click);
+            // 
+            // toolStripSeparatorSendCommands
+            // 
+            this.toolStripSeparatorSendCommands.Name = "toolStripSeparatorSendCommands";
+            this.toolStripSeparatorSendCommands.Size = new System.Drawing.Size(6, 27);
+            // 
+            // tbBtnSelectDocs
+            // 
+            this.tbBtnSelectDocs.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbBtnSelectDocs.Image = global::SuperPutty.Properties.Resources.application_edit;
+            this.tbBtnSelectDocs.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbBtnSelectDocs.Name = "tbBtnSelectDocs";
+            this.tbBtnSelectDocs.Size = new System.Drawing.Size(24, 24);
+            this.tbBtnSelectDocs.Text = "Select Documents";
+            this.tbBtnSelectDocs.Click += new System.EventHandler(this.tsBtnSelectDocs_Click);
+            // 
+            // toolStripButtonChooseIconGroup
+            // 
+            this.toolStripButtonChooseIconGroup.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonChooseIconGroup.Image = global::SuperPutty.Properties.Resources.stop;
+            this.toolStripButtonChooseIconGroup.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonChooseIconGroup.Name = "toolStripButtonChooseIconGroup";
+            this.toolStripButtonChooseIconGroup.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonChooseIconGroup.Text = "toolStripButtonScript";
+            this.toolStripButtonChooseIconGroup.ToolTipText = "Select target icon-group";
+            this.toolStripButtonChooseIconGroup.Click += new System.EventHandler(this.toolStripButtonChooseIconGroup_Click);
+            // 
             // openFileDialogLayout
             // 
             this.openFileDialogLayout.FileName = "openFileDialog1";
@@ -823,6 +825,13 @@ namespace SuperPutty
             this.exitSuperPuTTYToolStripMenuItem.Text = "Exit SuperPuTTY";
             this.exitSuperPuTTYToolStripMenuItem.Click += new System.EventHandler(this.exitSuperPuTTYToolStripMenuItem_Click);
             // 
+            // fromMobaXtermToolStripMenuItem
+            // 
+            this.fromMobaXtermToolStripMenuItem.Name = "fromMobaXtermToolStripMenuItem";
+            this.fromMobaXtermToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.fromMobaXtermToolStripMenuItem.Text = "From &MobaXterm file...";
+            this.fromMobaXtermToolStripMenuItem.Click += new System.EventHandler(this.fromMobaXtermToolStripMenuItem_Click);
+            // 
             // frmSuperPutty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -848,10 +857,10 @@ namespace SuperPutty
             this.toolStripContainer1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.tsCommands.ResumeLayout(false);
-            this.tsCommands.PerformLayout();
             this.tsConnect.ResumeLayout(false);
             this.tsConnect.PerformLayout();
+            this.tsCommands.ResumeLayout(false);
+            this.tsCommands.PerformLayout();
             this.notifyIconContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -942,6 +951,6 @@ namespace SuperPutty
         private System.Windows.Forms.ToolStripButton toolStripButtonRunScript;
         private System.Windows.Forms.ToolStripMenuItem sessionDetailToolStripMenuItem;
         internal WeifenLuo.WinFormsUI.Docking.DockPanel DockPanel;
-
+        private System.Windows.Forms.ToolStripMenuItem fromMobaXtermToolStripMenuItem;
     }
 }

@@ -374,7 +374,6 @@ namespace SuperPutty
             {
                 Filter = "XML Files|*.xml|All files|*.*",
                 FileName = "Sessions.XML",
-                InitialDirectory = Application.StartupPath
             };
             if (saveDialog.ShowDialog(this) == DialogResult.OK)
             {
@@ -389,7 +388,6 @@ namespace SuperPutty
                 Filter = "XML Files|*.xml|All files|*.*",
                 FileName = "Sessions.XML",
                 CheckFileExists = true,
-                InitialDirectory = Application.StartupPath
             };
             if (openDialog.ShowDialog(this) == DialogResult.OK)
             {
@@ -405,7 +403,6 @@ namespace SuperPutty
                 Filter = "XML Files|*.xml|All files|*.*",
                 FileName = "export.xml",
                 CheckFileExists = true,
-                InitialDirectory = Application.StartupPath
             };
             if (openDialog.ShowDialog(this) == DialogResult.OK)
             {
@@ -449,6 +446,20 @@ namespace SuperPutty
             if (res == DialogResult.Yes)
             {
                 SuperPuTTY.ImportRDPSessionsFromWinReg();
+            }
+        }
+
+        private void fromMobaXtermToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openDialog = new OpenFileDialog
+            {
+                Filter = "MobaXterm sessions file|*.mxtsessions|All files|*.*",
+                FileName = "MobaXterm Sessions.mxtsessions",
+                CheckFileExists = true,
+            };
+            if (openDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                SuperPuTTY.ImportSessionsFromMoba(openDialog.FileName);
             }
         }
 

@@ -632,12 +632,20 @@ namespace SuperPutty
             ImportSessions(sessions, "ImportedFromPuTTY");
         }
 
-        /// <summary>Import sessions from Windows Registry which were set by PuttYCM and load them into the in-application sessions database</summary>
+        /// <summary>Import sessions from file exported by PuttYCM and load them into the in-application sessions database</summary>
         public static void ImportSessionsFromPuttyCM(string fileExport)
         {
             Log.InfoFormat("Importing sessions from PuttyCM");
             List<SessionData> sessions = PuttyDataHelper.GetAllSessionsFromPuTTYCM(fileExport);
             ImportSessions(sessions, "ImportedFromPuTTYCM");
+        }
+
+        /// <summary>Import sessions from MobaXterm sessions file and load them into the in-application sessions database</summary>
+        public static void ImportSessionsFromMoba(string fileExport)
+        {
+            Log.InfoFormat("Importing sessions from MobaXterm");
+            List<SessionData> sessions = MobaDataHelper.GetAllSessionsFromMoba(fileExport);
+            ImportSessions(sessions, "ImportedFromMobaXterm");
         }
 
         /// <summary>Import sessions from Windows Registry which were set by PuTTY or KiTTY and load them into the in-application sessions database</summary>
