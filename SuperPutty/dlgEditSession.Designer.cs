@@ -314,7 +314,7 @@ namespace SuperPutty
             this.textBoxNote.Multiline = true;
             this.textBoxNote.Name = "textBoxNote";
             this.textBoxNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxNote.Size = new System.Drawing.Size(492, 81);
+            this.textBoxNote.Size = new System.Drawing.Size(492, 77);
             this.textBoxNote.TabIndex = 26;
             // 
             // label1
@@ -432,8 +432,8 @@ namespace SuperPutty
             // dlgEditSession
             // 
             this.AcceptButton = this.buttonSave;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(556, 536);
             this.Controls.Add(this.groupBox1);

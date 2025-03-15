@@ -100,6 +100,9 @@ namespace SuperPutty
 
             FixDpiScalingIssues();
 
+            // keep menubar first
+            menuStrip1.Location = new System.Drawing.Point(0, 0);
+
             if (this.DesignMode) return;
 
             // setup connection bar
