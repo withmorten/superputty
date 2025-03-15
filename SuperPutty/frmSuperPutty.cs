@@ -49,7 +49,7 @@ namespace SuperPutty
 
         private static string XmlEditor = ConfigurationManager.AppSettings["SuperPuTTY.XmlEditor"];
 
-        internal DockPanel DockPanel { get; private set; }
+        //internal DockPanel DockPanel { get; private set; }
 
         public ToolWindowDocument CurrentPanel { get; set; }
 

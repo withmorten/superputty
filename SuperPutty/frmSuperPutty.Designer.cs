@@ -1000,5 +1000,7 @@ namespace SuperPutty
         private System.Windows.Forms.ToolStripMenuItem checkForUpdatesToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripButtonRunScript;
         private System.Windows.Forms.ToolStripMenuItem sessionDetailToolStripMenuItem;
+        internal WeifenLuo.WinFormsUI.Docking.DockPanel DockPanel;
+
     }
 }
