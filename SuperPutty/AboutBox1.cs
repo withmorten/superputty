@@ -19,7 +19,7 @@ namespace SuperPutty
             this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
             this.labelCopyright.Text = AssemblyCopyright;
             this.linkLabelCompany.Text = AssemblyCompany;
-            this.linkLabelCompany2.Text = "https://github.com/jimradford/superputty";            
+            this.linkLabelCompany2.Text = "https://github.com/SilverGreen93/superputty";            
 
             textBoxSupportText.AppendText("SuperPuTTY Version: " + SuperPuTTY.Version + System.Environment.NewLine);
             Assembly[] asms = AppDomain.CurrentDomain.GetAssemblies();

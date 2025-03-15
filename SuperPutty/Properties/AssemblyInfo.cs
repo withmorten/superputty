@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("SuperPuTTY")]
 [assembly: AssemblyDescription("PuTTY Window Manager")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("https://www.jimradford.com/")]
+[assembly: AssemblyCompany("SilverGreen93")]
 [assembly: AssemblyProduct("SuperPuTTY")]
 [assembly: AssemblyCopyright("Copyright © 2025 SilverGreen93")]
 [assembly: AssemblyTrademark("")]
