@@ -34,7 +34,6 @@
             this.buttonBrowsePutty = new System.Windows.Forms.Button();
             this.buttonBrowsePscp = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.textBoxPuttyLocation = new System.Windows.Forms.TextBox();
             this.textBoxPscpLocation = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -70,28 +69,27 @@
             this.label14 = new System.Windows.Forms.Label();
             this.checkRestrictFloatingWindows = new System.Windows.Forms.CheckBox();
             this.checkSessionsShowSearch = new System.Windows.Forms.CheckBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.checkBoxCheckForUpdates = new System.Windows.Forms.CheckBox();
             this.checkSessionTreeFoldersFirst = new System.Windows.Forms.CheckBox();
             this.checkBoxPersistTsHistory = new System.Windows.Forms.CheckBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.checkBoxAllowPuttyPWArg = new System.Windows.Forms.CheckBox();
+            this.checkFilterWhileTyping = new System.Windows.Forms.CheckBox();
             this.checkConfirmTabClose = new System.Windows.Forms.CheckBox();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageGeneral = new System.Windows.Forms.TabPage();
+            this.kittyLink = new System.Windows.Forms.LinkLabel();
+            this.puttyLink = new System.Windows.Forms.LinkLabel();
             this.label23 = new System.Windows.Forms.Label();
             this.textBoxPuttyDefaultParameters = new System.Windows.Forms.TextBox();
             this.buttonBrowseFilezilla = new System.Windows.Forms.Button();
-            this.label22 = new System.Windows.Forms.Label();
             this.textBoxFilezillaLocation = new System.Windows.Forms.TextBox();
             this.btnBrowseVNC = new System.Windows.Forms.Button();
-            this.label24 = new System.Windows.Forms.Label();
             this.textBoxVNCLocation = new System.Windows.Forms.TextBox();
             this.btnBrowseRDP = new System.Windows.Forms.Button();
             this.labelRDP = new System.Windows.Forms.Label();
             this.textBoxRDPLocation = new System.Windows.Forms.TextBox();
             this.buttonBrowseWinSCP = new System.Windows.Forms.Button();
-            this.label21 = new System.Windows.Forms.Label();
             this.textBoxWinSCPLocation = new System.Windows.Forms.TextBox();
             this.tabPageGUI = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
@@ -118,20 +116,27 @@
             this.label11 = new System.Windows.Forms.Label();
             this.tabPageShortcuts = new System.Windows.Forms.TabPage();
             this.dataGridViewShortcuts = new System.Windows.Forms.DataGridView();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.keyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modifiersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shortcutStringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colClear = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.keyboardShortcutBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPageAdvanced = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.comboBoxActivatorType = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.panelBottom = new System.Windows.Forms.Panel();
             this.fontDialog = new System.Windows.Forms.FontDialog();
-            this.checkFilterWhileTyping = new System.Windows.Forms.CheckBox();
+            this.linkPscp = new System.Windows.Forms.LinkLabel();
+            this.linkCygwin = new System.Windows.Forms.LinkLabel();
+            this.linkMsys = new System.Windows.Forms.LinkLabel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.linkWinScp = new System.Windows.Forms.LinkLabel();
+            this.linkFilezilla = new System.Windows.Forms.LinkLabel();
+            this.linkTightVnc = new System.Windows.Forms.LinkLabel();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.keyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modifiersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shortcutStringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.keyboardShortcutBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label18 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabControl.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
@@ -146,11 +151,11 @@
             this.groupBox1.SuspendLayout();
             this.tabPageShortcuts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewShortcuts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.keyboardShortcutBindingSource)).BeginInit();
             this.tabPageAdvanced.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.panelBottom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.keyboardShortcutBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonOk
@@ -160,7 +165,7 @@
             this.buttonOk.Name = "buttonOk";
             this.buttonOk.Size = new System.Drawing.Size(75, 23);
             this.buttonOk.TabIndex = 20;
-            this.buttonOk.Text = "Ok";
+            this.buttonOk.Text = "Save";
             this.buttonOk.UseVisualStyleBackColor = true;
             this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
             // 
@@ -171,7 +176,7 @@
             this.buttonBrowsePutty.Name = "buttonBrowsePutty";
             this.buttonBrowsePutty.Size = new System.Drawing.Size(75, 23);
             this.buttonBrowsePutty.TabIndex = 1;
-            this.buttonBrowsePutty.Text = "Browse";
+            this.buttonBrowsePutty.Text = "Browse...";
             this.buttonBrowsePutty.UseVisualStyleBackColor = true;
             this.buttonBrowsePutty.Click += new System.EventHandler(this.buttonBrowse_Click);
             // 
@@ -182,7 +187,7 @@
             this.buttonBrowsePscp.Name = "buttonBrowsePscp";
             this.buttonBrowsePscp.Size = new System.Drawing.Size(75, 23);
             this.buttonBrowsePscp.TabIndex = 3;
-            this.buttonBrowsePscp.Text = "Browse";
+            this.buttonBrowsePscp.Text = "Browse...";
             this.buttonBrowsePscp.UseVisualStyleBackColor = true;
             this.buttonBrowsePscp.Click += new System.EventHandler(this.buttonBrowsePscp_Click);
             // 
@@ -190,21 +195,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 111);
+            this.label1.Location = new System.Drawing.Point(56, 112);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 15);
+            this.label1.Size = new System.Drawing.Size(18, 15);
             this.label1.TabIndex = 4;
-            this.label1.Text = "putty.exe Location (Required)";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(4, 139);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 15);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "pscp.exe Location";
+            this.label1.Text = "or";
             // 
             // textBoxPuttyLocation
             // 
@@ -212,7 +207,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPuttyLocation.Location = new System.Drawing.Point(172, 108);
             this.textBoxPuttyLocation.Name = "textBoxPuttyLocation";
-            this.textBoxPuttyLocation.Size = new System.Drawing.Size(357, 22);
+            this.textBoxPuttyLocation.Size = new System.Drawing.Size(357, 23);
             this.textBoxPuttyLocation.TabIndex = 0;
             // 
             // textBoxPscpLocation
@@ -221,7 +216,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPscpLocation.Location = new System.Drawing.Point(172, 135);
             this.textBoxPscpLocation.Name = "textBoxPscpLocation";
-            this.textBoxPscpLocation.Size = new System.Drawing.Size(357, 22);
+            this.textBoxPscpLocation.Size = new System.Drawing.Size(357, 23);
             this.textBoxPscpLocation.TabIndex = 2;
             // 
             // openFileDialog1
@@ -234,7 +229,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.richTextBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.richTextBox1.Location = new System.Drawing.Point(7, 7);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
@@ -249,18 +244,18 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxSettingsFolder.Location = new System.Drawing.Point(172, 297);
             this.textBoxSettingsFolder.Name = "textBoxSettingsFolder";
-            this.textBoxSettingsFolder.Size = new System.Drawing.Size(357, 22);
+            this.textBoxSettingsFolder.Size = new System.Drawing.Size(357, 23);
             this.textBoxSettingsFolder.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(4, 301);
+            this.label3.Location = new System.Drawing.Point(6, 301);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(143, 15);
+            this.label3.Size = new System.Drawing.Size(141, 15);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Settings Folder (Required)";
+            this.label3.Text = "Settings folder (required):";
             this.toolTip.SetToolTip(this.label3, "Where sessions and layout config files are stored");
             // 
             // buttonBrowseLayoutsFolder
@@ -270,7 +265,7 @@
             this.buttonBrowseLayoutsFolder.Name = "buttonBrowseLayoutsFolder";
             this.buttonBrowseLayoutsFolder.Size = new System.Drawing.Size(75, 23);
             this.buttonBrowseLayoutsFolder.TabIndex = 5;
-            this.buttonBrowseLayoutsFolder.Text = "Browse";
+            this.buttonBrowseLayoutsFolder.Text = "Browse...";
             this.buttonBrowseLayoutsFolder.UseVisualStyleBackColor = true;
             this.buttonBrowseLayoutsFolder.Click += new System.EventHandler(this.buttonBrowseLayoutsFolder_Click);
             // 
@@ -278,11 +273,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(4, 327);
+            this.label4.Location = new System.Drawing.Point(6, 327);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 15);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Default Layout";
+            this.label4.Text = "Default layout:";
             this.toolTip.SetToolTip(this.label4, "Determines which set of sessions, if any, to restore at startup");
             // 
             // comboBoxLayouts
@@ -293,7 +288,7 @@
             this.comboBoxLayouts.FormattingEnabled = true;
             this.comboBoxLayouts.Location = new System.Drawing.Point(172, 324);
             this.comboBoxLayouts.Name = "comboBoxLayouts";
-            this.comboBoxLayouts.Size = new System.Drawing.Size(357, 21);
+            this.comboBoxLayouts.Size = new System.Drawing.Size(357, 23);
             this.comboBoxLayouts.TabIndex = 6;
             // 
             // buttonCancel
@@ -312,7 +307,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(11, 76);
+            this.label5.Location = new System.Drawing.Point(5, 77);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 15);
             this.label5.TabIndex = 23;
@@ -323,20 +318,20 @@
             this.checkRestoreWindow.AutoSize = true;
             this.checkRestoreWindow.Location = new System.Drawing.Point(15, 43);
             this.checkRestoreWindow.Name = "checkRestoreWindow";
-            this.checkRestoreWindow.Size = new System.Drawing.Size(205, 17);
+            this.checkRestoreWindow.Size = new System.Drawing.Size(201, 19);
             this.checkRestoreWindow.TabIndex = 26;
-            this.checkRestoreWindow.Text = "Restore Window Size and Location";
+            this.checkRestoreWindow.Text = "Restore window size and location";
             this.toolTip.SetToolTip(this.checkRestoreWindow, "Save windows size and location on close and restore on start up");
             this.checkRestoreWindow.UseVisualStyleBackColor = true;
             // 
             // checkConstrainPuttyDocking
             // 
             this.checkConstrainPuttyDocking.AutoSize = true;
-            this.checkConstrainPuttyDocking.Location = new System.Drawing.Point(76, 76);
+            this.checkConstrainPuttyDocking.Location = new System.Drawing.Point(70, 77);
             this.checkConstrainPuttyDocking.Name = "checkConstrainPuttyDocking";
-            this.checkConstrainPuttyDocking.Size = new System.Drawing.Size(204, 17);
+            this.checkConstrainPuttyDocking.Size = new System.Drawing.Size(206, 19);
             this.checkConstrainPuttyDocking.TabIndex = 25;
-            this.checkConstrainPuttyDocking.Text = "Restrict Content to Document Tabs";
+            this.checkConstrainPuttyDocking.Text = "Restrict content to document tabs";
             this.checkConstrainPuttyDocking.UseVisualStyleBackColor = true;
             // 
             // checkSingleInstanceMode
@@ -344,7 +339,7 @@
             this.checkSingleInstanceMode.AutoSize = true;
             this.checkSingleInstanceMode.Location = new System.Drawing.Point(15, 20);
             this.checkSingleInstanceMode.Name = "checkSingleInstanceMode";
-            this.checkSingleInstanceMode.Size = new System.Drawing.Size(271, 17);
+            this.checkSingleInstanceMode.Size = new System.Drawing.Size(280, 19);
             this.checkSingleInstanceMode.TabIndex = 24;
             this.checkSingleInstanceMode.Text = "Only allow single instance of SuperPuTTY to run";
             this.toolTip.SetToolTip(this.checkSingleInstanceMode, "If checked, new sessions launched from the command line are opened in an existing" +
@@ -356,20 +351,20 @@
             this.checkExitConfirmation.AutoSize = true;
             this.checkExitConfirmation.Location = new System.Drawing.Point(15, 66);
             this.checkExitConfirmation.Name = "checkExitConfirmation";
-            this.checkExitConfirmation.Size = new System.Drawing.Size(115, 17);
+            this.checkExitConfirmation.Size = new System.Drawing.Size(116, 19);
             this.checkExitConfirmation.TabIndex = 27;
-            this.checkExitConfirmation.Text = "Exit Confirmation";
+            this.checkExitConfirmation.Text = "Exit confirmation";
             this.toolTip.SetToolTip(this.checkExitConfirmation, "Ask for confirmation before closing SuperPutty");
             this.checkExitConfirmation.UseVisualStyleBackColor = true;
             // 
             // checkExpandTree
             // 
             this.checkExpandTree.AutoSize = true;
-            this.checkExpandTree.Location = new System.Drawing.Point(76, 67);
+            this.checkExpandTree.Location = new System.Drawing.Point(76, 71);
             this.checkExpandTree.Name = "checkExpandTree";
-            this.checkExpandTree.Size = new System.Drawing.Size(125, 17);
+            this.checkExpandTree.Size = new System.Drawing.Size(126, 19);
             this.checkExpandTree.TabIndex = 29;
-            this.checkExpandTree.Text = "Expand on Start up";
+            this.checkExpandTree.Text = "Expand on start-up";
             this.toolTip.SetToolTip(this.checkExpandTree, "Expand the session tree at startup to full extent");
             this.checkExpandTree.UseVisualStyleBackColor = true;
             // 
@@ -378,9 +373,9 @@
             this.checkMinimizeToTray.AutoSize = true;
             this.checkMinimizeToTray.Location = new System.Drawing.Point(71, 49);
             this.checkMinimizeToTray.Name = "checkMinimizeToTray";
-            this.checkMinimizeToTray.Size = new System.Drawing.Size(108, 17);
+            this.checkMinimizeToTray.Size = new System.Drawing.Size(112, 19);
             this.checkMinimizeToTray.TabIndex = 30;
-            this.checkMinimizeToTray.Text = "Minimize To Tray";
+            this.checkMinimizeToTray.Text = "Minimize to tray";
             this.checkMinimizeToTray.UseVisualStyleBackColor = true;
             // 
             // textBoxMinttyLocation
@@ -389,18 +384,18 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxMinttyLocation.Location = new System.Drawing.Point(172, 162);
             this.textBoxMinttyLocation.Name = "textBoxMinttyLocation";
-            this.textBoxMinttyLocation.Size = new System.Drawing.Size(357, 22);
+            this.textBoxMinttyLocation.Size = new System.Drawing.Size(357, 23);
             this.textBoxMinttyLocation.TabIndex = 31;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(4, 164);
+            this.label7.Location = new System.Drawing.Point(6, 165);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(111, 15);
+            this.label7.Size = new System.Drawing.Size(62, 15);
             this.label7.TabIndex = 33;
-            this.label7.Text = "mintty.exe Location";
+            this.label7.Text = "mintty.exe";
             this.toolTip.SetToolTip(this.label7, "Alternative to putty-cyg for local access");
             // 
             // btnBrowseMintty
@@ -410,35 +405,35 @@
             this.btnBrowseMintty.Name = "btnBrowseMintty";
             this.btnBrowseMintty.Size = new System.Drawing.Size(75, 23);
             this.btnBrowseMintty.TabIndex = 32;
-            this.btnBrowseMintty.Text = "Browse";
+            this.btnBrowseMintty.Text = "Browse...";
             this.btnBrowseMintty.UseVisualStyleBackColor = true;
             this.btnBrowseMintty.Click += new System.EventHandler(this.btnBrowseMintty_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(11, 22);
+            this.label8.Location = new System.Drawing.Point(5, 25);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 13);
+            this.label8.Size = new System.Drawing.Size(51, 15);
             this.label8.TabIndex = 34;
-            this.label8.Text = "Tab Text:";
+            this.label8.Text = "Tab text:";
             this.toolTip.SetToolTip(this.label8, "Determines how tabs are named and if they respond to the shell\'s title changing");
             // 
             // comboBoxTabText
             // 
             this.comboBoxTabText.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTabText.FormattingEnabled = true;
-            this.comboBoxTabText.Location = new System.Drawing.Point(76, 19);
+            this.comboBoxTabText.Location = new System.Drawing.Point(70, 22);
             this.comboBoxTabText.Name = "comboBoxTabText";
-            this.comboBoxTabText.Size = new System.Drawing.Size(273, 21);
+            this.comboBoxTabText.Size = new System.Drawing.Size(273, 23);
             this.comboBoxTabText.TabIndex = 35;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(11, 47);
+            this.label9.Location = new System.Drawing.Point(5, 50);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(61, 13);
+            this.label9.Size = new System.Drawing.Size(62, 15);
             this.label9.TabIndex = 36;
             this.label9.Text = "Switching:";
             this.toolTip.SetToolTip(this.label9, "Determines the order sessions tabs are cycled through");
@@ -448,17 +443,17 @@
             this.comboBoxTabSwitching.DisplayMember = "Description";
             this.comboBoxTabSwitching.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTabSwitching.FormattingEnabled = true;
-            this.comboBoxTabSwitching.Location = new System.Drawing.Point(76, 46);
+            this.comboBoxTabSwitching.Location = new System.Drawing.Point(70, 49);
             this.comboBoxTabSwitching.Name = "comboBoxTabSwitching";
-            this.comboBoxTabSwitching.Size = new System.Drawing.Size(273, 21);
+            this.comboBoxTabSwitching.Size = new System.Drawing.Size(273, 23);
             this.comboBoxTabSwitching.TabIndex = 37;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(11, 16);
+            this.label10.Location = new System.Drawing.Point(11, 20);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(34, 13);
+            this.label10.Size = new System.Drawing.Size(34, 15);
             this.label10.TabIndex = 35;
             this.label10.Text = "Font:";
             this.toolTip.SetToolTip(this.label10, "Determines how tabs are named and if they respond to the shell\'s title changing");
@@ -466,11 +461,11 @@
             // checkSessionsTreeShowLines
             // 
             this.checkSessionsTreeShowLines.AutoSize = true;
-            this.checkSessionsTreeShowLines.Location = new System.Drawing.Point(76, 90);
+            this.checkSessionsTreeShowLines.Location = new System.Drawing.Point(76, 94);
             this.checkSessionsTreeShowLines.Name = "checkSessionsTreeShowLines";
-            this.checkSessionsTreeShowLines.Size = new System.Drawing.Size(84, 17);
+            this.checkSessionsTreeShowLines.Size = new System.Drawing.Size(82, 19);
             this.checkSessionsTreeShowLines.TabIndex = 36;
-            this.checkSessionsTreeShowLines.Text = "Show Lines";
+            this.checkSessionsTreeShowLines.Text = "Show lines";
             this.toolTip.SetToolTip(this.checkSessionsTreeShowLines, "Show lines in tree");
             this.checkSessionsTreeShowLines.UseVisualStyleBackColor = true;
             // 
@@ -479,7 +474,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(15, 20);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 13);
+            this.label6.Size = new System.Drawing.Size(58, 15);
             this.label6.TabIndex = 0;
             this.label6.Text = "Activator:";
             this.toolTip.SetToolTip(this.label6, "Method for activating SuperPutty when clicking on a putty session.");
@@ -489,7 +484,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(10, 18);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(49, 13);
+            this.label12.Size = new System.Drawing.Size(51, 15);
             this.label12.TabIndex = 35;
             this.label12.Text = "Opacity:";
             this.toolTip.SetToolTip(this.label12, "Determines how tabs are named and if they respond to the shell\'s title changing");
@@ -497,86 +492,76 @@
             // checkEnableControlTabSwitching
             // 
             this.checkEnableControlTabSwitching.AutoSize = true;
-            this.checkEnableControlTabSwitching.Location = new System.Drawing.Point(286, 20);
+            this.checkEnableControlTabSwitching.Location = new System.Drawing.Point(304, 21);
             this.checkEnableControlTabSwitching.Name = "checkEnableControlTabSwitching";
-            this.checkEnableControlTabSwitching.Size = new System.Drawing.Size(198, 17);
+            this.checkEnableControlTabSwitching.Size = new System.Drawing.Size(205, 19);
             this.checkEnableControlTabSwitching.TabIndex = 28;
-            this.checkEnableControlTabSwitching.Text = "Enable Control-Tab Tab Switching";
+            this.checkEnableControlTabSwitching.Text = "Enable Control+Tab tab switching";
             this.toolTip.SetToolTip(this.checkEnableControlTabSwitching, "Enable CTRL+TAB Session Switching");
             this.checkEnableControlTabSwitching.UseVisualStyleBackColor = true;
             // 
             // checkEnableKeyboardShortcuts
             // 
             this.checkEnableKeyboardShortcuts.AutoSize = true;
-            this.checkEnableKeyboardShortcuts.Location = new System.Drawing.Point(286, 43);
+            this.checkEnableKeyboardShortcuts.Location = new System.Drawing.Point(304, 44);
             this.checkEnableKeyboardShortcuts.Name = "checkEnableKeyboardShortcuts";
-            this.checkEnableKeyboardShortcuts.Size = new System.Drawing.Size(164, 17);
+            this.checkEnableKeyboardShortcuts.Size = new System.Drawing.Size(165, 19);
             this.checkEnableKeyboardShortcuts.TabIndex = 29;
-            this.checkEnableKeyboardShortcuts.Text = "Enable Keyboard Shortcuts";
+            this.checkEnableKeyboardShortcuts.Text = "Enable keyboard shortcuts";
             this.toolTip.SetToolTip(this.checkEnableKeyboardShortcuts, "Enable Keyboard Shortcuts");
             this.checkEnableKeyboardShortcuts.UseVisualStyleBackColor = true;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(11, 43);
+            this.label14.Location = new System.Drawing.Point(11, 47);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(41, 13);
+            this.label14.Size = new System.Drawing.Size(45, 15);
             this.label14.TabIndex = 40;
-            this.label14.Text = "Search";
+            this.label14.Text = "Search:";
             this.toolTip.SetToolTip(this.label14, "Determines how tabs are named and if they respond to the shell\'s title changing");
             // 
             // checkRestrictFloatingWindows
             // 
             this.checkRestrictFloatingWindows.AutoSize = true;
-            this.checkRestrictFloatingWindows.Location = new System.Drawing.Point(76, 99);
+            this.checkRestrictFloatingWindows.Location = new System.Drawing.Point(70, 100);
             this.checkRestrictFloatingWindows.Name = "checkRestrictFloatingWindows";
-            this.checkRestrictFloatingWindows.Size = new System.Drawing.Size(162, 17);
+            this.checkRestrictFloatingWindows.Size = new System.Drawing.Size(159, 19);
             this.checkRestrictFloatingWindows.TabIndex = 39;
-            this.checkRestrictFloatingWindows.Text = "Restrict Floating Windows";
+            this.checkRestrictFloatingWindows.Text = "Restrict floating windows";
             this.toolTip.SetToolTip(this.checkRestrictFloatingWindows, "Do not allow tabs to be undocked");
             this.checkRestrictFloatingWindows.UseVisualStyleBackColor = true;
             // 
             // checkSessionsShowSearch
             // 
             this.checkSessionsShowSearch.AutoSize = true;
-            this.checkSessionsShowSearch.Location = new System.Drawing.Point(76, 136);
+            this.checkSessionsShowSearch.Location = new System.Drawing.Point(76, 140);
             this.checkSessionsShowSearch.Name = "checkSessionsShowSearch";
-            this.checkSessionsShowSearch.Size = new System.Drawing.Size(92, 17);
+            this.checkSessionsShowSearch.Size = new System.Drawing.Size(92, 19);
             this.checkSessionsShowSearch.TabIndex = 42;
-            this.checkSessionsShowSearch.Text = "Show Search";
+            this.checkSessionsShowSearch.Text = "Show search";
             this.toolTip.SetToolTip(this.checkSessionsShowSearch, "Show search box above sessions");
             this.checkSessionsShowSearch.UseVisualStyleBackColor = true;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(10, 16);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(37, 13);
-            this.label18.TabIndex = 35;
-            this.label18.Text = "Other";
-            this.toolTip.SetToolTip(this.label18, "Determines how tabs are named and if they respond to the shell\'s title changing");
             // 
             // checkBoxCheckForUpdates
             // 
             this.checkBoxCheckForUpdates.AutoSize = true;
-            this.checkBoxCheckForUpdates.Location = new System.Drawing.Point(286, 66);
+            this.checkBoxCheckForUpdates.Location = new System.Drawing.Point(304, 67);
             this.checkBoxCheckForUpdates.Name = "checkBoxCheckForUpdates";
-            this.checkBoxCheckForUpdates.Size = new System.Drawing.Size(193, 17);
+            this.checkBoxCheckForUpdates.Size = new System.Drawing.Size(197, 19);
             this.checkBoxCheckForUpdates.TabIndex = 30;
-            this.checkBoxCheckForUpdates.Text = "Automatically Check for Updates";
+            this.checkBoxCheckForUpdates.Text = "Automatically check for updates";
             this.toolTip.SetToolTip(this.checkBoxCheckForUpdates, "Check for Updates when Application starts");
             this.checkBoxCheckForUpdates.UseVisualStyleBackColor = true;
             // 
             // checkSessionTreeFoldersFirst
             // 
             this.checkSessionTreeFoldersFirst.AutoSize = true;
-            this.checkSessionTreeFoldersFirst.Location = new System.Drawing.Point(76, 113);
+            this.checkSessionTreeFoldersFirst.Location = new System.Drawing.Point(76, 117);
             this.checkSessionTreeFoldersFirst.Name = "checkSessionTreeFoldersFirst";
-            this.checkSessionTreeFoldersFirst.Size = new System.Drawing.Size(119, 17);
+            this.checkSessionTreeFoldersFirst.Size = new System.Drawing.Size(117, 19);
             this.checkSessionTreeFoldersFirst.TabIndex = 43;
-            this.checkSessionTreeFoldersFirst.Text = "Show Folders first";
+            this.checkSessionTreeFoldersFirst.Text = "Show folders first";
             this.toolTip.SetToolTip(this.checkSessionTreeFoldersFirst, "Show search box above sessions");
             this.checkSessionTreeFoldersFirst.UseVisualStyleBackColor = true;
             // 
@@ -585,9 +570,9 @@
             this.checkBoxPersistTsHistory.AutoSize = true;
             this.checkBoxPersistTsHistory.Location = new System.Drawing.Point(13, 25);
             this.checkBoxPersistTsHistory.Name = "checkBoxPersistTsHistory";
-            this.checkBoxPersistTsHistory.Size = new System.Drawing.Size(88, 17);
+            this.checkBoxPersistTsHistory.Size = new System.Drawing.Size(89, 19);
             this.checkBoxPersistTsHistory.TabIndex = 0;
-            this.checkBoxPersistTsHistory.Text = "Save History";
+            this.checkBoxPersistTsHistory.Text = "Save history";
             this.toolTip.SetToolTip(this.checkBoxPersistTsHistory, "Persist command bar history between program restarts");
             this.checkBoxPersistTsHistory.UseVisualStyleBackColor = true;
             // 
@@ -595,7 +580,7 @@
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(128, 25);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(48, 22);
+            this.numericUpDown1.Size = new System.Drawing.Size(48, 23);
             this.numericUpDown1.TabIndex = 1;
             this.toolTip.SetToolTip(this.numericUpDown1, "The number of days to save history for. Entries older than the selected number of" +
         " days will be automatically deleted.");
@@ -610,21 +595,32 @@
             this.checkBoxAllowPuttyPWArg.AutoSize = true;
             this.checkBoxAllowPuttyPWArg.Location = new System.Drawing.Point(14, 19);
             this.checkBoxAllowPuttyPWArg.Name = "checkBoxAllowPuttyPWArg";
-            this.checkBoxAllowPuttyPWArg.Size = new System.Drawing.Size(286, 17);
+            this.checkBoxAllowPuttyPWArg.Size = new System.Drawing.Size(293, 19);
             this.checkBoxAllowPuttyPWArg.TabIndex = 0;
             this.checkBoxAllowPuttyPWArg.Text = "Allow plain text passwords on putty command line";
             this.toolTip.SetToolTip(this.checkBoxAllowPuttyPWArg, "Enabling this will allow plain text passwords to be cached and shown on the comma" +
         "nd line. It is Recommended you do NOT enable this");
             this.checkBoxAllowPuttyPWArg.UseVisualStyleBackColor = true;
             // 
+            // checkFilterWhileTyping
+            // 
+            this.checkFilterWhileTyping.AutoSize = true;
+            this.checkFilterWhileTyping.Location = new System.Drawing.Point(208, 140);
+            this.checkFilterWhileTyping.Name = "checkFilterWhileTyping";
+            this.checkFilterWhileTyping.Size = new System.Drawing.Size(120, 19);
+            this.checkFilterWhileTyping.TabIndex = 44;
+            this.checkFilterWhileTyping.Text = "Filter while typing";
+            this.toolTip.SetToolTip(this.checkFilterWhileTyping, "Show search box above sessions");
+            this.checkFilterWhileTyping.UseVisualStyleBackColor = true;
+            // 
             // checkConfirmTabClose
             // 
             this.checkConfirmTabClose.AutoSize = true;
-            this.checkConfirmTabClose.Location = new System.Drawing.Point(76, 122);
+            this.checkConfirmTabClose.Location = new System.Drawing.Point(70, 123);
             this.checkConfirmTabClose.Name = "checkConfirmTabClose";
-            this.checkConfirmTabClose.Size = new System.Drawing.Size(280, 17);
+            this.checkConfirmTabClose.Size = new System.Drawing.Size(280, 19);
             this.checkConfirmTabClose.TabIndex = 38;
-            this.checkConfirmTabClose.Text = "Ask for Confirmation When Closing Mulitple Tabs";
+            this.checkConfirmTabClose.Text = "Ask for confirmation when closing mulitple tabs";
             this.checkConfirmTabClose.UseVisualStyleBackColor = true;
             // 
             // tabControl
@@ -637,30 +633,35 @@
             this.tabControl.Location = new System.Drawing.Point(5, 5);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(624, 401);
+            this.tabControl.Size = new System.Drawing.Size(624, 412);
             this.tabControl.TabIndex = 38;
             // 
             // tabPageGeneral
             // 
+            this.tabPageGeneral.Controls.Add(this.linkTightVnc);
+            this.tabPageGeneral.Controls.Add(this.linkFilezilla);
+            this.tabPageGeneral.Controls.Add(this.linkWinScp);
+            this.tabPageGeneral.Controls.Add(this.linkCygwin);
+            this.tabPageGeneral.Controls.Add(this.linkMsys);
+            this.tabPageGeneral.Controls.Add(this.label2);
+            this.tabPageGeneral.Controls.Add(this.linkPscp);
+            this.tabPageGeneral.Controls.Add(this.kittyLink);
+            this.tabPageGeneral.Controls.Add(this.puttyLink);
             this.tabPageGeneral.Controls.Add(this.label23);
             this.tabPageGeneral.Controls.Add(this.textBoxPuttyDefaultParameters);
             this.tabPageGeneral.Controls.Add(this.buttonBrowseFilezilla);
-            this.tabPageGeneral.Controls.Add(this.label22);
             this.tabPageGeneral.Controls.Add(this.textBoxFilezillaLocation);
             this.tabPageGeneral.Controls.Add(this.btnBrowseVNC);
-            this.tabPageGeneral.Controls.Add(this.label24);
             this.tabPageGeneral.Controls.Add(this.textBoxVNCLocation);
             this.tabPageGeneral.Controls.Add(this.btnBrowseRDP);
             this.tabPageGeneral.Controls.Add(this.labelRDP);
             this.tabPageGeneral.Controls.Add(this.textBoxRDPLocation);
             this.tabPageGeneral.Controls.Add(this.buttonBrowseWinSCP);
-            this.tabPageGeneral.Controls.Add(this.label21);
             this.tabPageGeneral.Controls.Add(this.textBoxWinSCPLocation);
             this.tabPageGeneral.Controls.Add(this.label4);
             this.tabPageGeneral.Controls.Add(this.buttonBrowsePutty);
             this.tabPageGeneral.Controls.Add(this.buttonBrowsePscp);
             this.tabPageGeneral.Controls.Add(this.label1);
-            this.tabPageGeneral.Controls.Add(this.label2);
             this.tabPageGeneral.Controls.Add(this.textBoxMinttyLocation);
             this.tabPageGeneral.Controls.Add(this.textBoxPuttyLocation);
             this.tabPageGeneral.Controls.Add(this.label7);
@@ -671,23 +672,45 @@
             this.tabPageGeneral.Controls.Add(this.textBoxSettingsFolder);
             this.tabPageGeneral.Controls.Add(this.buttonBrowseLayoutsFolder);
             this.tabPageGeneral.Controls.Add(this.comboBoxLayouts);
-            this.tabPageGeneral.Location = new System.Drawing.Point(4, 22);
+            this.tabPageGeneral.Location = new System.Drawing.Point(4, 24);
             this.tabPageGeneral.Name = "tabPageGeneral";
             this.tabPageGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageGeneral.Size = new System.Drawing.Size(616, 375);
+            this.tabPageGeneral.Size = new System.Drawing.Size(616, 384);
             this.tabPageGeneral.TabIndex = 0;
-            this.tabPageGeneral.Text = "General";
+            this.tabPageGeneral.Text = "Paths";
             this.tabPageGeneral.UseVisualStyleBackColor = true;
+            // 
+            // kittyLink
+            // 
+            this.kittyLink.AutoSize = true;
+            this.kittyLink.Location = new System.Drawing.Point(6, 112);
+            this.kittyLink.Name = "kittyLink";
+            this.kittyLink.Size = new System.Drawing.Size(50, 15);
+            this.kittyLink.TabIndex = 43;
+            this.kittyLink.TabStop = true;
+            this.kittyLink.Text = "kitty.exe";
+            this.kittyLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.kittyLink_LinkClicked);
+            // 
+            // puttyLink
+            // 
+            this.puttyLink.AutoSize = true;
+            this.puttyLink.Location = new System.Drawing.Point(74, 112);
+            this.puttyLink.Name = "puttyLink";
+            this.puttyLink.Size = new System.Drawing.Size(55, 15);
+            this.puttyLink.TabIndex = 42;
+            this.puttyLink.TabStop = true;
+            this.puttyLink.Text = "putty.exe";
+            this.puttyLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.puttyLink_LinkClicked);
             // 
             // label23
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(4, 353);
+            this.label23.Location = new System.Drawing.Point(6, 354);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(145, 15);
+            this.label23.Size = new System.Drawing.Size(147, 15);
             this.label23.TabIndex = 41;
-            this.label23.Text = "PuTTY Default Parameters";
+            this.label23.Text = "PuTTY default parameters:";
             // 
             // textBoxPuttyDefaultParameters
             // 
@@ -695,7 +718,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPuttyDefaultParameters.Location = new System.Drawing.Point(172, 351);
             this.textBoxPuttyDefaultParameters.Name = "textBoxPuttyDefaultParameters";
-            this.textBoxPuttyDefaultParameters.Size = new System.Drawing.Size(357, 22);
+            this.textBoxPuttyDefaultParameters.Size = new System.Drawing.Size(357, 23);
             this.textBoxPuttyDefaultParameters.TabIndex = 40;
             // 
             // buttonBrowseFilezilla
@@ -705,19 +728,9 @@
             this.buttonBrowseFilezilla.Name = "buttonBrowseFilezilla";
             this.buttonBrowseFilezilla.Size = new System.Drawing.Size(75, 23);
             this.buttonBrowseFilezilla.TabIndex = 38;
-            this.buttonBrowseFilezilla.Text = "Browse";
+            this.buttonBrowseFilezilla.Text = "Browse...";
             this.buttonBrowseFilezilla.UseVisualStyleBackColor = true;
             this.buttonBrowseFilezilla.Click += new System.EventHandler(this.buttonBrowseFilezilla_Click);
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(4, 222);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(112, 15);
-            this.label22.TabIndex = 39;
-            this.label22.Text = "filezilla.exe Location";
             // 
             // textBoxFilezillaLocation
             // 
@@ -725,7 +738,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxFilezillaLocation.Location = new System.Drawing.Point(172, 216);
             this.textBoxFilezillaLocation.Name = "textBoxFilezillaLocation";
-            this.textBoxFilezillaLocation.Size = new System.Drawing.Size(357, 22);
+            this.textBoxFilezillaLocation.Size = new System.Drawing.Size(357, 23);
             this.textBoxFilezillaLocation.TabIndex = 37;
             this.textBoxFilezillaLocation.DoubleClick += new System.EventHandler(this.textBoxFilezillaLocation_DoubleClick);
             // 
@@ -736,19 +749,9 @@
             this.btnBrowseVNC.Name = "btnBrowseVNC";
             this.btnBrowseVNC.Size = new System.Drawing.Size(75, 23);
             this.btnBrowseVNC.TabIndex = 32;
-            this.btnBrowseVNC.Text = "Browse";
+            this.btnBrowseVNC.Text = "Browse...";
             this.btnBrowseVNC.UseVisualStyleBackColor = true;
             this.btnBrowseVNC.Click += new System.EventHandler(this.btnBrowseVNC_Click);
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(4, 246);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(146, 15);
-            this.label24.TabIndex = 33;
-            this.label24.Text = "TightVNC Viewer Location";
             // 
             // textBoxVNCLocation
             // 
@@ -756,7 +759,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxVNCLocation.Location = new System.Drawing.Point(172, 243);
             this.textBoxVNCLocation.Name = "textBoxVNCLocation";
-            this.textBoxVNCLocation.Size = new System.Drawing.Size(357, 22);
+            this.textBoxVNCLocation.Size = new System.Drawing.Size(357, 23);
             this.textBoxVNCLocation.TabIndex = 31;
             // 
             // btnBrowseRDP
@@ -766,7 +769,7 @@
             this.btnBrowseRDP.Name = "btnBrowseRDP";
             this.btnBrowseRDP.Size = new System.Drawing.Size(75, 23);
             this.btnBrowseRDP.TabIndex = 32;
-            this.btnBrowseRDP.Text = "Browse";
+            this.btnBrowseRDP.Text = "Browse...";
             this.btnBrowseRDP.UseVisualStyleBackColor = true;
             this.btnBrowseRDP.Click += new System.EventHandler(this.btnBrowseRDP_Click);
             // 
@@ -774,11 +777,11 @@
             // 
             this.labelRDP.AutoSize = true;
             this.labelRDP.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRDP.Location = new System.Drawing.Point(4, 273);
+            this.labelRDP.Location = new System.Drawing.Point(6, 273);
             this.labelRDP.Name = "labelRDP";
-            this.labelRDP.Size = new System.Drawing.Size(146, 15);
+            this.labelRDP.Size = new System.Drawing.Size(64, 15);
             this.labelRDP.TabIndex = 33;
-            this.labelRDP.Text = "RDP Client Location";
+            this.labelRDP.Text = "RDP client:";
             // 
             // textBoxRDPLocation
             // 
@@ -786,7 +789,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxRDPLocation.Location = new System.Drawing.Point(172, 270);
             this.textBoxRDPLocation.Name = "textBoxRDPLocation";
-            this.textBoxRDPLocation.Size = new System.Drawing.Size(357, 22);
+            this.textBoxRDPLocation.Size = new System.Drawing.Size(357, 23);
             this.textBoxRDPLocation.TabIndex = 31;
             // 
             // buttonBrowseWinSCP
@@ -796,19 +799,9 @@
             this.buttonBrowseWinSCP.Name = "buttonBrowseWinSCP";
             this.buttonBrowseWinSCP.Size = new System.Drawing.Size(75, 23);
             this.buttonBrowseWinSCP.TabIndex = 35;
-            this.buttonBrowseWinSCP.Text = "Browse";
+            this.buttonBrowseWinSCP.Text = "Browse...";
             this.buttonBrowseWinSCP.UseVisualStyleBackColor = true;
             this.buttonBrowseWinSCP.Click += new System.EventHandler(this.buttonBrowseWinSCP_Click);
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(4, 194);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(121, 15);
-            this.label21.TabIndex = 36;
-            this.label21.Text = "WinSCP.exe Location ";
             // 
             // textBoxWinSCPLocation
             // 
@@ -816,7 +809,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxWinSCPLocation.Location = new System.Drawing.Point(172, 189);
             this.textBoxWinSCPLocation.Name = "textBoxWinSCPLocation";
-            this.textBoxWinSCPLocation.Size = new System.Drawing.Size(357, 22);
+            this.textBoxWinSCPLocation.Size = new System.Drawing.Size(357, 23);
             this.textBoxWinSCPLocation.TabIndex = 34;
             this.textBoxWinSCPLocation.DoubleClick += new System.EventHandler(this.textBoxWinSCPLocation_DoubleClick);
             // 
@@ -829,10 +822,10 @@
             this.tabPageGUI.Controls.Add(this.groupBox3);
             this.tabPageGUI.Controls.Add(this.groupBox2);
             this.tabPageGUI.Controls.Add(this.groupBox1);
-            this.tabPageGUI.Location = new System.Drawing.Point(4, 22);
+            this.tabPageGUI.Location = new System.Drawing.Point(4, 24);
             this.tabPageGUI.Name = "tabPageGUI";
             this.tabPageGUI.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageGUI.Size = new System.Drawing.Size(616, 402);
+            this.tabPageGUI.Size = new System.Drawing.Size(616, 384);
             this.tabPageGUI.TabIndex = 1;
             this.tabPageGUI.Text = "GUI";
             this.tabPageGUI.UseVisualStyleBackColor = true;
@@ -858,23 +851,23 @@
             this.groupBox8.Size = new System.Drawing.Size(243, 55);
             this.groupBox8.TabIndex = 43;
             this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Command Bar";
+            this.groupBox8.Text = "Command bar";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(182, 26);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(31, 13);
+            this.label20.Size = new System.Drawing.Size(31, 15);
             this.label20.TabIndex = 3;
-            this.label20.Text = "Days";
+            this.label20.Text = "days";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(100, 26);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(22, 13);
+            this.label19.Size = new System.Drawing.Size(22, 15);
             this.label19.TabIndex = 2;
             this.label19.Text = "for";
             // 
@@ -895,7 +888,7 @@
             // 
             this.textBoxRootDirPrefix.Location = new System.Drawing.Point(133, 53);
             this.textBoxRootDirPrefix.Name = "textBoxRootDirPrefix";
-            this.textBoxRootDirPrefix.Size = new System.Drawing.Size(100, 22);
+            this.textBoxRootDirPrefix.Size = new System.Drawing.Size(100, 23);
             this.textBoxRootDirPrefix.TabIndex = 3;
             // 
             // label17
@@ -903,15 +896,15 @@
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(10, 56);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(112, 13);
+            this.label17.Size = new System.Drawing.Size(117, 15);
             this.label17.TabIndex = 2;
-            this.label17.Text = "Root Directory Prefix";
+            this.label17.Text = "Root directory prefix:";
             // 
             // textBoxHomeDirPrefix
             // 
             this.textBoxHomeDirPrefix.Location = new System.Drawing.Point(133, 19);
             this.textBoxHomeDirPrefix.Name = "textBoxHomeDirPrefix";
-            this.textBoxHomeDirPrefix.Size = new System.Drawing.Size(100, 22);
+            this.textBoxHomeDirPrefix.Size = new System.Drawing.Size(100, 23);
             this.textBoxHomeDirPrefix.TabIndex = 1;
             // 
             // label16
@@ -919,9 +912,9 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(10, 25);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(117, 13);
+            this.label16.Size = new System.Drawing.Size(125, 15);
             this.label16.TabIndex = 0;
-            this.label16.Text = "Home Directory Prefix";
+            this.label16.Text = "Home directory prefix:";
             // 
             // groupBox6
             // 
@@ -941,9 +934,9 @@
             this.checkPuttyEnableNewSessionMenu.AutoSize = true;
             this.checkPuttyEnableNewSessionMenu.Location = new System.Drawing.Point(71, 16);
             this.checkPuttyEnableNewSessionMenu.Name = "checkPuttyEnableNewSessionMenu";
-            this.checkPuttyEnableNewSessionMenu.Size = new System.Drawing.Size(162, 17);
+            this.checkPuttyEnableNewSessionMenu.Size = new System.Drawing.Size(161, 19);
             this.checkPuttyEnableNewSessionMenu.TabIndex = 37;
-            this.checkPuttyEnableNewSessionMenu.Text = "Enable New Session Menu";
+            this.checkPuttyEnableNewSessionMenu.Text = "Enable new session menu";
             this.checkPuttyEnableNewSessionMenu.UseVisualStyleBackColor = true;
             // 
             // groupBox3
@@ -969,9 +962,9 @@
             this.checkShowDocumentIcons.AutoSize = true;
             this.checkShowDocumentIcons.Location = new System.Drawing.Point(71, 72);
             this.checkShowDocumentIcons.Name = "checkShowDocumentIcons";
-            this.checkShowDocumentIcons.Size = new System.Drawing.Size(141, 17);
+            this.checkShowDocumentIcons.Size = new System.Drawing.Size(144, 19);
             this.checkShowDocumentIcons.TabIndex = 39;
-            this.checkShowDocumentIcons.Text = "Show Document Icons";
+            this.checkShowDocumentIcons.Text = "Show document icons";
             this.checkShowDocumentIcons.UseVisualStyleBackColor = true;
             // 
             // label15
@@ -980,18 +973,18 @@
             this.label15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(10, 97);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(121, 15);
+            this.label15.Size = new System.Drawing.Size(120, 15);
             this.label15.TabIndex = 38;
-            this.label15.Text = "Open/Switch Session:";
+            this.label15.Text = "Open/Switch session:";
             // 
             // checkQuickSelectorCaseSensitiveSearch
             // 
             this.checkQuickSelectorCaseSensitiveSearch.AutoSize = true;
             this.checkQuickSelectorCaseSensitiveSearch.Location = new System.Drawing.Point(71, 119);
             this.checkQuickSelectorCaseSensitiveSearch.Name = "checkQuickSelectorCaseSensitiveSearch";
-            this.checkQuickSelectorCaseSensitiveSearch.Size = new System.Drawing.Size(135, 17);
+            this.checkQuickSelectorCaseSensitiveSearch.Size = new System.Drawing.Size(138, 19);
             this.checkQuickSelectorCaseSensitiveSearch.TabIndex = 37;
-            this.checkQuickSelectorCaseSensitiveSearch.Text = "Case Sensitive Search";
+            this.checkQuickSelectorCaseSensitiveSearch.Text = "Case-sensitive search";
             this.checkQuickSelectorCaseSensitiveSearch.UseVisualStyleBackColor = true;
             // 
             // label13
@@ -1018,7 +1011,7 @@
             0,
             0});
             this.numericUpDownOpacity.Name = "numericUpDownOpacity";
-            this.numericUpDownOpacity.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownOpacity.Size = new System.Drawing.Size(120, 23);
             this.numericUpDownOpacity.TabIndex = 32;
             this.numericUpDownOpacity.Value = new decimal(new int[] {
             5,
@@ -1036,12 +1029,12 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.comboBoxTabSwitching);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Location = new System.Drawing.Point(3, 170);
+            this.groupBox2.Location = new System.Drawing.Point(3, 175);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(355, 148);
             this.groupBox2.TabIndex = 39;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Tabs and Docking";
+            this.groupBox2.Text = "Tabs and docking";
             // 
             // groupBox1
             // 
@@ -1057,27 +1050,27 @@
             this.groupBox1.Controls.Add(this.checkExpandTree);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(355, 161);
+            this.groupBox1.Size = new System.Drawing.Size(355, 166);
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Session Tree";
+            this.groupBox1.Text = "Session tree";
             // 
             // comboSearchMode
             // 
             this.comboSearchMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboSearchMode.FormattingEnabled = true;
-            this.comboSearchMode.Location = new System.Drawing.Point(76, 40);
+            this.comboSearchMode.Location = new System.Drawing.Point(76, 44);
             this.comboSearchMode.Name = "comboSearchMode";
-            this.comboSearchMode.Size = new System.Drawing.Size(274, 21);
+            this.comboSearchMode.Size = new System.Drawing.Size(274, 23);
             this.comboSearchMode.TabIndex = 41;
             // 
             // btnFont
             // 
-            this.btnFont.Location = new System.Drawing.Point(76, 11);
+            this.btnFont.Location = new System.Drawing.Point(76, 16);
             this.btnFont.Name = "btnFont";
             this.btnFont.Size = new System.Drawing.Size(274, 23);
             this.btnFont.TabIndex = 39;
-            this.btnFont.Text = "Choose Font";
+            this.btnFont.Text = "Choose font";
             this.btnFont.UseVisualStyleBackColor = true;
             this.btnFont.Click += new System.EventHandler(this.btnFont_Click);
             // 
@@ -1085,7 +1078,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(11, 67);
+            this.label11.Location = new System.Drawing.Point(11, 71);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(52, 15);
             this.label11.TabIndex = 37;
@@ -1094,9 +1087,9 @@
             // tabPageShortcuts
             // 
             this.tabPageShortcuts.Controls.Add(this.dataGridViewShortcuts);
-            this.tabPageShortcuts.Location = new System.Drawing.Point(4, 22);
+            this.tabPageShortcuts.Location = new System.Drawing.Point(4, 24);
             this.tabPageShortcuts.Name = "tabPageShortcuts";
-            this.tabPageShortcuts.Size = new System.Drawing.Size(616, 375);
+            this.tabPageShortcuts.Size = new System.Drawing.Size(616, 384);
             this.tabPageShortcuts.TabIndex = 3;
             this.tabPageShortcuts.Text = "Shortcuts";
             this.tabPageShortcuts.UseVisualStyleBackColor = true;
@@ -1119,9 +1112,165 @@
             this.dataGridViewShortcuts.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewShortcuts.Name = "dataGridViewShortcuts";
             this.dataGridViewShortcuts.ReadOnly = true;
-            this.dataGridViewShortcuts.Size = new System.Drawing.Size(616, 375);
+            this.dataGridViewShortcuts.Size = new System.Drawing.Size(616, 384);
             this.dataGridViewShortcuts.TabIndex = 0;
             this.dataGridViewShortcuts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewShortcuts_CellClick);
+            // 
+            // colEdit
+            // 
+            this.colEdit.HeaderText = "";
+            this.colEdit.Name = "colEdit";
+            this.colEdit.ReadOnly = true;
+            this.colEdit.Text = "Edit";
+            this.colEdit.UseColumnTextForButtonValue = true;
+            this.colEdit.Width = 50;
+            // 
+            // colClear
+            // 
+            this.colClear.HeaderText = "";
+            this.colClear.Name = "colClear";
+            this.colClear.ReadOnly = true;
+            this.colClear.Text = "Clear";
+            this.colClear.UseColumnTextForButtonValue = true;
+            this.colClear.Width = 50;
+            // 
+            // tabPageAdvanced
+            // 
+            this.tabPageAdvanced.Controls.Add(this.groupBox5);
+            this.tabPageAdvanced.Controls.Add(this.groupBox4);
+            this.tabPageAdvanced.Location = new System.Drawing.Point(4, 24);
+            this.tabPageAdvanced.Name = "tabPageAdvanced";
+            this.tabPageAdvanced.Size = new System.Drawing.Size(616, 384);
+            this.tabPageAdvanced.TabIndex = 2;
+            this.tabPageAdvanced.Text = "Advanced";
+            this.tabPageAdvanced.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Controls.Add(this.comboBoxActivatorType);
+            this.groupBox5.Controls.Add(this.label6);
+            this.groupBox5.Location = new System.Drawing.Point(3, 102);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(610, 142);
+            this.groupBox5.TabIndex = 29;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Focus";
+            // 
+            // comboBoxActivatorType
+            // 
+            this.comboBoxActivatorType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxActivatorType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxActivatorType.FormattingEnabled = true;
+            this.comboBoxActivatorType.Location = new System.Drawing.Point(79, 17);
+            this.comboBoxActivatorType.Name = "comboBoxActivatorType";
+            this.comboBoxActivatorType.Size = new System.Drawing.Size(525, 23);
+            this.comboBoxActivatorType.TabIndex = 1;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Controls.Add(this.checkBoxCheckForUpdates);
+            this.groupBox4.Controls.Add(this.checkEnableKeyboardShortcuts);
+            this.groupBox4.Controls.Add(this.checkEnableControlTabSwitching);
+            this.groupBox4.Controls.Add(this.checkSingleInstanceMode);
+            this.groupBox4.Controls.Add(this.checkExitConfirmation);
+            this.groupBox4.Controls.Add(this.checkRestoreWindow);
+            this.groupBox4.Location = new System.Drawing.Point(3, 3);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(610, 92);
+            this.groupBox4.TabIndex = 28;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Application behavior";
+            // 
+            // panelBottom
+            // 
+            this.panelBottom.Controls.Add(this.buttonCancel);
+            this.panelBottom.Controls.Add(this.buttonOk);
+            this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelBottom.Location = new System.Drawing.Point(5, 417);
+            this.panelBottom.Name = "panelBottom";
+            this.panelBottom.Size = new System.Drawing.Size(624, 27);
+            this.panelBottom.TabIndex = 39;
+            // 
+            // linkPscp
+            // 
+            this.linkPscp.AutoSize = true;
+            this.linkPscp.Location = new System.Drawing.Point(6, 139);
+            this.linkPscp.Name = "linkPscp";
+            this.linkPscp.Size = new System.Drawing.Size(52, 15);
+            this.linkPscp.TabIndex = 44;
+            this.linkPscp.TabStop = true;
+            this.linkPscp.Text = "pscp.exe";
+            this.linkPscp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.puttyLink_LinkClicked);
+            // 
+            // linkCygwin
+            // 
+            this.linkCygwin.AutoSize = true;
+            this.linkCygwin.Location = new System.Drawing.Point(66, 165);
+            this.linkCygwin.Name = "linkCygwin";
+            this.linkCygwin.Size = new System.Drawing.Size(47, 15);
+            this.linkCygwin.TabIndex = 47;
+            this.linkCygwin.TabStop = true;
+            this.linkCygwin.Text = "Cygwin";
+            this.linkCygwin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkCygwin_LinkClicked);
+            // 
+            // linkMsys
+            // 
+            this.linkMsys.AutoSize = true;
+            this.linkMsys.Location = new System.Drawing.Point(125, 166);
+            this.linkMsys.Name = "linkMsys";
+            this.linkMsys.Size = new System.Drawing.Size(43, 15);
+            this.linkMsys.TabIndex = 46;
+            this.linkMsys.TabStop = true;
+            this.linkMsys.Text = "MSYS2";
+            this.linkMsys.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkMsys_LinkClicked);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(110, 165);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(18, 15);
+            this.label2.TabIndex = 45;
+            this.label2.Text = "or";
+            // 
+            // linkWinScp
+            // 
+            this.linkWinScp.AutoSize = true;
+            this.linkWinScp.Location = new System.Drawing.Point(6, 193);
+            this.linkWinScp.Name = "linkWinScp";
+            this.linkWinScp.Size = new System.Drawing.Size(69, 15);
+            this.linkWinScp.TabIndex = 48;
+            this.linkWinScp.TabStop = true;
+            this.linkWinScp.Text = "WinSCP.exe";
+            this.linkWinScp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkWinScp_LinkClicked);
+            // 
+            // linkFilezilla
+            // 
+            this.linkFilezilla.AutoSize = true;
+            this.linkFilezilla.Location = new System.Drawing.Point(6, 220);
+            this.linkFilezilla.Name = "linkFilezilla";
+            this.linkFilezilla.Size = new System.Drawing.Size(63, 15);
+            this.linkFilezilla.TabIndex = 49;
+            this.linkFilezilla.TabStop = true;
+            this.linkFilezilla.Text = "filezilla.exe";
+            this.linkFilezilla.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkFilezilla_LinkClicked);
+            // 
+            // linkTightVnc
+            // 
+            this.linkTightVnc.AutoSize = true;
+            this.linkTightVnc.Location = new System.Drawing.Point(6, 246);
+            this.linkTightVnc.Name = "linkTightVnc";
+            this.linkTightVnc.Size = new System.Drawing.Size(78, 15);
+            this.linkTightVnc.TabIndex = 50;
+            this.linkTightVnc.TabStop = true;
+            this.linkTightVnc.Text = "tvnviewer.exe";
+            this.linkTightVnc.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkTightVnc_LinkClicked);
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -1155,111 +1304,30 @@
             this.shortcutStringDataGridViewTextBoxColumn.Name = "shortcutStringDataGridViewTextBoxColumn";
             this.shortcutStringDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // colEdit
-            // 
-            this.colEdit.HeaderText = "";
-            this.colEdit.Name = "colEdit";
-            this.colEdit.ReadOnly = true;
-            this.colEdit.Text = "Edit";
-            this.colEdit.UseColumnTextForButtonValue = true;
-            this.colEdit.Width = 50;
-            // 
-            // colClear
-            // 
-            this.colClear.HeaderText = "";
-            this.colClear.Name = "colClear";
-            this.colClear.ReadOnly = true;
-            this.colClear.Text = "Clear";
-            this.colClear.UseColumnTextForButtonValue = true;
-            this.colClear.Width = 50;
-            // 
             // keyboardShortcutBindingSource
             // 
             this.keyboardShortcutBindingSource.DataSource = typeof(SuperPutty.Data.KeyboardShortcut);
             // 
-            // tabPageAdvanced
+            // label18
             // 
-            this.tabPageAdvanced.Controls.Add(this.groupBox5);
-            this.tabPageAdvanced.Controls.Add(this.groupBox4);
-            this.tabPageAdvanced.Location = new System.Drawing.Point(4, 22);
-            this.tabPageAdvanced.Name = "tabPageAdvanced";
-            this.tabPageAdvanced.Size = new System.Drawing.Size(616, 375);
-            this.tabPageAdvanced.TabIndex = 2;
-            this.tabPageAdvanced.Text = "Advanced";
-            this.tabPageAdvanced.UseVisualStyleBackColor = true;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox5.Controls.Add(this.comboBoxActivatorType);
-            this.groupBox5.Controls.Add(this.label6);
-            this.groupBox5.Location = new System.Drawing.Point(3, 102);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(610, 142);
-            this.groupBox5.TabIndex = 29;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Focus";
-            // 
-            // comboBoxActivatorType
-            // 
-            this.comboBoxActivatorType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxActivatorType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxActivatorType.FormattingEnabled = true;
-            this.comboBoxActivatorType.Location = new System.Drawing.Point(79, 17);
-            this.comboBoxActivatorType.Name = "comboBoxActivatorType";
-            this.comboBoxActivatorType.Size = new System.Drawing.Size(525, 21);
-            this.comboBoxActivatorType.TabIndex = 1;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox4.Controls.Add(this.checkBoxCheckForUpdates);
-            this.groupBox4.Controls.Add(this.checkEnableKeyboardShortcuts);
-            this.groupBox4.Controls.Add(this.checkEnableControlTabSwitching);
-            this.groupBox4.Controls.Add(this.checkSingleInstanceMode);
-            this.groupBox4.Controls.Add(this.checkExitConfirmation);
-            this.groupBox4.Controls.Add(this.checkRestoreWindow);
-            this.groupBox4.Location = new System.Drawing.Point(3, 3);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(610, 92);
-            this.groupBox4.TabIndex = 28;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Application Behavior";
-            // 
-            // panelBottom
-            // 
-            this.panelBottom.Controls.Add(this.buttonCancel);
-            this.panelBottom.Controls.Add(this.buttonOk);
-            this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottom.Location = new System.Drawing.Point(5, 406);
-            this.panelBottom.Name = "panelBottom";
-            this.panelBottom.Size = new System.Drawing.Size(624, 27);
-            this.panelBottom.TabIndex = 39;
-            // 
-            // checkFilterWhileTyping
-            // 
-            this.checkFilterWhileTyping.AutoSize = true;
-            this.checkFilterWhileTyping.Location = new System.Drawing.Point(208, 136);
-            this.checkFilterWhileTyping.Name = "checkFilterWhileTyping";
-            this.checkFilterWhileTyping.Size = new System.Drawing.Size(119, 17);
-            this.checkFilterWhileTyping.TabIndex = 44;
-            this.checkFilterWhileTyping.Text = "Filter while typing";
-            this.toolTip.SetToolTip(this.checkFilterWhileTyping, "Show search box above sessions");
-            this.checkFilterWhileTyping.UseVisualStyleBackColor = true;
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(10, 16);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(37, 15);
+            this.label18.TabIndex = 35;
+            this.label18.Text = "Other";
+            this.toolTip.SetToolTip(this.label18, "Determines how tabs are named and if they respond to the shell\'s title changing");
             // 
             // dlgFindPutty
             // 
             this.AcceptButton = this.buttonOk;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(634, 438);
+            this.ClientSize = new System.Drawing.Size(634, 449);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.panelBottom);
-            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -1292,13 +1360,13 @@
             this.groupBox1.PerformLayout();
             this.tabPageShortcuts.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewShortcuts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.keyboardShortcutBindingSource)).EndInit();
             this.tabPageAdvanced.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.panelBottom.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.keyboardShortcutBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1309,7 +1377,6 @@
         private System.Windows.Forms.Button buttonBrowsePutty;
         private System.Windows.Forms.Button buttonBrowsePscp;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxPuttyLocation;
         private System.Windows.Forms.TextBox textBoxPscpLocation;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
@@ -1332,7 +1399,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnBrowseMintty;
         private System.Windows.Forms.TextBox textBoxVNCLocation;
-        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button btnBrowseVNC;
         private System.Windows.Forms.TextBox textBoxRDPLocation;
         private System.Windows.Forms.Label labelRDP;
@@ -1383,7 +1449,6 @@
         private System.Windows.Forms.CheckBox checkSessionsShowSearch;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.CheckBox checkPuttyEnableNewSessionMenu;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.CheckBox checkBoxCheckForUpdates;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.TextBox textBoxHomeDirPrefix;
@@ -1399,13 +1464,21 @@
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.CheckBox checkBoxAllowPuttyPWArg;
         private System.Windows.Forms.Button buttonBrowseFilezilla;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox textBoxFilezillaLocation;
         private System.Windows.Forms.Button buttonBrowseWinSCP;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox textBoxWinSCPLocation;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox textBoxPuttyDefaultParameters;
         private System.Windows.Forms.CheckBox checkFilterWhileTyping;
+        private System.Windows.Forms.LinkLabel puttyLink;
+        private System.Windows.Forms.LinkLabel kittyLink;
+        private System.Windows.Forms.LinkLabel linkPscp;
+        private System.Windows.Forms.LinkLabel linkWinScp;
+        private System.Windows.Forms.LinkLabel linkCygwin;
+        private System.Windows.Forms.LinkLabel linkMsys;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.LinkLabel linkFilezilla;
+        private System.Windows.Forms.LinkLabel linkTightVnc;
+        private System.Windows.Forms.Label label18;
     }
 }

@@ -31,6 +31,7 @@ using log4net;
 using SuperPutty.Data;
 using SuperPutty.Utils;
 using SuperPutty.Gui;
+using System.Diagnostics;
 
 namespace SuperPutty
 {
@@ -425,8 +426,8 @@ namespace SuperPutty
 
         private void buttonBrowse_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = "PuTTY|putty.exe|KiTTY|kitty*.exe";
-            openFileDialog1.FileName = "putty.exe";
+            openFileDialog1.Filter = "KiTTY|kitty*.exe|PuTTY|putty.exe";
+            openFileDialog1.FileName = "kitty*.exe";
             if (File.Exists(textBoxPuttyLocation.Text))
             {
                 openFileDialog1.FileName = Path.GetFileName(textBoxPuttyLocation.Text);
@@ -598,7 +599,42 @@ namespace SuperPutty
         static string ToShortString(Font font)
         {
             return String.Format("{0}, {1} pt, {2}", font.FontFamily.Name, font.Size, font.Style);
-        }       
+        }
+
+        private void kittyLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://www.9bis.net/kitty/#!pages/download.md");
+        }
+
+        private void puttyLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html");
+        }
+
+        private void linkCygwin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://cygwin.com");
+        }
+
+        private void linkMsys_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://www.msys2.org");
+        }
+
+        private void linkWinScp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://winscp.net/eng/download.php");
+        }
+
+        private void linkFilezilla_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://filezilla-project.org/download.php");
+        }
+
+        private void linkTightVnc_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://www.tightvnc.com/download.php");
+        }
     }
 
 }
