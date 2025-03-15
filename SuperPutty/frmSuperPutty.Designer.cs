@@ -521,7 +521,7 @@ namespace SuperPutty
             this.DockPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DockPanel.DockBackColor = System.Drawing.SystemColors.Control;
             this.DockPanel.DockBottomPortion = 200D;
-            this.DockPanel.DockRightPortion = 200D;
+            this.DockPanel.DockLeftPortion = 200D;
             this.DockPanel.Location = new System.Drawing.Point(0, 0);
             this.DockPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DockPanel.Name = "DockPanel";

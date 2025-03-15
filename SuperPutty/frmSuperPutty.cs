@@ -587,7 +587,7 @@ namespace SuperPutty
             }
             else
             {
-                this.sessions.ShowWindow(DockState.DockRight);
+                this.sessions.ShowWindow(DockState.DockLeft);
             }
         }
 
@@ -609,7 +609,7 @@ namespace SuperPutty
             }
             else
             {
-                this.layouts.ShowWindow(DockState.DockRight);
+                this.layouts.ShowWindow(DockState.DockLeft);
             }
         }
 
@@ -625,7 +625,7 @@ namespace SuperPutty
             }
             else
             {
-                this.sessionDetail.ShowWindow(DockState.DockRight);
+                this.sessionDetail.ShowWindow(DockState.DockLeft);
             }
         }
 
