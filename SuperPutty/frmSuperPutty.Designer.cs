@@ -522,8 +522,10 @@ namespace SuperPutty
             this.DockPanel.DefaultFloatWindowSize = new System.Drawing.Size(800, 600);
             this.DockPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DockPanel.DockBackColor = System.Drawing.SystemColors.Control;
+            this.DockPanel.DockTopPortion = 200D;
             this.DockPanel.DockBottomPortion = 200D;
-            this.DockPanel.DockLeftPortion = 200D;
+            this.DockPanel.DockLeftPortion = 250D;
+            this.DockPanel.DockRightPortion = 250D;
             this.DockPanel.Location = new System.Drawing.Point(0, 0);
             this.DockPanel.Name = "DockPanel";
             this.DockPanel.Size = new System.Drawing.Size(1008, 610);
