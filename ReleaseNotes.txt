@@ -3,7 +3,7 @@
  - Added MobaXterm sessions import option
  - Added download links for third party components
  - Moved session list to the left by default
- - Moved menu-bard to the top with toolbars below it
+ - Moved menu-bar to the top with toolbars below it
  - Reworked UI for "Edit session" window
  - Reworked UI for "Options" window
  - Upgraded Installer to Wix 5
