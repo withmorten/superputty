@@ -216,6 +216,8 @@ namespace SuperPutty
             }
             this.dataGridViewShortcuts.DataSource = this.Shortcuts;
 
+            PuttyDefParamLbl.Text = SuperPuTTY.PuTTYAppName + " default parameters:";
+
             new DarkModeCS(this)
             {
                 ColorMode = DarkModeCS.DisplayMode.DarkMode,

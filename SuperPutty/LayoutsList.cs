@@ -5,7 +5,6 @@ using System.Windows.Forms;
 using DarkModeForms;
 using SuperPutty.Data;
 using SuperPutty.Gui;
-using DarkModeForms;
 
 namespace SuperPutty
 {

@@ -195,6 +195,8 @@ namespace SuperPutty
             this.tsCommands.ImageList = SuperPuTTY.ImagesWithStop;
             this.toolStripButtonChooseIconGroup.ImageKey = "stop";
 
+            puTTYConfigurationToolStripMenuItem.Text = "&" + SuperPuTTY.PuTTYAppName + " configuration";
+
             new DarkModeCS(this)
             {
                 ColorMode = DarkModeCS.DisplayMode.DarkMode,
