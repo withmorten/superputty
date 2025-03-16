@@ -413,11 +413,18 @@ namespace SuperPutty
 
         }
 
+        private void textBoxExtraArgs_Validating(object sender, CancelEventArgs e)
+        {
+            if (CommandLineOptions.getcommand(textBoxExtraArgs.Text, "-pw") != null)
+            {
+                e.Cancel = true;
+                this.SetError(this.textBoxExtraArgs,  "Password set in clear text");
+            }
+        }
 
-       private void textBoxExtraArgs_TextChanged(object sender, EventArgs e)
-       {
-           //if extra Args contains a password, change the backgroudn
-           textBoxExtraArgs.BackColor = String.IsNullOrEmpty(CommandLineOptions.getcommand(textBoxExtraArgs.Text, "-pw")) ? Color.White : Color.LightCoral;
-       }
+        private void textBoxExtraArgs_Validated(object sender, EventArgs e)
+        {
+            this.SetError(this.textBoxExtraArgs, String.Empty);
+        }
     }
 }
