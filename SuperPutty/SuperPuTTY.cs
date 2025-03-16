@@ -889,7 +889,14 @@ namespace SuperPutty
         OpenScriptEditor,
         /// <summary>Rename active tab</summary>
         RenameTab
-    } 
+    }
     #endregion
+
+    public enum InterfaceTheme
+    {
+        DarkTheme = 0,
+        DarkBlueTheme,
+        LightTheme
+    }
 
 }

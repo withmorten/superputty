@@ -101,11 +101,14 @@ namespace SuperPutty
 
             this.isInitialized = true;
 
-            new DarkModeCS(this)
+            if (SuperPuTTY.Settings.InterfaceTheme < (int)InterfaceTheme.LightTheme)
             {
-                ColorMode = DarkModeCS.DisplayMode.DarkMode,
-                ColorizeIcons = false
-            };
+                new DarkModeCS(this)
+                {
+                    ColorMode = DarkModeCS.DisplayMode.DarkMode,
+                    ColorizeIcons = false
+                };
+            }
         }
 
         protected override void OnLoad(EventArgs e)

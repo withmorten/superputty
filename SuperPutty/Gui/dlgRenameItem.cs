@@ -13,11 +13,14 @@ namespace SuperPutty.Gui
         {
             InitializeComponent();
 
-            new DarkModeCS(this)
+            if (SuperPuTTY.Settings.InterfaceTheme < (int)InterfaceTheme.LightTheme)
             {
-                ColorMode = DarkModeCS.DisplayMode.DarkMode,
-                ColorizeIcons = false
-            };
+                new DarkModeCS(this)
+                {
+                    ColorMode = DarkModeCS.DisplayMode.DarkMode,
+                    ColorizeIcons = false
+                };
+            }
         }
 
         public string ItemName {

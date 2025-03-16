@@ -29,11 +29,14 @@ namespace SuperPutty
                 textBoxSupportText.AppendText(a.FullName + System.Environment.NewLine);                
             }
 
-            new DarkModeCS(this)
+            if (SuperPuTTY.Settings.InterfaceTheme < (int)InterfaceTheme.LightTheme)
             {
-                ColorMode = DarkModeCS.DisplayMode.DarkMode,
-                ColorizeIcons = false
-            };
+                new DarkModeCS(this)
+                {
+                    ColorMode = DarkModeCS.DisplayMode.DarkMode,
+                    ColorizeIcons = false
+                };
+            }
         }
 
         #region Assembly Attribute Accessors

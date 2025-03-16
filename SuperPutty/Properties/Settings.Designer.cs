@@ -841,5 +841,17 @@ namespace SuperPutty.Properties {
                 this["FilterSessionsOnChange"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int InterfaceTheme {
+            get {
+                return ((int)(this["InterfaceTheme"]));
+            }
+            set {
+                this["InterfaceTheme"] = value;
+            }
+        }
     }
 }

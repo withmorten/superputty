@@ -95,9 +95,32 @@ namespace SuperPutty
             dlgFindPutty.PuttyCheck();
 
             InitializeComponent();
+            
+            // set both DockPanel and Interface theme
+            switch (SuperPuTTY.Settings.InterfaceTheme)
+            {
+                case (int)InterfaceTheme.DarkTheme:
+                    DockPanel.Theme = new VS2015DarkTheme();
+                    break;
+                case (int)InterfaceTheme.DarkBlueTheme:
+                    DockPanel.Theme = new VS2015BlueTheme();
+                    break;
+                case (int)InterfaceTheme.LightTheme:
+                    DockPanel.Theme = new VS2015LightTheme();
+                    break;
+                default:
+                    DockPanel.Theme = new VS2015DarkTheme();
+                    break;
+            }
 
-            var theme = new VS2015DarkTheme();
-            this.DockPanel.Theme = theme;
+            if (SuperPuTTY.Settings.InterfaceTheme < (int)InterfaceTheme.LightTheme)
+            {
+                new DarkModeCS(this)
+                {
+                    ColorMode = DarkModeCS.DisplayMode.DarkMode,
+                    ColorizeIcons = false
+                };
+            }
 
             FixDpiScalingIssues();
 
@@ -196,12 +219,6 @@ namespace SuperPutty
             this.toolStripButtonChooseIconGroup.ImageKey = "stop";
 
             puTTYConfigurationToolStripMenuItem.Text = "&" + SuperPuTTY.PuTTYAppName + " configuration";
-
-            new DarkModeCS(this)
-            {
-                ColorMode = DarkModeCS.DisplayMode.DarkMode,
-                ColorizeIcons = false
-            };
         }
 
         private void FixDpiScalingIssues()

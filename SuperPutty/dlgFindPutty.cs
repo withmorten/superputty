@@ -218,11 +218,31 @@ namespace SuperPutty
 
             PuttyDefParamLbl.Text = SuperPuTTY.PuTTYAppName + " default parameters:";
 
-            new DarkModeCS(this)
+            // set theme Radio boxes and Interface theme
+            switch (SuperPuTTY.Settings.InterfaceTheme)
             {
-                ColorMode = DarkModeCS.DisplayMode.DarkMode,
-                ColorizeIcons = false
-            };
+                case (int)InterfaceTheme.DarkTheme:
+                    optDarkTheme.Checked = true;
+                    break;
+                case (int)InterfaceTheme.DarkBlueTheme:
+                    optDarkBlueTheme.Checked = true;
+                    break;
+                case (int)InterfaceTheme.LightTheme:
+                    optLightTheme.Checked = true;
+                    break;
+                default:
+                    optDarkTheme.Checked = true;
+                    break;
+            }
+
+            if (SuperPuTTY.Settings.InterfaceTheme < (int)InterfaceTheme.LightTheme)
+            {
+                new DarkModeCS(this)
+                {
+                    ColorMode = DarkModeCS.DisplayMode.DarkMode,
+                    ColorizeIcons = false
+                };
+            }
         }
 
         private void FixDpiScalingIssues()
@@ -398,6 +418,28 @@ namespace SuperPutty
                 SuperPuTTY.Settings.SaveCommandHistoryDays = (int)this.numericUpDown1.Value;
                 SuperPuTTY.Settings.AllowPlainTextPuttyPasswordArg = this.checkBoxAllowPuttyPWArg.Checked;
                 SuperPuTTY.Settings.PuttyDefaultParameters = this.textBoxPuttyDefaultParameters.Text;
+
+                bool warnThemeChange = false;
+                if (optDarkTheme.Checked && SuperPuTTY.Settings.InterfaceTheme != (int)InterfaceTheme.DarkTheme)
+                {
+                    SuperPuTTY.Settings.InterfaceTheme = (int)InterfaceTheme.DarkTheme;
+                    warnThemeChange = true;
+                }
+                else if(optDarkBlueTheme.Checked && SuperPuTTY.Settings.InterfaceTheme != (int)InterfaceTheme.DarkBlueTheme)
+                {
+                    SuperPuTTY.Settings.InterfaceTheme = (int)InterfaceTheme.DarkBlueTheme;
+                    warnThemeChange = true;
+                }
+                else if (optLightTheme.Checked && SuperPuTTY.Settings.InterfaceTheme != (int)InterfaceTheme.LightTheme)
+                {
+                    SuperPuTTY.Settings.InterfaceTheme = (int)InterfaceTheme.LightTheme;
+                    warnThemeChange = true;
+                }
+
+                if (warnThemeChange)
+                {
+                    Messenger.MessageBox("You must restart the application to fully apply the new theme.", "Restart required", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
                 // save shortcuts
                 KeyboardShortcut[] shortcuts = new KeyboardShortcut[this.Shortcuts.Count];
