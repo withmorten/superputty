@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -727,6 +727,7 @@ namespace SuperPutty
         public static ImageList LoadImageList(string theme, bool isEnableStopImage)
         {
             ImageList imgIcons = new ImageList();
+            imgIcons.ColorDepth = ColorDepth.Depth32Bit;
             
             if (isEnableStopImage)
                 imgIcons.Images.Add("stop", Resources.stop);

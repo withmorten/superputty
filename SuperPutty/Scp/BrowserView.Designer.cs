@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BrowserView));
             this.panelBottom = new System.Windows.Forms.Panel();
             this.labelBrowserState = new System.Windows.Forms.Label();
+            this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblStatus = new System.Windows.Forms.Label();
             this.listViewFiles = new System.Windows.Forms.ListView();
             this.columnHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -53,11 +54,10 @@
             this.tileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripLabelName = new System.Windows.Forms.ToolStripLabel();
-            this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelBottom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
             this.panelTop.SuspendLayout();
             this.toolStripTools.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBottom
@@ -65,30 +65,37 @@
             this.panelBottom.Controls.Add(this.labelBrowserState);
             this.panelBottom.Controls.Add(this.lblStatus);
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottom.Location = new System.Drawing.Point(0, 581);
+            this.panelBottom.Location = new System.Drawing.Point(0, 715);
+            this.panelBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelBottom.Name = "panelBottom";
-            this.panelBottom.Size = new System.Drawing.Size(600, 22);
+            this.panelBottom.Size = new System.Drawing.Size(800, 27);
             this.panelBottom.TabIndex = 0;
             // 
             // labelBrowserState
             // 
             this.labelBrowserState.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource, "BrowserState", true));
             this.labelBrowserState.Dock = System.Windows.Forms.DockStyle.Right;
-            this.labelBrowserState.Location = new System.Drawing.Point(531, 0);
+            this.labelBrowserState.Location = new System.Drawing.Point(708, 0);
+            this.labelBrowserState.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelBrowserState.Name = "labelBrowserState";
-            this.labelBrowserState.Size = new System.Drawing.Size(69, 22);
+            this.labelBrowserState.Size = new System.Drawing.Size(92, 27);
             this.labelBrowserState.TabIndex = 1;
             this.labelBrowserState.Text = "<State>";
             this.labelBrowserState.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bindingSource
+            // 
+            this.bindingSource.DataSource = typeof(SuperPutty.Scp.IBrowserViewModel);
             // 
             // lblStatus
             // 
             this.lblStatus.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource, "Status", true));
             this.lblStatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblStatus.Location = new System.Drawing.Point(0, 0);
+            this.lblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.lblStatus.Size = new System.Drawing.Size(600, 22);
+            this.lblStatus.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.lblStatus.Size = new System.Drawing.Size(800, 27);
             this.lblStatus.TabIndex = 0;
             this.lblStatus.Text = "<Status>";
             this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -108,9 +115,10 @@
             this.listViewFiles.FullRowSelect = true;
             this.listViewFiles.HideSelection = false;
             this.listViewFiles.LargeImageList = this.imageListLarge;
-            this.listViewFiles.Location = new System.Drawing.Point(0, 51);
+            this.listViewFiles.Location = new System.Drawing.Point(0, 63);
+            this.listViewFiles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listViewFiles.Name = "listViewFiles";
-            this.listViewFiles.Size = new System.Drawing.Size(600, 530);
+            this.listViewFiles.Size = new System.Drawing.Size(800, 652);
             this.listViewFiles.SmallImageList = this.imageListSmall;
             this.listViewFiles.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listViewFiles.TabIndex = 1;
@@ -172,33 +180,36 @@
             // 
             this.panelTop.Controls.Add(this.txtPath);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.Location = new System.Drawing.Point(0, 25);
+            this.panelTop.Location = new System.Drawing.Point(0, 31);
+            this.panelTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Padding = new System.Windows.Forms.Padding(3);
-            this.panelTop.Size = new System.Drawing.Size(600, 26);
+            this.panelTop.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTop.Size = new System.Drawing.Size(800, 32);
             this.panelTop.TabIndex = 3;
             // 
             // txtPath
             // 
             this.txtPath.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource, "CurrentPath", true));
             this.txtPath.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPath.Location = new System.Drawing.Point(3, 3);
+            this.txtPath.Location = new System.Drawing.Point(4, 4);
+            this.txtPath.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPath.Name = "txtPath";
             this.txtPath.ReadOnly = true;
-            this.txtPath.Size = new System.Drawing.Size(594, 20);
+            this.txtPath.Size = new System.Drawing.Size(792, 22);
             this.txtPath.TabIndex = 0;
             this.txtPath.Text = "<Path>";
             // 
             // toolStripTools
             // 
             this.toolStripTools.AutoSize = false;
+            this.toolStripTools.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStripTools.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsBtnRefresh,
             this.toolStripSplitButtonView,
             this.toolStripLabelName});
             this.toolStripTools.Location = new System.Drawing.Point(0, 0);
             this.toolStripTools.Name = "toolStripTools";
-            this.toolStripTools.Size = new System.Drawing.Size(600, 25);
+            this.toolStripTools.Size = new System.Drawing.Size(800, 31);
             this.toolStripTools.Stretch = true;
             this.toolStripTools.TabIndex = 4;
             // 
@@ -209,7 +220,7 @@
             this.tsBtnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnRefresh.Image")));
             this.tsBtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnRefresh.Name = "tsBtnRefresh";
-            this.tsBtnRefresh.Size = new System.Drawing.Size(23, 22);
+            this.tsBtnRefresh.Size = new System.Drawing.Size(29, 28);
             this.tsBtnRefresh.Text = "Refresh";
             this.tsBtnRefresh.Click += new System.EventHandler(this.tsBtnRefresh_Click);
             // 
@@ -225,7 +236,7 @@
             this.toolStripSplitButtonView.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButtonView.Image")));
             this.toolStripSplitButtonView.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripSplitButtonView.Name = "toolStripSplitButtonView";
-            this.toolStripSplitButtonView.Size = new System.Drawing.Size(64, 22);
+            this.toolStripSplitButtonView.Size = new System.Drawing.Size(80, 28);
             this.toolStripSplitButtonView.Text = "View";
             // 
             // detailsToolStripMenuItem
@@ -234,64 +245,61 @@
             this.detailsToolStripMenuItem.CheckOnClick = true;
             this.detailsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.detailsToolStripMenuItem.Name = "detailsToolStripMenuItem";
-            this.detailsToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.detailsToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
             this.detailsToolStripMenuItem.Text = "Details";
             this.detailsToolStripMenuItem.Click += new System.EventHandler(this.detailsToolStripMenuItem_Click);
             // 
             // smallIconsToolStripMenuItem
             // 
             this.smallIconsToolStripMenuItem.Name = "smallIconsToolStripMenuItem";
-            this.smallIconsToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.smallIconsToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
             this.smallIconsToolStripMenuItem.Text = "Small Icons";
             this.smallIconsToolStripMenuItem.Click += new System.EventHandler(this.smallIconsToolStripMenuItem_Click);
             // 
             // largeIconsToolStripMenuItem
             // 
             this.largeIconsToolStripMenuItem.Name = "largeIconsToolStripMenuItem";
-            this.largeIconsToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.largeIconsToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
             this.largeIconsToolStripMenuItem.Text = "Large Icons";
             this.largeIconsToolStripMenuItem.Click += new System.EventHandler(this.largeIconsToolStripMenuItem_Click);
             // 
             // tileToolStripMenuItem
             // 
             this.tileToolStripMenuItem.Name = "tileToolStripMenuItem";
-            this.tileToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.tileToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
             this.tileToolStripMenuItem.Text = "Tile";
             this.tileToolStripMenuItem.Click += new System.EventHandler(this.tileToolStripMenuItem_Click);
             // 
             // listToolStripMenuItem
             // 
             this.listToolStripMenuItem.Name = "listToolStripMenuItem";
-            this.listToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.listToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
             this.listToolStripMenuItem.Text = "List";
             this.listToolStripMenuItem.Click += new System.EventHandler(this.listToolStripMenuItem_Click);
             // 
             // toolStripLabelName
             // 
             this.toolStripLabelName.Name = "toolStripLabelName";
-            this.toolStripLabelName.Size = new System.Drawing.Size(55, 22);
+            this.toolStripLabelName.Size = new System.Drawing.Size(69, 28);
             this.toolStripLabelName.Text = "<Name>";
-            // 
-            // bindingSource
-            // 
-            this.bindingSource.DataSource = typeof(SuperPutty.Scp.IBrowserViewModel);
             // 
             // BrowserView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.listViewFiles);
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.panelBottom);
             this.Controls.Add(this.toolStripTools);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "BrowserView";
-            this.Size = new System.Drawing.Size(600, 603);
+            this.Size = new System.Drawing.Size(800, 742);
             this.panelBottom.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).EndInit();
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
             this.toolStripTools.ResumeLayout(false);
             this.toolStripTools.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
