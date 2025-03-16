@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2009 - 2015 Jim Radford http://www.jimradford.com
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -95,7 +95,7 @@ namespace SuperPutty
 
             InitializeComponent();
 
-            var theme = new VS2005Theme();
+            var theme = new VS2015DarkTheme();
             this.DockPanel.Theme = theme;
 
             FixDpiScalingIssues();
