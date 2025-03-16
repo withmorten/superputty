@@ -52,10 +52,8 @@ namespace SuperPutty
                 // display help if --help specified
                 if (CommandLine.Help)
                 {
-                    if (DialogResult.Cancel == Messenger.MessageBox(CommandLineOptions.Usage(), "SuperPutty CLI Help", MessageBoxButtons.OKCancel, MessageBoxIcon.Information))
-                    {
-                        Environment.Exit(0);
-                    }
+                    Messenger.MessageBox(CommandLineOptions.Usage(), "SuperPutty CLI Help", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    Environment.Exit(0);
                 }
 
                 // load data                
