@@ -2,7 +2,7 @@
 
 namespace SuperPutty
 {
-    partial class AboutBox1
+    partial class AboutBox
     {
         /// <summary>
         /// Required designer variable.
@@ -40,7 +40,7 @@ namespace SuperPutty
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox));
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.okButton = new System.Windows.Forms.Button();
             this.linkLabelCompany = new System.Windows.Forms.LinkLabel();

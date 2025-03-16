@@ -1027,7 +1027,7 @@ namespace SuperPutty
         #region Help Menu
         private void aboutSuperPuttyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AboutBox1 about = new AboutBox1();
+            AboutBox about = new AboutBox();
             about.ShowDialog(this);
             about = null;
         }
