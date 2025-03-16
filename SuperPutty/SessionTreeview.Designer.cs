@@ -33,14 +33,14 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.contextMenuStripAddTreeItem = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.connectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.connectExternalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.connectInNewSuperPuTTYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.newSessionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createLikeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.connectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.connectExternalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.connectInNewSuperPuTTYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.fileBrowserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.winSCPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -119,6 +119,33 @@
             this.contextMenuStripAddTreeItem.Size = new System.Drawing.Size(211, 256);
             this.contextMenuStripAddTreeItem.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStripAddTreeItem_Opening);
             // 
+            // connectToolStripMenuItem
+            // 
+            this.connectToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.connectToolStripMenuItem.Name = "connectToolStripMenuItem";
+            this.connectToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.connectToolStripMenuItem.Text = "Connect";
+            this.connectToolStripMenuItem.Click += new System.EventHandler(this.connectToolStripMenuItem_Click);
+            // 
+            // connectExternalToolStripMenuItem
+            // 
+            this.connectExternalToolStripMenuItem.Name = "connectExternalToolStripMenuItem";
+            this.connectExternalToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.connectExternalToolStripMenuItem.Text = "Connect external";
+            this.connectExternalToolStripMenuItem.Click += new System.EventHandler(this.connectExternalToolStripMenuItem_Click);
+            // 
+            // connectInNewSuperPuTTYToolStripMenuItem
+            // 
+            this.connectInNewSuperPuTTYToolStripMenuItem.Name = "connectInNewSuperPuTTYToolStripMenuItem";
+            this.connectInNewSuperPuTTYToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.connectInNewSuperPuTTYToolStripMenuItem.Text = "Connect in new window";
+            this.connectInNewSuperPuTTYToolStripMenuItem.Click += new System.EventHandler(this.connectInNewSuperPuTTYToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(207, 6);
+            // 
             // newSessionToolStripMenuItem
             // 
             this.newSessionToolStripMenuItem.Name = "newSessionToolStripMenuItem";
@@ -146,33 +173,6 @@
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(207, 6);
-            // 
-            // connectToolStripMenuItem
-            // 
-            this.connectToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.connectToolStripMenuItem.Name = "connectToolStripMenuItem";
-            this.connectToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
-            this.connectToolStripMenuItem.Text = "Connect";
-            this.connectToolStripMenuItem.Click += new System.EventHandler(this.connectToolStripMenuItem_Click);
-            // 
-            // connectExternalToolStripMenuItem
-            // 
-            this.connectExternalToolStripMenuItem.Name = "connectExternalToolStripMenuItem";
-            this.connectExternalToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
-            this.connectExternalToolStripMenuItem.Text = "Connect external";
-            this.connectExternalToolStripMenuItem.Click += new System.EventHandler(this.connectExternalToolStripMenuItem_Click);
-            // 
-            // connectInNewSuperPuTTYToolStripMenuItem
-            // 
-            this.connectInNewSuperPuTTYToolStripMenuItem.Name = "connectInNewSuperPuTTYToolStripMenuItem";
-            this.connectInNewSuperPuTTYToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
-            this.connectInNewSuperPuTTYToolStripMenuItem.Text = "Connect in new window";
-            this.connectInNewSuperPuTTYToolStripMenuItem.Click += new System.EventHandler(this.connectInNewSuperPuTTYToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 

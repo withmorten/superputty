@@ -119,6 +119,14 @@ namespace SuperPutty
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
+
+            if (SuperPuTTY.Settings.InterfaceTheme < (int)InterfaceTheme.LightTheme)
+            {
+                contextMenuStripAddTreeItem.BackColor = Color.FromArgb(32, 32, 32);
+                contextMenuStripFolder.BackColor = contextMenuStripAddTreeItem.BackColor;
+                contextMenuStripAddTreeItem.ForeColor = Color.FromArgb(241, 241, 241);
+                contextMenuStripFolder.ForeColor = contextMenuStripAddTreeItem.ForeColor;
+            }
         }
 
         void Settings_SettingsSaving(object sender, CancelEventArgs e)
