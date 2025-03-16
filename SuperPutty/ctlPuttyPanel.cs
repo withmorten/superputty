@@ -66,6 +66,8 @@ namespace SuperPutty
 
             CreatePanel();
             AdjustMenu();
+
+            aboutPuttyToolStripMenuItem.Text = "About " + SuperPuTTY.PuTTYAppName;
         }
 
         /// <summary>Gets or sets the text displayed on a tab.</summary>
@@ -384,7 +386,19 @@ namespace SuperPutty
 
         private void aboutPuttyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start("http://www.chiark.greenend.org.uk/~sgtatham/putty/");
+            if (SuperPuTTY.PuTTYAppName == "PuTTY")
+            {
+                Process.Start("http://www.chiark.greenend.org.uk/~sgtatham/putty/");
+            }
+            else if (SuperPuTTY.PuTTYAppName == "KiTTY")
+            {
+                Process.Start("https://www.9bis.net/kitty/index.html");
+            }
+            else
+            {
+                Messenger.MessageBox("No information available.", "About " + SuperPuTTY.PuTTYAppName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
         }
 
  
