@@ -26,6 +26,7 @@ using System.Diagnostics;
 using System.Threading;
 using System.Text.RegularExpressions;
 using SuperPutty.Data;
+using DarkModeForms;
 
 
 namespace SuperPutty
@@ -276,8 +277,10 @@ namespace SuperPutty
                         {
                             m_processDir.CancelErrorRead();
                             m_processDir.Kill();
-                            System.Windows.Forms.MessageBox.Show("The key of the host you are attempting to connect to has changed or is not cached \n" +
-                                "You must connect to this host with with a PuTTY ssh terminal to accept the key and store it in the cache", "Host Key not found or changed", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Stop);
+                            Messenger.MessageBox("The key of the host you are attempting to connect to has changed or is not cached\n" +
+                                                 "You must connect to this host with with a PuTTY ssh terminal to accept the key and store it in the cache.",
+                                                 "Host Key not found or changed",
+                                                 System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Stop);
                         }
                         else
                         {

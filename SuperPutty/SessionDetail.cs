@@ -1,4 +1,5 @@
-﻿using SuperPutty.Data;
+﻿using DarkModeForms;
+using SuperPutty.Data;
 using SuperPutty.Utils;
 using System;
 using System.Windows.Forms;
@@ -110,12 +111,12 @@ namespace SuperPutty
                     {
                         if (e.ChangedItem.PropertyDescriptor.Name == HostPropertyName)
                         {
-                            MessageBox.Show("A host name must be specified if a Putty Session Profile is not selected");
+                            Messenger.MessageBox("A host name must be specified if a Putty Session Profile is not selected");
                             Session.Host = (String)e.OldValue;
                         }
                         else
                         {
-                            MessageBox.Show("A Putty Session Profile must be selected if a Host Name is not provided");
+                            Messenger.MessageBox("A Putty Session Profile must be selected if a Host Name is not provided");
                             Session.PuttySession = (String)e.OldValue;
                         }
                         sessionDetailPropertyGrid.Refresh();
@@ -129,10 +130,14 @@ namespace SuperPutty
                     
                     if (!String.IsNullOrEmpty(CommandLineOptions.getcommand(Session.ExtraArgs, "-pw")))
                     {
-                        if (MessageBox.Show("SuperPutty save the password in Sessions.xml file in plain text.\nUse a password in 'Extra PuTTY Arguments' is very insecure.\nFor a secure connection use SSH authentication with Pageant. \nSelect yes, if you want save the password", "Are you sure that you want to save the password?",
-                            MessageBoxButtons.OKCancel,
-                            MessageBoxIcon.Warning,
-                            MessageBoxDefaultButton.Button1) == DialogResult.Cancel)
+                        if (Messenger.MessageBox("SuperPutty saves the extra arguments Sessions.xml file in plain text.\n" +
+                                                "Use of -pw password in 'Extra arguments' is very insecure.\n" +
+                                                "For a secure connection use SSH authentication with Pageant.\n" +
+                                                "Alternatively, use -pwfile to specify a password file.\n" +
+                                                "\nSelect Yes, if you still want save the password.",
+                                                "Are you sure that you want to save the password?",
+                                                MessageBoxButtons.YesNo,
+                                                MessageBoxIcon.Warning) == DialogResult.No)
                         {
                             Session.ExtraArgs = (String)e.OldValue;
                             return;

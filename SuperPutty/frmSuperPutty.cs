@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2009 - 2015 Jim Radford http://www.jimradford.com
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -319,7 +319,7 @@ namespace SuperPutty
         {
             if (SuperPuTTY.Settings.ExitConfirmation && !forceClose)
             {
-                if (MessageBox.Show("Exit SuperPuTTY?", "Confirm Exit", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.Cancel)
+                if (Messenger.MessageBox("Exit SuperPuTTY?", "Exit confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
                 {
                     e.Cancel = true;
                 }
@@ -420,10 +420,11 @@ namespace SuperPutty
 
         private void fromPuTTYSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show(
+            DialogResult res = Messenger.MessageBox(
                 "Do you want to copy all sessions from PuTTY/KiTTY?  Duplicates may be created.",
                 "SuperPuTTY",
-                MessageBoxButtons.YesNo);
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
             if (res == DialogResult.Yes)
             {
                 SuperPuTTY.ImportSessionsFromPuTTY();
@@ -446,10 +447,11 @@ namespace SuperPutty
 
         private void fromWinRDPRegToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show(
-                "Do you want to copy all RDP sessions from registry cache?  Duplicates may be created.",
+            DialogResult res = Messenger.MessageBox(
+                "Do you want to copy all RDP sessions from registry cache? Duplicates may be created.",
                 "SuperPuTTY",
-                MessageBoxButtons.YesNo);
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
             if (res == DialogResult.Yes)
             {
                 SuperPuTTY.ImportRDPSessionsFromWinReg();
@@ -1024,7 +1026,7 @@ namespace SuperPutty
             }
             else
             {
-                DialogResult result = MessageBox.Show("Local documentation could not be found. Would you like to view the documentation online instead?", "Documentation Not Found", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = Messenger.MessageBox("Local documentation could not be found. Would you like to view the documentation online instead?", "Documentation Not Found", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     Process.Start("https://github.com/jimradford/superputty/wiki/Documentation");
@@ -1774,7 +1776,7 @@ namespace SuperPutty
                 {
                     sb.AppendFormat("{0} ({1})", plist.Key, plist.Value.Count).AppendLine();
                 }
-                if (procs.Count > 0 && DialogResult.OK == MessageBox.Show(this, sb.ToString(), "Kill Processes?", MessageBoxButtons.OKCancel))
+                if (procs.Count > 0 && DialogResult.Yes == Messenger.MessageBox(sb.ToString(), "Kill Processes?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
                 {
                     int success = 0;
                     int error = 0;
@@ -1794,14 +1796,14 @@ namespace SuperPutty
                             }
                         }
                     }
-                    MessageBox.Show(this, string.Format("Killed {0} processes, {1} errors", success, error), "Clean Up Complete");
+                    Messenger.MessageBox(string.Format("Killed {0} processes, {1} errors", success, error), "Clean Up Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
                 string msg = "";
                 Log.Error(msg, ex);
-                MessageBox.Show(this, msg, "Error Cleaning Processes");
+                Messenger.MessageBox(msg, "Error Cleaning Processes", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1834,12 +1836,10 @@ namespace SuperPutty
                         {
                             Log.Info("New Application version found! " + latest.version);
 
-                            if (MessageBox.Show("An updated version of SuperPuTTY (" + latest.version + ") is Available Would you like to visit the download page to upgrade?",
+                            if (Messenger.MessageBox("An updated version of SuperPuTTY (" + latest.version + ") is Available Would you like to visit the download page to upgrade?",
                                 "SuperPutty Update Found",
                                 MessageBoxButtons.YesNo,
-                                MessageBoxIcon.Question,
-                                MessageBoxDefaultButton.Button1,
-                                MessageBoxOptions.DefaultDesktopOnly) == DialogResult.Yes)
+                                MessageBoxIcon.Question) == DialogResult.Yes)
                             {
                                 Process.Start(latest.release_url);
                             }
@@ -1848,13 +1848,13 @@ namespace SuperPutty
                         {
                             if (sender.ToString().Equals(checkForUpdatesToolStripMenuItem.Text))
                             {
-                                MessageBox.Show("You are running the latest version of SuperPutty", "SuperPuTTY Update Check", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                Messenger.MessageBox("You are running the latest version of SuperPutty", "SuperPuTTY Update Check", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
                     }
                     else
                     {
-                        MessageBox.Show("There was an error while checking for updates. Please try again later.", "Error during update check", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        Messenger.MessageBox("There was an error while checking for updates. Please try again later.", "Error during update check", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         Log.Warn("An Error occurred trying to check for program updates: " + content);                        
                     }
                 });

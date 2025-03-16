@@ -33,6 +33,7 @@ using SuperPutty.Utils;
 using WeifenLuo.WinFormsUI.Docking;
 using SuperPutty.Gui;
 using System.Text.RegularExpressions;
+using DarkModeForms;
 
 
 namespace SuperPutty
@@ -246,7 +247,7 @@ namespace SuperPutty
                 if (!IsValid)
                 {
                     CancelChange = true;
-                    MessageBox.Show(Error);
+                    Messenger.MessageBox(Error);
                 }
             }
         }
@@ -432,7 +433,7 @@ namespace SuperPutty
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SessionData session = (SessionData)treeView1.SelectedNode.Tag;
-            if (MessageBox.Show("Are you sure you want to delete " + session.SessionName + "?", "Delete Session?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (Messenger.MessageBox("Are you sure you want to delete " + session.SessionName + "?", "Delete Session?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 //session.RegistryRemove(session.SessionName);
                 treeView1.SelectedNode.Remove();
@@ -569,10 +570,11 @@ namespace SuperPutty
                 {
                     List<SessionData> sessions = new List<SessionData>();
                     GetAllSessions(node, sessions);
-                    if (DialogResult.Yes == MessageBox.Show(
-                        "Remove Folder [" + node.Text + "] and [" + sessions.Count + "] sessions?",
+                    if (DialogResult.Yes == Messenger.MessageBox(
+                        "Remove Folder [" + node.Text + "] and " + sessions.Count + " sessions?",
                         "Remove Folder?", 
-                        MessageBoxButtons.YesNo))
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question))
                     {
                         foreach (SessionData session in sessions)
                         {
@@ -602,7 +604,7 @@ namespace SuperPutty
 
                 if (sessions.Count > MaxSessionsToOpen)
                 {
-                    if (DialogResult.Cancel == MessageBox.Show(
+                    if (DialogResult.Cancel == Messenger.MessageBox(
                         "Open All " + sessions.Count + " sessions?", 
                         "WARNING", 
                         MessageBoxButtons.OKCancel, MessageBoxIcon.Warning))

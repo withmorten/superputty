@@ -157,11 +157,16 @@ namespace SuperPutty
             int val = 0;
             if (!String.IsNullOrEmpty(CommandLineOptions.getcommand(textBoxExtraArgs.Text, "-pw")))
             {
-                if (MessageBox.Show("SuperPutty saves the extra arguments Sessions.xml file in plain text.\nUse of -pw password in 'Extra Arguments' is very insecure.\nFor a secure connection use SSH authentication with Pageant. \nSelect yes, if you want save the password", "Are you sure that you want to save the password?",
-                        MessageBoxButtons.OKCancel,
-                        MessageBoxIcon.Warning,
-                        MessageBoxDefaultButton.Button1)==DialogResult.Cancel){
-                            return;                
+                if (Messenger.MessageBox("SuperPutty saves the extra arguments Sessions.xml file in plain text.\n" +
+                                         "Use of -pw password in 'Extra arguments' is very insecure.\n" +
+                                         "For a secure connection use SSH authentication with Pageant.\n" +
+                                         "Alternatively, use -pwfile to specify a password file.\n" +
+                                         "\nSelect Yes, if you still want save the password.",
+                                         "Are you sure that you want to save the password?",
+                                         MessageBoxButtons.YesNo,
+                                         MessageBoxIcon.Warning) == DialogResult.No)
+                {
+                    return;
                 }
             }
             Session.SessionName  = textBoxSessionName.Text.Trim();

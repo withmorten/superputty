@@ -30,6 +30,7 @@ using System.Configuration;
 using System.Collections.Generic;
 using SuperPutty.Utils;
 using System.Text;
+using DarkModeForms;
 
 namespace SuperPutty
 {
@@ -217,7 +218,7 @@ DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
             }
             else
             {
-                MessageBox.Show("Process window not found.", "Process Window Not Found");
+                Messenger.MessageBox("Process window not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 try {
                     m_Process.Kill();
                 } 
@@ -445,7 +446,7 @@ DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
                 {
                     if (!File.Exists(ApplicationName))
                     {
-                        MessageBox.Show(ApplicationName + " not found in configured path, please go into tools->settings and set the correct path", "Application Not Found");
+                        Messenger.MessageBox(ApplicationName + " not found in configured path, please go to Tools->Settings and set the correct path", "Application Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                     m_Process = new Process
@@ -518,7 +519,7 @@ DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
                      * The ProcessStartInfo.UseShellExecute member of the StartInfo property is true while ProcessStartInfo.RedirectStandardInput, 
                      * ProcessStartInfo.RedirectStandardOutput, or ProcessStartInfo.RedirectStandardError is true. 
                      */
-                    MessageBox.Show(this, ex.Message, "Invalid Operation Error");
+                    Messenger.MessageBox(ex.Message, "Invalid Operation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     throw;
                 }
                 catch (Win32Exception ex)
@@ -542,7 +543,7 @@ DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
                 {
                     // dont' try to capture or manipulate the window
                     Log.WarnFormat("Error while creating putty session: title={0}, handle={1}.  Abort capture window", this.m_Process.MainWindowTitle, this.m_AppWin);
-                    MessageBox.Show("Could not start putty session: Arguments passed to commandline invalid.", "putty command line error.");
+                    Messenger.MessageBox("Could not start putty session: Arguments passed to commandline are invalid.", "PuTTY command line error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.m_AppWin = IntPtr.Zero;
                 }
                 

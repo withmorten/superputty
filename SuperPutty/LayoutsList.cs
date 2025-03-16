@@ -2,8 +2,10 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
+using DarkModeForms;
 using SuperPutty.Data;
 using SuperPutty.Gui;
+using DarkModeForms;
 
 namespace SuperPutty
 {
@@ -102,7 +104,7 @@ namespace SuperPutty
             LayoutData layout = (LayoutData)this.listBoxLayouts.SelectedItem;
             if (layout != null)
             {
-                if (DialogResult.Yes == MessageBox.Show(this, "Delete Layout (" + layout.Name + ")?", "Delete Layout", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+                if (DialogResult.Yes == Messenger.MessageBox("Delete Layout (" + layout.Name + ")?", "Delete Layout", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
                 {
                     SuperPuTTY.RemoveLayout(layout.Name, true);
                 }

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -16,6 +16,7 @@ using System.Drawing;
 using SuperPutty.Scp;
 using SuperPuTTY.Scripting;
 using System.Net;
+using DarkModeForms;
 
 namespace SuperPutty
 {
@@ -51,7 +52,7 @@ namespace SuperPutty
                 // display help if --help specified
                 if (CommandLine.Help)
                 {
-                    if (DialogResult.Cancel == MessageBox.Show(CommandLineOptions.Usage(), "SuperPutty CLI Help", MessageBoxButtons.OKCancel))
+                    if (DialogResult.Cancel == Messenger.MessageBox(CommandLineOptions.Usage(), "SuperPutty CLI Help", MessageBoxButtons.OKCancel, MessageBoxIcon.Information))
                     {
                         Environment.Exit(0);
                     }
@@ -416,7 +417,7 @@ namespace SuperPutty
                 string Executable = PuttyStartInfo.GetExecutable(session);
                 if (string.IsNullOrEmpty(Executable))
                 {
-                    MessageBox.Show("Error trying to create session: " + session.ToString() +
+                    Messenger.MessageBox("Error trying to create session: " + session.ToString() +
                         "\nExecutable not set for " + session.Proto.ToString() + " protocol." +
                         "\nGo to tools->options->General tab to set the path to the executable."
                         , "Failed to create a session", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -424,7 +425,7 @@ namespace SuperPutty
                 }
                 if (!File.Exists(Executable))
                 {
-                    MessageBox.Show("Error trying to create session: " + session.ToString() +
+                    Messenger.MessageBox("Error trying to create session: " + session.ToString() +
                         "\nExecutable not found for " + session.Proto.ToString() + " protocol." +
                         "\nThe path for the executable was set as \"" + Executable + "\"." +
                         "\nGo to tools->options->General tab to set the path to the executable."
@@ -510,7 +511,7 @@ namespace SuperPutty
                     }
                 } catch (InvalidOperationException ex)
                 {
-                    MessageBox.Show("Error trying to create session " + ex.Message, "Failed to create session panel", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Messenger.MessageBox("Error trying to create session " + ex.Message, "Failed to create session panel", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             return panel;

@@ -424,7 +424,7 @@ namespace SuperPutty
                 {
                     sb.Append(s).AppendLine().AppendLine();
                 }
-                if (MessageBox.Show(sb.ToString(), "Errors", MessageBoxButtons.RetryCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+                if (Messenger.MessageBox(sb.ToString(), "Errors", MessageBoxButtons.RetryCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
                 {
                     DialogResult = DialogResult.Cancel;
                 }
@@ -538,7 +538,7 @@ namespace SuperPutty
 
             if (String.IsNullOrEmpty(SuperPuTTY.Settings.PuttyExe))
             {
-                MessageBox.Show("Cannot find PuTTY installation. Please visit http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html to download a copy",
+                Messenger.MessageBox("Cannot find PuTTY installation. Please visit http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html to download a copy",
                     "PuTTY Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
                 System.Environment.Exit(1);

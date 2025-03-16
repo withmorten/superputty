@@ -8,6 +8,7 @@ using System.Collections;
 using log4net;
 using SuperPutty.Gui;
 using System.IO;
+using DarkModeForms;
 
 namespace SuperPutty.Scp
 {
@@ -341,7 +342,7 @@ namespace SuperPutty.Scp
                 sb.AppendLine(this.dragDropFileTransfer.TargetFile.Path);
                 sb.AppendLine();
 
-                DialogResult res = MessageBox.Show(this, sb.ToString(), "Transfer Files?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult res = Messenger.MessageBox(sb.ToString(), "Transfer Files?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (res == DialogResult.No)
                 {
                     Log.InfoFormat("FileTransfer canceled: {0}", this.dragDropFileTransfer);

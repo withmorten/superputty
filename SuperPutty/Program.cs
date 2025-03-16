@@ -29,6 +29,7 @@ using System.Reflection;
 using System.IO;
 using System.Drawing;
 using System.Text;
+using DarkModeForms;
 
 namespace SuperPutty
 {
@@ -127,7 +128,7 @@ namespace SuperPutty
         static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
             String msg = String.Format("CurrentDomain_UnhandledException: IsTerminating={0}, ex={1}", e.IsTerminating, e.ExceptionObject);
-            MessageBox.Show(msg, "Unhandled Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            Messenger.MessageBox(msg, "Unhandled Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             Log.Error(msg);
         }
 
@@ -150,7 +151,7 @@ namespace SuperPutty
             }
 
             Log.Error("Application_ThreadException", e.Exception);
-            MessageBox.Show(sb.ToString(), "Application_ThreadException", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            Messenger.MessageBox(sb.ToString(), "Application_ThreadException", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
 

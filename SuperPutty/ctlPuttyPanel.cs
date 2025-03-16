@@ -36,6 +36,7 @@ using System.Threading;
 using System.Configuration;
 using SuperPutty.Gui;
 using log4net.Core;
+using DarkModeForms;
 
 
 namespace SuperPutty
@@ -268,7 +269,7 @@ namespace SuperPutty
             bool okToClose = true;
             if (SuperPuTTY.Settings.MultipleTabCloseConfirmation && n > 1)
             {
-                okToClose = DialogResult.Yes == MessageBox.Show(this, string.Format("Close {0} Tabs?", n), source, MessageBoxButtons.YesNo);
+                okToClose = DialogResult.Yes == Messenger.MessageBox(string.Format("Close {0} Tabs?", n), source, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
 
             if (okToClose)
