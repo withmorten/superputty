@@ -32,6 +32,7 @@ using SuperPutty.Data;
 using SuperPutty.Utils;
 using SuperPutty.Gui;
 using System.Diagnostics;
+using DarkModeForms;
 
 namespace SuperPutty
 {
@@ -46,7 +47,7 @@ namespace SuperPutty
 
         public dlgFindPutty()
         {
-            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            //this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             InitializeComponent();
 
@@ -214,6 +215,12 @@ namespace SuperPutty
                 this.Shortcuts.Add(ks);
             }
             this.dataGridViewShortcuts.DataSource = this.Shortcuts;
+
+            new DarkModeCS(this)
+            {
+                ColorMode = DarkModeCS.DisplayMode.DarkMode,
+                ColorizeIcons = false
+            };
         }
 
         private void FixDpiScalingIssues()

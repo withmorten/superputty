@@ -6,6 +6,7 @@ using System;
 using System.Reflection;
 using System.Windows.Forms;
 using System.Diagnostics;
+using DarkModeForms;
 
 namespace SuperPutty
 {
@@ -27,6 +28,12 @@ namespace SuperPutty
             {                
                 textBoxSupportText.AppendText(a.FullName + System.Environment.NewLine);                
             }
+
+            new DarkModeCS(this)
+            {
+                ColorMode = DarkModeCS.DisplayMode.DarkMode,
+                ColorizeIcons = false
+            };
         }
 
         #region Assembly Attribute Accessors

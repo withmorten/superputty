@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2009 - 2015 Jim Radford http://www.jimradford.com
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -195,7 +195,7 @@ namespace SuperPutty
             this.tsCommands.ImageList = SuperPuTTY.ImagesWithStop;
             this.toolStripButtonChooseIconGroup.ImageKey = "stop";
 
-            var dm = new DarkModeCS(this)
+            new DarkModeCS(this)
             {
                 ColorMode = DarkModeCS.DisplayMode.DarkMode,
                 ColorizeIcons = false

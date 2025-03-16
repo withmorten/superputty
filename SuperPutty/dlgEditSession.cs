@@ -28,6 +28,7 @@ using SuperPutty.Utils;
 using SuperPutty.Gui;
 using log4net;
 using System.IO;
+using DarkModeForms;
 
 namespace SuperPutty
 {
@@ -99,6 +100,12 @@ namespace SuperPutty
             this.toolTip.SetToolTip(this.buttonImageSelect, buttonImageSelect.ImageKey);
 
             this.isInitialized = true;
+
+            new DarkModeCS(this)
+            {
+                ColorMode = DarkModeCS.DisplayMode.DarkMode,
+                ColorizeIcons = false
+            };
         }
 
         protected override void OnLoad(EventArgs e)

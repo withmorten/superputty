@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DarkModeForms;
+using System;
 using System.ComponentModel;
 using System.Windows.Forms;
 
@@ -11,6 +12,12 @@ namespace SuperPutty.Gui
         public dlgRenameItem()
         {
             InitializeComponent();
+
+            new DarkModeCS(this)
+            {
+                ColorMode = DarkModeCS.DisplayMode.DarkMode,
+                ColorizeIcons = false
+            };
         }
 
         public string ItemName {
