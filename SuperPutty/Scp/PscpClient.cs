@@ -173,7 +173,7 @@ namespace SuperPutty.Scp
                 sb.AppendFormat("-pw {0} ", password);
             }
             
-            if (!string.IsNullOrEmpty(session.ExtraArgs.ToString()))
+            if (!string.IsNullOrEmpty(session.ExtraArgs))
             {
                 sb.AppendFormat(" {0} ", session.ExtraArgs.ToString());
             }
