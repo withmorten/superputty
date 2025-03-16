@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using DarkModeForms;
 using SuperPutty.Data;
 
 namespace SuperPutty.Gui
@@ -12,6 +13,15 @@ namespace SuperPutty.Gui
         {
             InitializeComponent();
             this.KeyboardShortcut = new KeyboardShortcut();
+
+            if (SuperPuTTY.Settings.InterfaceTheme < (int)InterfaceTheme.LightTheme)
+            {
+                new DarkModeCS(this)
+                {
+                    ColorMode = DarkModeCS.DisplayMode.DarkMode,
+                    ColorizeIcons = false
+                };
+            }
         }
 
         protected override void OnLoad(EventArgs e)

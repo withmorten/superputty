@@ -25,6 +25,7 @@ using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 using log4net;
 using SuperPutty.Utils;
+using DarkModeForms;
 
 namespace SuperPutty
 {
@@ -39,6 +40,15 @@ namespace SuperPutty
             this.dockPanel = dockPanel;
             InitializeComponent();
             this.checkSendToVisible.Checked = SuperPuTTY.Settings.SendCommandsToVisibleOnly;
+
+            if (SuperPuTTY.Settings.InterfaceTheme < (int)InterfaceTheme.LightTheme)
+            {
+                new DarkModeCS(this)
+                {
+                    ColorMode = DarkModeCS.DisplayMode.DarkMode,
+                    ColorizeIcons = false
+                };
+            }
         }
 
         protected override void OnVisibleChanged(EventArgs e)

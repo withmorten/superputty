@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DarkModeForms;
+using System;
 using System.Windows.Forms;
 
 namespace SuperPutty
@@ -9,6 +10,15 @@ namespace SuperPutty
         public frmTransferStatus()
         {
             InitializeComponent();
+
+            if (SuperPuTTY.Settings.InterfaceTheme < (int)InterfaceTheme.LightTheme)
+            {
+                new DarkModeCS(this)
+                {
+                    ColorMode = DarkModeCS.DisplayMode.DarkMode,
+                    ColorizeIcons = false
+                };
+            }
         }
 
         /// <summary>

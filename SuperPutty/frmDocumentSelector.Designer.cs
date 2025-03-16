@@ -33,9 +33,9 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.listViewDocs = new System.Windows.Forms.ListView();
+            this.colNum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colTab = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colSessionId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colNum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,11 +53,12 @@
             // checkSendToVisible
             // 
             this.checkSendToVisible.AutoSize = true;
+            this.checkSendToVisible.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkSendToVisible.Location = new System.Drawing.Point(7, 9);
             this.checkSendToVisible.Name = "checkSendToVisible";
-            this.checkSendToVisible.Size = new System.Drawing.Size(151, 17);
+            this.checkSendToVisible.Size = new System.Drawing.Size(153, 19);
             this.checkSendToVisible.TabIndex = 2;
-            this.checkSendToVisible.Text = "Send To Visible Tabs Only";
+            this.checkSendToVisible.Text = "Send to visible tabs only";
             this.checkSendToVisible.UseVisualStyleBackColor = true;
             this.checkSendToVisible.CheckedChanged += new System.EventHandler(this.checkSendToVisible_CheckedChanged);
             // 
@@ -91,13 +92,21 @@
             this.colTab,
             this.colSessionId});
             this.listViewDocs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewDocs.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listViewDocs.ForeColor = System.Drawing.SystemColors.WindowText;
             this.listViewDocs.FullRowSelect = true;
+            this.listViewDocs.HideSelection = false;
             this.listViewDocs.Location = new System.Drawing.Point(0, 0);
             this.listViewDocs.Name = "listViewDocs";
             this.listViewDocs.Size = new System.Drawing.Size(404, 223);
             this.listViewDocs.TabIndex = 1;
             this.listViewDocs.UseCompatibleStateImageBehavior = false;
             this.listViewDocs.View = System.Windows.Forms.View.Details;
+            // 
+            // colNum
+            // 
+            this.colNum.Text = "#";
+            this.colNum.Width = 25;
             // 
             // colTab
             // 
@@ -106,13 +115,8 @@
             // 
             // colSessionId
             // 
-            this.colSessionId.Text = "Session Id";
+            this.colSessionId.Text = "Session ID";
             this.colSessionId.Width = 285;
-            // 
-            // colNum
-            // 
-            this.colNum.Text = "#";
-            this.colNum.Width = 25;
             // 
             // frmDocumentSelector
             // 
@@ -126,7 +130,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmDocumentSelector";
             this.ShowInTaskbar = false;
-            this.Text = "Select Documents";
+            this.Text = "Select sessions to send to";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

@@ -22,6 +22,8 @@
 using System;
 using System.Windows.Forms;
 using System.IO;
+using DarkModeForms;
+using System.Drawing;
 
 namespace SuperPutty
 {
@@ -44,12 +46,21 @@ namespace SuperPutty
         public dlgScriptEditor()
         {
             InitializeComponent();
-            this.ActiveControl = textBoxSript;         
+            this.ActiveControl = textBoxScript;
+
+            if (SuperPuTTY.Settings.InterfaceTheme < (int)InterfaceTheme.LightTheme)
+            {
+                new DarkModeCS(this)
+                {
+                    ColorMode = DarkModeCS.DisplayMode.DarkMode,
+                    ColorizeIcons = false
+                };
+            }
         }
 
         private void buttonRunScript_Click(object sender, EventArgs e)
         {
-            ExecuteScriptEventArgs args = new ExecuteScriptEventArgs { Script = textBoxSript.Text };
+            ExecuteScriptEventArgs args = new ExecuteScriptEventArgs { Script = textBoxScript.Text };
             OnScriptReady(args);
             this.Close();
             
@@ -61,7 +72,7 @@ namespace SuperPutty
             if(dlgResult == DialogResult.OK)
             {
                 string script = File.ReadAllText(this.openFileDialog1.FileName);
-                textBoxSript.AppendText(script);
+                textBoxScript.AppendText(script);
             }
         }
 
@@ -70,7 +81,7 @@ namespace SuperPutty
             DialogResult dlgResult = this.saveFileDialog1.ShowDialog();
             if(dlgResult == DialogResult.OK)
             {
-                File.WriteAllText(this.saveFileDialog1.FileName, textBoxSript.Text);
+                File.WriteAllText(this.saveFileDialog1.FileName, textBoxScript.Text);
             }
         }
     }

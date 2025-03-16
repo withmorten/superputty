@@ -40,6 +40,7 @@ namespace SuperPutty
             this.fromPuTTYPortableSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fromPuTTYCMExportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fromWinRDPRegToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fromMobaXtermToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
             this.openSessionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -114,7 +115,6 @@ namespace SuperPutty
             this.notifyicon = new System.Windows.Forms.NotifyIcon(this.components);
             this.notifyIconContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.exitSuperPuTTYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fromMobaXtermToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -208,6 +208,13 @@ namespace SuperPutty
             this.fromWinRDPRegToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.fromWinRDPRegToolStripMenuItem.Text = "From &RDP (Registry)";
             this.fromWinRDPRegToolStripMenuItem.Click += new System.EventHandler(this.fromWinRDPRegToolStripMenuItem_Click);
+            // 
+            // fromMobaXtermToolStripMenuItem
+            // 
+            this.fromMobaXtermToolStripMenuItem.Name = "fromMobaXtermToolStripMenuItem";
+            this.fromMobaXtermToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.fromMobaXtermToolStripMenuItem.Text = "From &MobaXterm file...";
+            this.fromMobaXtermToolStripMenuItem.Click += new System.EventHandler(this.fromMobaXtermToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -522,10 +529,10 @@ namespace SuperPutty
             this.DockPanel.DefaultFloatWindowSize = new System.Drawing.Size(800, 600);
             this.DockPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DockPanel.DockBackColor = System.Drawing.SystemColors.Control;
-            this.DockPanel.DockTopPortion = 200D;
             this.DockPanel.DockBottomPortion = 200D;
             this.DockPanel.DockLeftPortion = 250D;
             this.DockPanel.DockRightPortion = 250D;
+            this.DockPanel.DockTopPortion = 200D;
             this.DockPanel.Location = new System.Drawing.Point(0, 0);
             this.DockPanel.Name = "DockPanel";
             this.DockPanel.Size = new System.Drawing.Size(1008, 610);
@@ -782,7 +789,7 @@ namespace SuperPutty
             this.tbBtnSelectDocs.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbBtnSelectDocs.Name = "tbBtnSelectDocs";
             this.tbBtnSelectDocs.Size = new System.Drawing.Size(24, 24);
-            this.tbBtnSelectDocs.Text = "Select Documents";
+            this.tbBtnSelectDocs.Text = "Select sessions to send to";
             this.tbBtnSelectDocs.Click += new System.EventHandler(this.tsBtnSelectDocs_Click);
             // 
             // toolStripButtonChooseIconGroup
@@ -826,13 +833,6 @@ namespace SuperPutty
             this.exitSuperPuTTYToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.exitSuperPuTTYToolStripMenuItem.Text = "Exit SuperPuTTY";
             this.exitSuperPuTTYToolStripMenuItem.Click += new System.EventHandler(this.exitSuperPuTTYToolStripMenuItem_Click);
-            // 
-            // fromMobaXtermToolStripMenuItem
-            // 
-            this.fromMobaXtermToolStripMenuItem.Name = "fromMobaXtermToolStripMenuItem";
-            this.fromMobaXtermToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
-            this.fromMobaXtermToolStripMenuItem.Text = "From &MobaXterm file...";
-            this.fromMobaXtermToolStripMenuItem.Click += new System.EventHandler(this.fromMobaXtermToolStripMenuItem_Click);
             // 
             // frmSuperPutty
             // 

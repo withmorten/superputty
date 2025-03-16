@@ -23,6 +23,7 @@ using System;
 using System.Windows.Forms;
 using System.Security.Principal;
 using SuperPutty.Data;
+using DarkModeForms;
 
 
 namespace SuperPutty
@@ -46,6 +47,15 @@ namespace SuperPutty
                 this.Username = userName;
 
             textBoxUsername.Text = this.Username;
+
+            if (SuperPuTTY.Settings.InterfaceTheme < (int)InterfaceTheme.LightTheme)
+            {
+                new DarkModeCS(this)
+                {
+                    ColorMode = DarkModeCS.DisplayMode.DarkMode,
+                    ColorizeIcons = false
+                };
+            }
         }
 
         public dlgLogin(SessionData session) : this(session.Username)

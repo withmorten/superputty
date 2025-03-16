@@ -30,7 +30,7 @@
         {
             this.buttonSendScript = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBoxSript = new System.Windows.Forms.TextBox();
+            this.textBoxScript = new System.Windows.Forms.TextBox();
             this.buttonLoadScript = new System.Windows.Forms.Button();
             this.buttonSaveScript = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -51,20 +51,20 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel1.Controls.Add(this.textBoxSript);
+            this.panel1.Controls.Add(this.textBoxScript);
             this.panel1.Location = new System.Drawing.Point(13, 13);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(259, 207);
             this.panel1.TabIndex = 1;
             // 
-            // textBoxSript
+            // textBoxScript
             // 
-            this.textBoxSript.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.textBoxSript.Location = new System.Drawing.Point(3, 3);
-            this.textBoxSript.Multiline = true;
-            this.textBoxSript.Name = "textBoxSript";
-            this.textBoxSript.Size = new System.Drawing.Size(253, 201);
-            this.textBoxSript.TabIndex = 0;
+            this.textBoxScript.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.textBoxScript.Location = new System.Drawing.Point(3, 3);
+            this.textBoxScript.Multiline = true;
+            this.textBoxScript.Name = "textBoxScript";
+            this.textBoxScript.Size = new System.Drawing.Size(253, 201);
+            this.textBoxScript.TabIndex = 0;
             // 
             // buttonLoadScript
             // 
@@ -122,7 +122,7 @@
 
         private System.Windows.Forms.Button buttonSendScript;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBoxSript;
+        private System.Windows.Forms.TextBox textBoxScript;
         private System.Windows.Forms.Button buttonLoadScript;
         private System.Windows.Forms.Button buttonSaveScript;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
