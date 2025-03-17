@@ -158,7 +158,7 @@ namespace SuperPutty
         {
 
             int val = 0;
-            if (!String.IsNullOrEmpty(CommandLineOptions.getcommand(textBoxExtraArgs.Text, "-pw")))
+            if (!string.IsNullOrEmpty(CommandLineOptions.getcommand(textBoxExtraArgs.Text, "-pw")))
             {
                 if (Messenger.MessageBox("SuperPutty saves the extra arguments Sessions.xml file in plain text.\n" +
                                          "Use of -pw password in 'Extra arguments' is very insecure.\n" +
@@ -426,7 +426,7 @@ namespace SuperPutty
 
         private void textBoxExtraArgs_Validating(object sender, CancelEventArgs e)
         {
-            if (CommandLineOptions.getcommand(textBoxExtraArgs.Text, "-pw") != null)
+            if (!string.IsNullOrEmpty(CommandLineOptions.getcommand(textBoxExtraArgs.Text, "-pw")))
             {
                 e.Cancel = true;
                 this.SetError(this.textBoxExtraArgs,  "Password set in clear text");
