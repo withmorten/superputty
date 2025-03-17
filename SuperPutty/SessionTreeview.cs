@@ -122,10 +122,15 @@ namespace SuperPutty
 
             if (SuperPuTTY.Settings.InterfaceTheme < (int)InterfaceTheme.LightTheme)
             {
-                contextMenuStripAddTreeItem.BackColor = Color.FromArgb(32, 32, 32);
-                contextMenuStripFolder.BackColor = contextMenuStripAddTreeItem.BackColor;
-                contextMenuStripAddTreeItem.ForeColor = Color.FromArgb(241, 241, 241);
-                contextMenuStripFolder.ForeColor = contextMenuStripAddTreeItem.ForeColor;
+                // Assign custom renderer for context menus
+                contextMenuStripFolder.Renderer = new MyRenderer(new CustomColorTable(new OSThemeColors()), false)
+                {
+                    MyColors = DarkModeCS.GetSystemColors(null, 0)
+                };
+                contextMenuStripAddTreeItem.Renderer = new MyRenderer(new CustomColorTable(new OSThemeColors()), false)
+                {
+                    MyColors = DarkModeCS.GetSystemColors(null, 0)
+                };
             }
         }
 
