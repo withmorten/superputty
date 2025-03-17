@@ -161,8 +161,11 @@ DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool ReFocusPuTTY(string caller)
         {
             bool result = false;
-            if (this.proto == SuperPutty.Data.ConnectionProtocol.RDP) /* Otherwise window will be hidden and require SuperPutTTY minimize-restore cycle */
+            if (proto == Data.ConnectionProtocol.VNC ||
+                proto == Data.ConnectionProtocol.RDP)
+            {/* If we don't move the window on tab refocus, the contents will be offset depending on screen DPI */
                 this.MoveWindow("RestoreTabSwitch");
+            }
             if (this.ExternalProcessCaptured && NativeMethods.GetForegroundWindow() != this.m_AppWin)
             {
                 settingForeground = true;
