@@ -116,8 +116,9 @@ namespace SuperPutty
 
         void AdjustMenu()
         {
-            // for mintty, disable the putty menu items
-            if (this.Session.Proto == ConnectionProtocol.Mintty)
+            // For Mintty and VNC, disable the putty menu items
+            if (this.Session.Proto == ConnectionProtocol.VNC ||
+                this.Session.Proto == ConnectionProtocol.Mintty)
             {
                 this.toolStripPuttySep1.Visible = false;
                 this.eventLogToolStripMenuItem.Visible = false;
@@ -127,6 +128,8 @@ namespace SuperPutty
                 this.restartSessionToolStripMenuItem.Visible = false;
                 this.clearScrollbackToolStripMenuItem.Visible = false;
                 this.resetTerminalToolStripMenuItem.Visible = false;
+                aboutPuttyToolStripMenuItem.Visible = false;
+                toolStripSeparator4.Visible = false;
             }
         }
 
