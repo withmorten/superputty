@@ -72,6 +72,9 @@
             this.checkFilterWhileTyping = new System.Windows.Forms.CheckBox();
             this.label18 = new System.Windows.Forms.Label();
             this.checkBoxAllowPuttyPWArg = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.checkConfirmTabClose = new System.Windows.Forms.CheckBox();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageGeneral = new System.Windows.Forms.TabPage();
@@ -84,6 +87,19 @@
             this.textBoxRDPLocation = new System.Windows.Forms.TextBox();
             this.buttonBrowseWinSCP = new System.Windows.Forms.Button();
             this.textBoxWinSCPLocation = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.linkTightVnc = new System.Windows.Forms.LinkLabel();
+            this.linkFilezilla = new System.Windows.Forms.LinkLabel();
+            this.linkWinScp = new System.Windows.Forms.LinkLabel();
+            this.linkCygwin = new System.Windows.Forms.LinkLabel();
+            this.linkMsys = new System.Windows.Forms.LinkLabel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.linkPscp = new System.Windows.Forms.LinkLabel();
+            this.kittyLink = new System.Windows.Forms.LinkLabel();
+            this.puttyLink = new System.Windows.Forms.LinkLabel();
+            this.PuttyDefParamLbl = new System.Windows.Forms.Label();
+            this.labelRDP = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabPageGUI = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.optDarkBlueTheme = new System.Windows.Forms.RadioButton();
@@ -112,8 +128,13 @@
             this.label11 = new System.Windows.Forms.Label();
             this.tabPageShortcuts = new System.Windows.Forms.TabPage();
             this.dataGridViewShortcuts = new System.Windows.Forms.DataGridView();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.keyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modifiersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shortcutStringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colClear = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.keyboardShortcutBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPageAdvanced = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -121,30 +142,10 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.panelBottom = new System.Windows.Forms.Panel();
             this.fontDialog = new System.Windows.Forms.FontDialog();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.linkTightVnc = new System.Windows.Forms.LinkLabel();
-            this.linkFilezilla = new System.Windows.Forms.LinkLabel();
-            this.linkWinScp = new System.Windows.Forms.LinkLabel();
-            this.linkCygwin = new System.Windows.Forms.LinkLabel();
-            this.linkMsys = new System.Windows.Forms.LinkLabel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.linkPscp = new System.Windows.Forms.LinkLabel();
-            this.kittyLink = new System.Windows.Forms.LinkLabel();
-            this.puttyLink = new System.Windows.Forms.LinkLabel();
-            this.PuttyDefParamLbl = new System.Windows.Forms.Label();
-            this.labelRDP = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.keyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modifiersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shortcutStringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.keyboardShortcutBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabControl.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.tabPageGUI.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -156,20 +157,19 @@
             this.groupBox1.SuspendLayout();
             this.tabPageShortcuts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewShortcuts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.keyboardShortcutBindingSource)).BeginInit();
             this.tabPageAdvanced.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.panelBottom.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.keyboardShortcutBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonOk
             // 
             this.buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonOk.Location = new System.Drawing.Point(572, 5);
-            this.buttonOk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonOk.Margin = new System.Windows.Forms.Padding(4);
             this.buttonOk.Name = "buttonOk";
             this.buttonOk.Size = new System.Drawing.Size(94, 29);
             this.buttonOk.TabIndex = 20;
@@ -181,7 +181,7 @@
             // 
             this.buttonBrowsePutty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonBrowsePutty.Location = new System.Drawing.Point(669, 135);
-            this.buttonBrowsePutty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonBrowsePutty.Margin = new System.Windows.Forms.Padding(4);
             this.buttonBrowsePutty.Name = "buttonBrowsePutty";
             this.buttonBrowsePutty.Size = new System.Drawing.Size(94, 29);
             this.buttonBrowsePutty.TabIndex = 1;
@@ -193,7 +193,7 @@
             // 
             this.buttonBrowsePscp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonBrowsePscp.Location = new System.Drawing.Point(669, 169);
-            this.buttonBrowsePscp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonBrowsePscp.Margin = new System.Windows.Forms.Padding(4);
             this.buttonBrowsePscp.Name = "buttonBrowsePscp";
             this.buttonBrowsePscp.Size = new System.Drawing.Size(94, 29);
             this.buttonBrowsePscp.TabIndex = 3;
@@ -206,7 +206,7 @@
             this.textBoxPuttyLocation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPuttyLocation.Location = new System.Drawing.Point(215, 135);
-            this.textBoxPuttyLocation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPuttyLocation.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPuttyLocation.Name = "textBoxPuttyLocation";
             this.textBoxPuttyLocation.Size = new System.Drawing.Size(445, 27);
             this.textBoxPuttyLocation.TabIndex = 0;
@@ -216,7 +216,7 @@
             this.textBoxPscpLocation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPscpLocation.Location = new System.Drawing.Point(215, 169);
-            this.textBoxPscpLocation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPscpLocation.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPscpLocation.Name = "textBoxPscpLocation";
             this.textBoxPscpLocation.Size = new System.Drawing.Size(445, 27);
             this.textBoxPscpLocation.TabIndex = 2;
@@ -233,7 +233,7 @@
             this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.richTextBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.richTextBox1.Location = new System.Drawing.Point(9, 9);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(754, 116);
@@ -246,7 +246,7 @@
             this.textBoxSettingsFolder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxSettingsFolder.Location = new System.Drawing.Point(215, 371);
-            this.textBoxSettingsFolder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSettingsFolder.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSettingsFolder.Name = "textBoxSettingsFolder";
             this.textBoxSettingsFolder.Size = new System.Drawing.Size(445, 27);
             this.textBoxSettingsFolder.TabIndex = 4;
@@ -255,7 +255,7 @@
             // 
             this.buttonBrowseLayoutsFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonBrowseLayoutsFolder.Location = new System.Drawing.Point(669, 371);
-            this.buttonBrowseLayoutsFolder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonBrowseLayoutsFolder.Margin = new System.Windows.Forms.Padding(4);
             this.buttonBrowseLayoutsFolder.Name = "buttonBrowseLayoutsFolder";
             this.buttonBrowseLayoutsFolder.Size = new System.Drawing.Size(94, 29);
             this.buttonBrowseLayoutsFolder.TabIndex = 5;
@@ -270,7 +270,7 @@
             this.comboBoxLayouts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxLayouts.FormattingEnabled = true;
             this.comboBoxLayouts.Location = new System.Drawing.Point(215, 405);
-            this.comboBoxLayouts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxLayouts.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxLayouts.Name = "comboBoxLayouts";
             this.comboBoxLayouts.Size = new System.Drawing.Size(445, 28);
             this.comboBoxLayouts.TabIndex = 6;
@@ -280,7 +280,7 @@
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Location = new System.Drawing.Point(686, 5);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(94, 29);
             this.buttonCancel.TabIndex = 21;
@@ -303,7 +303,7 @@
             // 
             this.checkRestoreWindow.AutoSize = true;
             this.checkRestoreWindow.Location = new System.Drawing.Point(19, 54);
-            this.checkRestoreWindow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkRestoreWindow.Margin = new System.Windows.Forms.Padding(4);
             this.checkRestoreWindow.Name = "checkRestoreWindow";
             this.checkRestoreWindow.Size = new System.Drawing.Size(253, 24);
             this.checkRestoreWindow.TabIndex = 26;
@@ -315,7 +315,7 @@
             // 
             this.checkConstrainPuttyDocking.AutoSize = true;
             this.checkConstrainPuttyDocking.Location = new System.Drawing.Point(95, 96);
-            this.checkConstrainPuttyDocking.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkConstrainPuttyDocking.Margin = new System.Windows.Forms.Padding(4);
             this.checkConstrainPuttyDocking.Name = "checkConstrainPuttyDocking";
             this.checkConstrainPuttyDocking.Size = new System.Drawing.Size(255, 24);
             this.checkConstrainPuttyDocking.TabIndex = 25;
@@ -326,7 +326,7 @@
             // 
             this.checkSingleInstanceMode.AutoSize = true;
             this.checkSingleInstanceMode.Location = new System.Drawing.Point(19, 25);
-            this.checkSingleInstanceMode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkSingleInstanceMode.Margin = new System.Windows.Forms.Padding(4);
             this.checkSingleInstanceMode.Name = "checkSingleInstanceMode";
             this.checkSingleInstanceMode.Size = new System.Drawing.Size(345, 24);
             this.checkSingleInstanceMode.TabIndex = 24;
@@ -339,7 +339,7 @@
             // 
             this.checkExitConfirmation.AutoSize = true;
             this.checkExitConfirmation.Location = new System.Drawing.Point(19, 82);
-            this.checkExitConfirmation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkExitConfirmation.Margin = new System.Windows.Forms.Padding(4);
             this.checkExitConfirmation.Name = "checkExitConfirmation";
             this.checkExitConfirmation.Size = new System.Drawing.Size(144, 24);
             this.checkExitConfirmation.TabIndex = 27;
@@ -351,7 +351,7 @@
             // 
             this.checkExpandTree.AutoSize = true;
             this.checkExpandTree.Location = new System.Drawing.Point(95, 89);
-            this.checkExpandTree.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkExpandTree.Margin = new System.Windows.Forms.Padding(4);
             this.checkExpandTree.Name = "checkExpandTree";
             this.checkExpandTree.Size = new System.Drawing.Size(157, 24);
             this.checkExpandTree.TabIndex = 29;
@@ -363,7 +363,7 @@
             // 
             this.checkMinimizeToTray.AutoSize = true;
             this.checkMinimizeToTray.Location = new System.Drawing.Point(89, 61);
-            this.checkMinimizeToTray.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkMinimizeToTray.Margin = new System.Windows.Forms.Padding(4);
             this.checkMinimizeToTray.Name = "checkMinimizeToTray";
             this.checkMinimizeToTray.Size = new System.Drawing.Size(139, 24);
             this.checkMinimizeToTray.TabIndex = 30;
@@ -375,7 +375,7 @@
             this.textBoxMinttyLocation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxMinttyLocation.Location = new System.Drawing.Point(215, 202);
-            this.textBoxMinttyLocation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxMinttyLocation.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxMinttyLocation.Name = "textBoxMinttyLocation";
             this.textBoxMinttyLocation.Size = new System.Drawing.Size(445, 27);
             this.textBoxMinttyLocation.TabIndex = 31;
@@ -384,7 +384,7 @@
             // 
             this.btnBrowseMintty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBrowseMintty.Location = new System.Drawing.Point(669, 202);
-            this.btnBrowseMintty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBrowseMintty.Margin = new System.Windows.Forms.Padding(4);
             this.btnBrowseMintty.Name = "btnBrowseMintty";
             this.btnBrowseMintty.Size = new System.Drawing.Size(94, 29);
             this.btnBrowseMintty.TabIndex = 32;
@@ -408,7 +408,7 @@
             this.comboBoxTabText.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTabText.FormattingEnabled = true;
             this.comboBoxTabText.Location = new System.Drawing.Point(95, 28);
-            this.comboBoxTabText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxTabText.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxTabText.Name = "comboBoxTabText";
             this.comboBoxTabText.Size = new System.Drawing.Size(342, 28);
             this.comboBoxTabText.TabIndex = 35;
@@ -430,7 +430,7 @@
             this.comboBoxTabSwitching.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTabSwitching.FormattingEnabled = true;
             this.comboBoxTabSwitching.Location = new System.Drawing.Point(95, 61);
-            this.comboBoxTabSwitching.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxTabSwitching.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxTabSwitching.Name = "comboBoxTabSwitching";
             this.comboBoxTabSwitching.Size = new System.Drawing.Size(342, 28);
             this.comboBoxTabSwitching.TabIndex = 37;
@@ -450,7 +450,7 @@
             // 
             this.checkSessionsTreeShowLines.AutoSize = true;
             this.checkSessionsTreeShowLines.Location = new System.Drawing.Point(95, 118);
-            this.checkSessionsTreeShowLines.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkSessionsTreeShowLines.Margin = new System.Windows.Forms.Padding(4);
             this.checkSessionsTreeShowLines.Name = "checkSessionsTreeShowLines";
             this.checkSessionsTreeShowLines.Size = new System.Drawing.Size(101, 24);
             this.checkSessionsTreeShowLines.TabIndex = 36;
@@ -484,7 +484,7 @@
             // 
             this.checkEnableControlTabSwitching.AutoSize = true;
             this.checkEnableControlTabSwitching.Location = new System.Drawing.Point(380, 26);
-            this.checkEnableControlTabSwitching.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkEnableControlTabSwitching.Margin = new System.Windows.Forms.Padding(4);
             this.checkEnableControlTabSwitching.Name = "checkEnableControlTabSwitching";
             this.checkEnableControlTabSwitching.Size = new System.Drawing.Size(254, 24);
             this.checkEnableControlTabSwitching.TabIndex = 28;
@@ -496,7 +496,7 @@
             // 
             this.checkEnableKeyboardShortcuts.AutoSize = true;
             this.checkEnableKeyboardShortcuts.Location = new System.Drawing.Point(380, 55);
-            this.checkEnableKeyboardShortcuts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkEnableKeyboardShortcuts.Margin = new System.Windows.Forms.Padding(4);
             this.checkEnableKeyboardShortcuts.Name = "checkEnableKeyboardShortcuts";
             this.checkEnableKeyboardShortcuts.Size = new System.Drawing.Size(205, 24);
             this.checkEnableKeyboardShortcuts.TabIndex = 29;
@@ -519,7 +519,7 @@
             // 
             this.checkRestrictFloatingWindows.AutoSize = true;
             this.checkRestrictFloatingWindows.Location = new System.Drawing.Point(95, 125);
-            this.checkRestrictFloatingWindows.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkRestrictFloatingWindows.Margin = new System.Windows.Forms.Padding(4);
             this.checkRestrictFloatingWindows.Name = "checkRestrictFloatingWindows";
             this.checkRestrictFloatingWindows.Size = new System.Drawing.Size(198, 24);
             this.checkRestrictFloatingWindows.TabIndex = 39;
@@ -531,7 +531,7 @@
             // 
             this.checkSessionsShowSearch.AutoSize = true;
             this.checkSessionsShowSearch.Location = new System.Drawing.Point(95, 175);
-            this.checkSessionsShowSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkSessionsShowSearch.Margin = new System.Windows.Forms.Padding(4);
             this.checkSessionsShowSearch.Name = "checkSessionsShowSearch";
             this.checkSessionsShowSearch.Size = new System.Drawing.Size(113, 24);
             this.checkSessionsShowSearch.TabIndex = 42;
@@ -543,7 +543,7 @@
             // 
             this.checkBoxCheckForUpdates.AutoSize = true;
             this.checkBoxCheckForUpdates.Location = new System.Drawing.Point(380, 84);
-            this.checkBoxCheckForUpdates.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxCheckForUpdates.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxCheckForUpdates.Name = "checkBoxCheckForUpdates";
             this.checkBoxCheckForUpdates.Size = new System.Drawing.Size(244, 24);
             this.checkBoxCheckForUpdates.TabIndex = 30;
@@ -555,7 +555,7 @@
             // 
             this.checkSessionTreeFoldersFirst.AutoSize = true;
             this.checkSessionTreeFoldersFirst.Location = new System.Drawing.Point(95, 146);
-            this.checkSessionTreeFoldersFirst.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkSessionTreeFoldersFirst.Margin = new System.Windows.Forms.Padding(4);
             this.checkSessionTreeFoldersFirst.Name = "checkSessionTreeFoldersFirst";
             this.checkSessionTreeFoldersFirst.Size = new System.Drawing.Size(146, 24);
             this.checkSessionTreeFoldersFirst.TabIndex = 43;
@@ -567,7 +567,7 @@
             // 
             this.checkBoxPersistTsHistory.AutoSize = true;
             this.checkBoxPersistTsHistory.Location = new System.Drawing.Point(16, 31);
-            this.checkBoxPersistTsHistory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxPersistTsHistory.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxPersistTsHistory.Name = "checkBoxPersistTsHistory";
             this.checkBoxPersistTsHistory.Size = new System.Drawing.Size(110, 24);
             this.checkBoxPersistTsHistory.TabIndex = 0;
@@ -578,7 +578,7 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(160, 31);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(60, 27);
             this.numericUpDown1.TabIndex = 1;
@@ -594,7 +594,7 @@
             // 
             this.checkFilterWhileTyping.AutoSize = true;
             this.checkFilterWhileTyping.Location = new System.Drawing.Point(260, 175);
-            this.checkFilterWhileTyping.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkFilterWhileTyping.Margin = new System.Windows.Forms.Padding(4);
             this.checkFilterWhileTyping.Name = "checkFilterWhileTyping";
             this.checkFilterWhileTyping.Size = new System.Drawing.Size(149, 24);
             this.checkFilterWhileTyping.TabIndex = 44;
@@ -617,7 +617,7 @@
             // 
             this.checkBoxAllowPuttyPWArg.AutoSize = true;
             this.checkBoxAllowPuttyPWArg.Location = new System.Drawing.Point(18, 24);
-            this.checkBoxAllowPuttyPWArg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxAllowPuttyPWArg.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxAllowPuttyPWArg.Name = "checkBoxAllowPuttyPWArg";
             this.checkBoxAllowPuttyPWArg.Size = new System.Drawing.Size(366, 24);
             this.checkBoxAllowPuttyPWArg.TabIndex = 0;
@@ -626,11 +626,47 @@
         "nd line. It is Recommended you do NOT enable this");
             this.checkBoxAllowPuttyPWArg.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(96, 273);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(103, 20);
+            this.label4.TabIndex = 53;
+            this.label4.Text = "Default layout";
+            this.toolTip.SetToolTip(this.label4, "Determines which set of sessions, if any, to restore at startup");
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(2, 70);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(77, 20);
+            this.label7.TabIndex = 55;
+            this.label7.Text = "mintty.exe";
+            this.toolTip.SetToolTip(this.label7, "Alternative to putty-cyg for local access");
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(23, 239);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(176, 20);
+            this.label3.TabIndex = 52;
+            this.label3.Text = "Settings folder (required)";
+            this.toolTip.SetToolTip(this.label3, "Where sessions and layout config files are stored");
+            // 
             // checkConfirmTabClose
             // 
             this.checkConfirmTabClose.AutoSize = true;
             this.checkConfirmTabClose.Location = new System.Drawing.Point(95, 154);
-            this.checkConfirmTabClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkConfirmTabClose.Margin = new System.Windows.Forms.Padding(4);
             this.checkConfirmTabClose.Name = "checkConfirmTabClose";
             this.checkConfirmTabClose.Size = new System.Drawing.Size(347, 24);
             this.checkConfirmTabClose.TabIndex = 38;
@@ -645,7 +681,7 @@
             this.tabControl.Controls.Add(this.tabPageAdvanced);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Location = new System.Drawing.Point(6, 6);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(780, 515);
@@ -674,9 +710,9 @@
             this.tabPageGeneral.Controls.Add(this.comboBoxLayouts);
             this.tabPageGeneral.Controls.Add(this.panel1);
             this.tabPageGeneral.Location = new System.Drawing.Point(4, 29);
-            this.tabPageGeneral.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageGeneral.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageGeneral.Name = "tabPageGeneral";
-            this.tabPageGeneral.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageGeneral.Padding = new System.Windows.Forms.Padding(4);
             this.tabPageGeneral.Size = new System.Drawing.Size(772, 482);
             this.tabPageGeneral.TabIndex = 0;
             this.tabPageGeneral.Text = "Paths";
@@ -687,7 +723,7 @@
             this.textBoxPuttyDefaultParameters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPuttyDefaultParameters.Location = new System.Drawing.Point(215, 439);
-            this.textBoxPuttyDefaultParameters.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPuttyDefaultParameters.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPuttyDefaultParameters.Name = "textBoxPuttyDefaultParameters";
             this.textBoxPuttyDefaultParameters.Size = new System.Drawing.Size(445, 27);
             this.textBoxPuttyDefaultParameters.TabIndex = 40;
@@ -696,7 +732,7 @@
             // 
             this.buttonBrowseFilezilla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonBrowseFilezilla.Location = new System.Drawing.Point(669, 270);
-            this.buttonBrowseFilezilla.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonBrowseFilezilla.Margin = new System.Windows.Forms.Padding(4);
             this.buttonBrowseFilezilla.Name = "buttonBrowseFilezilla";
             this.buttonBrowseFilezilla.Size = new System.Drawing.Size(94, 29);
             this.buttonBrowseFilezilla.TabIndex = 38;
@@ -709,7 +745,7 @@
             this.textBoxFilezillaLocation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxFilezillaLocation.Location = new System.Drawing.Point(215, 270);
-            this.textBoxFilezillaLocation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxFilezillaLocation.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxFilezillaLocation.Name = "textBoxFilezillaLocation";
             this.textBoxFilezillaLocation.Size = new System.Drawing.Size(445, 27);
             this.textBoxFilezillaLocation.TabIndex = 37;
@@ -719,7 +755,7 @@
             // 
             this.btnBrowseVNC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBrowseVNC.Location = new System.Drawing.Point(669, 304);
-            this.btnBrowseVNC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBrowseVNC.Margin = new System.Windows.Forms.Padding(4);
             this.btnBrowseVNC.Name = "btnBrowseVNC";
             this.btnBrowseVNC.Size = new System.Drawing.Size(94, 29);
             this.btnBrowseVNC.TabIndex = 32;
@@ -732,7 +768,7 @@
             this.textBoxVNCLocation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxVNCLocation.Location = new System.Drawing.Point(215, 304);
-            this.textBoxVNCLocation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxVNCLocation.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxVNCLocation.Name = "textBoxVNCLocation";
             this.textBoxVNCLocation.Size = new System.Drawing.Size(445, 27);
             this.textBoxVNCLocation.TabIndex = 31;
@@ -741,7 +777,7 @@
             // 
             this.btnBrowseRDP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBrowseRDP.Location = new System.Drawing.Point(669, 338);
-            this.btnBrowseRDP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBrowseRDP.Margin = new System.Windows.Forms.Padding(4);
             this.btnBrowseRDP.Name = "btnBrowseRDP";
             this.btnBrowseRDP.Size = new System.Drawing.Size(94, 29);
             this.btnBrowseRDP.TabIndex = 32;
@@ -754,7 +790,7 @@
             this.textBoxRDPLocation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxRDPLocation.Location = new System.Drawing.Point(215, 338);
-            this.textBoxRDPLocation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxRDPLocation.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxRDPLocation.Name = "textBoxRDPLocation";
             this.textBoxRDPLocation.Size = new System.Drawing.Size(445, 27);
             this.textBoxRDPLocation.TabIndex = 31;
@@ -763,7 +799,7 @@
             // 
             this.buttonBrowseWinSCP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonBrowseWinSCP.Location = new System.Drawing.Point(669, 236);
-            this.buttonBrowseWinSCP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonBrowseWinSCP.Margin = new System.Windows.Forms.Padding(4);
             this.buttonBrowseWinSCP.Name = "buttonBrowseWinSCP";
             this.buttonBrowseWinSCP.Size = new System.Drawing.Size(94, 29);
             this.buttonBrowseWinSCP.TabIndex = 35;
@@ -776,487 +812,11 @@
             this.textBoxWinSCPLocation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxWinSCPLocation.Location = new System.Drawing.Point(215, 236);
-            this.textBoxWinSCPLocation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxWinSCPLocation.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxWinSCPLocation.Name = "textBoxWinSCPLocation";
             this.textBoxWinSCPLocation.Size = new System.Drawing.Size(445, 27);
             this.textBoxWinSCPLocation.TabIndex = 34;
             this.textBoxWinSCPLocation.DoubleClick += new System.EventHandler(this.textBoxWinSCPLocation_DoubleClick);
-            // 
-            // tabPageGUI
-            // 
-            this.tabPageGUI.Controls.Add(this.groupBox10);
-            this.tabPageGUI.Controls.Add(this.groupBox8);
-            this.tabPageGUI.Controls.Add(this.groupBox7);
-            this.tabPageGUI.Controls.Add(this.groupBox6);
-            this.tabPageGUI.Controls.Add(this.groupBox3);
-            this.tabPageGUI.Controls.Add(this.groupBox2);
-            this.tabPageGUI.Controls.Add(this.groupBox1);
-            this.tabPageGUI.Location = new System.Drawing.Point(4, 29);
-            this.tabPageGUI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPageGUI.Name = "tabPageGUI";
-            this.tabPageGUI.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPageGUI.Size = new System.Drawing.Size(772, 482);
-            this.tabPageGUI.TabIndex = 1;
-            this.tabPageGUI.Text = "GUI";
-            this.tabPageGUI.UseVisualStyleBackColor = true;
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.optDarkBlueTheme);
-            this.groupBox10.Controls.Add(this.optLightTheme);
-            this.groupBox10.Controls.Add(this.optDarkTheme);
-            this.groupBox10.Location = new System.Drawing.Point(4, 4);
-            this.groupBox10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox10.Size = new System.Drawing.Size(444, 52);
-            this.groupBox10.TabIndex = 44;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Interface theme";
-            // 
-            // optDarkBlueTheme
-            // 
-            this.optDarkBlueTheme.AutoSize = true;
-            this.optDarkBlueTheme.Location = new System.Drawing.Point(154, 20);
-            this.optDarkBlueTheme.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.optDarkBlueTheme.Name = "optDarkBlueTheme";
-            this.optDarkBlueTheme.Size = new System.Drawing.Size(140, 24);
-            this.optDarkBlueTheme.TabIndex = 2;
-            this.optDarkBlueTheme.TabStop = true;
-            this.optDarkBlueTheme.Text = "Dark blue theme";
-            this.optDarkBlueTheme.UseVisualStyleBackColor = true;
-            // 
-            // optLightTheme
-            // 
-            this.optLightTheme.AutoSize = true;
-            this.optLightTheme.Location = new System.Drawing.Point(325, 20);
-            this.optLightTheme.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.optLightTheme.Name = "optLightTheme";
-            this.optLightTheme.Size = new System.Drawing.Size(109, 24);
-            this.optLightTheme.TabIndex = 1;
-            this.optLightTheme.TabStop = true;
-            this.optLightTheme.Text = "Light theme";
-            this.optLightTheme.UseVisualStyleBackColor = true;
-            // 
-            // optDarkTheme
-            // 
-            this.optDarkTheme.AutoSize = true;
-            this.optDarkTheme.Location = new System.Drawing.Point(18, 20);
-            this.optDarkTheme.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.optDarkTheme.Name = "optDarkTheme";
-            this.optDarkTheme.Size = new System.Drawing.Size(107, 24);
-            this.optDarkTheme.TabIndex = 0;
-            this.optDarkTheme.TabStop = true;
-            this.optDarkTheme.Text = "Dark theme";
-            this.optDarkTheme.UseVisualStyleBackColor = true;
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.label20);
-            this.groupBox8.Controls.Add(this.label19);
-            this.groupBox8.Controls.Add(this.numericUpDown1);
-            this.groupBox8.Controls.Add(this.checkBoxPersistTsHistory);
-            this.groupBox8.Location = new System.Drawing.Point(459, 188);
-            this.groupBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox8.Size = new System.Drawing.Size(304, 69);
-            this.groupBox8.TabIndex = 43;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Command bar";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(228, 32);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(39, 20);
-            this.label20.TabIndex = 3;
-            this.label20.Text = "days";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(125, 32);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(28, 20);
-            this.label19.TabIndex = 2;
-            this.label19.Text = "for";
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.textBoxRootDirPrefix);
-            this.groupBox7.Controls.Add(this.label17);
-            this.groupBox7.Controls.Add(this.textBoxHomeDirPrefix);
-            this.groupBox7.Controls.Add(this.label16);
-            this.groupBox7.Location = new System.Drawing.Point(459, 60);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox7.Size = new System.Drawing.Size(304, 120);
-            this.groupBox7.TabIndex = 42;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "File transfer options";
-            // 
-            // textBoxRootDirPrefix
-            // 
-            this.textBoxRootDirPrefix.Location = new System.Drawing.Point(166, 66);
-            this.textBoxRootDirPrefix.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBoxRootDirPrefix.Name = "textBoxRootDirPrefix";
-            this.textBoxRootDirPrefix.Size = new System.Drawing.Size(124, 27);
-            this.textBoxRootDirPrefix.TabIndex = 3;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(12, 70);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(149, 20);
-            this.label17.TabIndex = 2;
-            this.label17.Text = "Root directory prefix:";
-            // 
-            // textBoxHomeDirPrefix
-            // 
-            this.textBoxHomeDirPrefix.Location = new System.Drawing.Point(166, 24);
-            this.textBoxHomeDirPrefix.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBoxHomeDirPrefix.Name = "textBoxHomeDirPrefix";
-            this.textBoxHomeDirPrefix.Size = new System.Drawing.Size(124, 27);
-            this.textBoxHomeDirPrefix.TabIndex = 1;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(12, 31);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(158, 20);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Home directory prefix:";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox6.Controls.Add(this.checkPuttyEnableNewSessionMenu);
-            this.groupBox6.Controls.Add(this.label18);
-            this.groupBox6.Location = new System.Drawing.Point(459, 4);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox6.Size = new System.Drawing.Size(304, 52);
-            this.groupBox6.TabIndex = 41;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Session panel";
-            // 
-            // checkPuttyEnableNewSessionMenu
-            // 
-            this.checkPuttyEnableNewSessionMenu.AutoSize = true;
-            this.checkPuttyEnableNewSessionMenu.Location = new System.Drawing.Point(89, 20);
-            this.checkPuttyEnableNewSessionMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.checkPuttyEnableNewSessionMenu.Name = "checkPuttyEnableNewSessionMenu";
-            this.checkPuttyEnableNewSessionMenu.Size = new System.Drawing.Size(199, 24);
-            this.checkPuttyEnableNewSessionMenu.TabIndex = 37;
-            this.checkPuttyEnableNewSessionMenu.Text = "Enable new session menu";
-            this.checkPuttyEnableNewSessionMenu.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.checkShowDocumentIcons);
-            this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.checkQuickSelectorCaseSensitiveSearch);
-            this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.numericUpDownOpacity);
-            this.groupBox3.Controls.Add(this.checkMinimizeToTray);
-            this.groupBox3.Location = new System.Drawing.Point(459, 264);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox3.Size = new System.Drawing.Size(304, 196);
-            this.groupBox3.TabIndex = 40;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Misc";
-            // 
-            // checkShowDocumentIcons
-            // 
-            this.checkShowDocumentIcons.AutoSize = true;
-            this.checkShowDocumentIcons.Location = new System.Drawing.Point(89, 90);
-            this.checkShowDocumentIcons.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.checkShowDocumentIcons.Name = "checkShowDocumentIcons";
-            this.checkShowDocumentIcons.Size = new System.Drawing.Size(176, 24);
-            this.checkShowDocumentIcons.TabIndex = 39;
-            this.checkShowDocumentIcons.Text = "Show document icons";
-            this.checkShowDocumentIcons.UseVisualStyleBackColor = true;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(12, 121);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(148, 20);
-            this.label15.TabIndex = 38;
-            this.label15.Text = "Open/Switch session:";
-            // 
-            // checkQuickSelectorCaseSensitiveSearch
-            // 
-            this.checkQuickSelectorCaseSensitiveSearch.AutoSize = true;
-            this.checkQuickSelectorCaseSensitiveSearch.Location = new System.Drawing.Point(89, 149);
-            this.checkQuickSelectorCaseSensitiveSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.checkQuickSelectorCaseSensitiveSearch.Name = "checkQuickSelectorCaseSensitiveSearch";
-            this.checkQuickSelectorCaseSensitiveSearch.Size = new System.Drawing.Size(170, 24);
-            this.checkQuickSelectorCaseSensitiveSearch.TabIndex = 37;
-            this.checkQuickSelectorCaseSensitiveSearch.Text = "Case-sensitive search";
-            this.checkQuickSelectorCaseSensitiveSearch.UseVisualStyleBackColor = true;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(12, 61);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(49, 20);
-            this.label13.TabIndex = 36;
-            this.label13.Text = "Other:";
-            // 
-            // numericUpDownOpacity
-            // 
-            this.numericUpDownOpacity.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.numericUpDownOpacity.Location = new System.Drawing.Point(89, 20);
-            this.numericUpDownOpacity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.numericUpDownOpacity.Minimum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.numericUpDownOpacity.Name = "numericUpDownOpacity";
-            this.numericUpDownOpacity.Size = new System.Drawing.Size(150, 27);
-            this.numericUpDownOpacity.TabIndex = 32;
-            this.numericUpDownOpacity.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.checkRestrictFloatingWindows);
-            this.groupBox2.Controls.Add(this.checkConfirmTabClose);
-            this.groupBox2.Controls.Add(this.checkConstrainPuttyDocking);
-            this.groupBox2.Controls.Add(this.comboBoxTabText);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.comboBoxTabSwitching);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Location = new System.Drawing.Point(4, 275);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(444, 185);
-            this.groupBox2.TabIndex = 39;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Tabs and docking";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.checkFilterWhileTyping);
-            this.groupBox1.Controls.Add(this.checkSessionTreeFoldersFirst);
-            this.groupBox1.Controls.Add(this.checkSessionsShowSearch);
-            this.groupBox1.Controls.Add(this.comboSearchMode);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.btnFont);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.checkSessionsTreeShowLines);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.checkExpandTree);
-            this.groupBox1.Location = new System.Drawing.Point(4, 60);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(444, 208);
-            this.groupBox1.TabIndex = 38;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Session tree";
-            // 
-            // comboSearchMode
-            // 
-            this.comboSearchMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboSearchMode.FormattingEnabled = true;
-            this.comboSearchMode.Location = new System.Drawing.Point(95, 55);
-            this.comboSearchMode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboSearchMode.Name = "comboSearchMode";
-            this.comboSearchMode.Size = new System.Drawing.Size(342, 28);
-            this.comboSearchMode.TabIndex = 41;
-            // 
-            // btnFont
-            // 
-            this.btnFont.Location = new System.Drawing.Point(95, 20);
-            this.btnFont.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnFont.Name = "btnFont";
-            this.btnFont.Size = new System.Drawing.Size(342, 29);
-            this.btnFont.TabIndex = 39;
-            this.btnFont.Text = "Choose font";
-            this.btnFont.UseVisualStyleBackColor = true;
-            this.btnFont.Click += new System.EventHandler(this.btnFont_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(14, 89);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(64, 20);
-            this.label11.TabIndex = 37;
-            this.label11.Text = "Options:";
-            // 
-            // tabPageShortcuts
-            // 
-            this.tabPageShortcuts.Controls.Add(this.dataGridViewShortcuts);
-            this.tabPageShortcuts.Location = new System.Drawing.Point(4, 29);
-            this.tabPageShortcuts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPageShortcuts.Name = "tabPageShortcuts";
-            this.tabPageShortcuts.Size = new System.Drawing.Size(772, 482);
-            this.tabPageShortcuts.TabIndex = 3;
-            this.tabPageShortcuts.Text = "Shortcuts";
-            this.tabPageShortcuts.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewShortcuts
-            // 
-            this.dataGridViewShortcuts.AllowUserToAddRows = false;
-            this.dataGridViewShortcuts.AllowUserToDeleteRows = false;
-            this.dataGridViewShortcuts.AutoGenerateColumns = false;
-            this.dataGridViewShortcuts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewShortcuts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nameDataGridViewTextBoxColumn,
-            this.keyDataGridViewTextBoxColumn,
-            this.modifiersDataGridViewTextBoxColumn,
-            this.shortcutStringDataGridViewTextBoxColumn,
-            this.colEdit,
-            this.colClear});
-            this.dataGridViewShortcuts.DataSource = this.keyboardShortcutBindingSource;
-            this.dataGridViewShortcuts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewShortcuts.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewShortcuts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridViewShortcuts.Name = "dataGridViewShortcuts";
-            this.dataGridViewShortcuts.ReadOnly = true;
-            this.dataGridViewShortcuts.RowHeadersWidth = 51;
-            this.dataGridViewShortcuts.Size = new System.Drawing.Size(772, 486);
-            this.dataGridViewShortcuts.TabIndex = 0;
-            this.dataGridViewShortcuts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewShortcuts_CellClick);
-            // 
-            // colEdit
-            // 
-            this.colEdit.HeaderText = "";
-            this.colEdit.MinimumWidth = 6;
-            this.colEdit.Name = "colEdit";
-            this.colEdit.ReadOnly = true;
-            this.colEdit.Text = "Edit";
-            this.colEdit.UseColumnTextForButtonValue = true;
-            this.colEdit.Width = 50;
-            // 
-            // colClear
-            // 
-            this.colClear.HeaderText = "";
-            this.colClear.MinimumWidth = 6;
-            this.colClear.Name = "colClear";
-            this.colClear.ReadOnly = true;
-            this.colClear.Text = "Clear";
-            this.colClear.UseColumnTextForButtonValue = true;
-            this.colClear.Width = 50;
-            // 
-            // tabPageAdvanced
-            // 
-            this.tabPageAdvanced.Controls.Add(this.groupBox9);
-            this.tabPageAdvanced.Controls.Add(this.groupBox5);
-            this.tabPageAdvanced.Controls.Add(this.groupBox4);
-            this.tabPageAdvanced.Location = new System.Drawing.Point(4, 29);
-            this.tabPageAdvanced.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPageAdvanced.Name = "tabPageAdvanced";
-            this.tabPageAdvanced.Size = new System.Drawing.Size(772, 482);
-            this.tabPageAdvanced.TabIndex = 2;
-            this.tabPageAdvanced.Text = "Advanced";
-            this.tabPageAdvanced.UseVisualStyleBackColor = true;
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.checkBoxAllowPuttyPWArg);
-            this.groupBox9.Location = new System.Drawing.Point(4, 126);
-            this.groupBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox9.Size = new System.Drawing.Size(762, 60);
-            this.groupBox9.TabIndex = 45;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Security";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox5.Controls.Add(this.comboBoxActivatorType);
-            this.groupBox5.Controls.Add(this.label6);
-            this.groupBox5.Location = new System.Drawing.Point(4, 194);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox5.Size = new System.Drawing.Size(762, 66);
-            this.groupBox5.TabIndex = 29;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Focus";
-            // 
-            // comboBoxActivatorType
-            // 
-            this.comboBoxActivatorType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxActivatorType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxActivatorType.FormattingEnabled = true;
-            this.comboBoxActivatorType.Location = new System.Drawing.Point(99, 21);
-            this.comboBoxActivatorType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBoxActivatorType.Name = "comboBoxActivatorType";
-            this.comboBoxActivatorType.Size = new System.Drawing.Size(655, 28);
-            this.comboBoxActivatorType.TabIndex = 1;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox4.Controls.Add(this.checkBoxCheckForUpdates);
-            this.groupBox4.Controls.Add(this.checkEnableKeyboardShortcuts);
-            this.groupBox4.Controls.Add(this.checkEnableControlTabSwitching);
-            this.groupBox4.Controls.Add(this.checkSingleInstanceMode);
-            this.groupBox4.Controls.Add(this.checkExitConfirmation);
-            this.groupBox4.Controls.Add(this.checkRestoreWindow);
-            this.groupBox4.Location = new System.Drawing.Point(4, 4);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox4.Size = new System.Drawing.Size(762, 115);
-            this.groupBox4.TabIndex = 28;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Application behavior";
-            // 
-            // panelBottom
-            // 
-            this.panelBottom.Controls.Add(this.buttonCancel);
-            this.panelBottom.Controls.Add(this.buttonOk);
-            this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottom.Location = new System.Drawing.Point(6, 521);
-            this.panelBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panelBottom.Name = "panelBottom";
-            this.panelBottom.Size = new System.Drawing.Size(780, 34);
-            this.panelBottom.TabIndex = 39;
             // 
             // panel1
             // 
@@ -1360,7 +920,7 @@
             // kittyLink
             // 
             this.kittyLink.AutoSize = true;
-            this.kittyLink.Location = new System.Drawing.Point(46, 4);
+            this.kittyLink.Location = new System.Drawing.Point(135, 4);
             this.kittyLink.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.kittyLink.Name = "kittyLink";
             this.kittyLink.Size = new System.Drawing.Size(63, 20);
@@ -1371,7 +931,7 @@
             // puttyLink
             // 
             this.puttyLink.AutoSize = true;
-            this.puttyLink.Location = new System.Drawing.Point(130, 4);
+            this.puttyLink.Location = new System.Drawing.Point(41, 4);
             this.puttyLink.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.puttyLink.Name = "puttyLink";
             this.puttyLink.Size = new System.Drawing.Size(69, 20);
@@ -1401,52 +961,390 @@
             this.labelRDP.TabIndex = 54;
             this.labelRDP.Text = "RDP client";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(96, 273);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 20);
-            this.label4.TabIndex = 53;
-            this.label4.Text = "Default layout";
-            this.toolTip.SetToolTip(this.label4, "Determines which set of sessions, if any, to restore at startup");
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(108, 4);
+            this.label1.Location = new System.Drawing.Point(111, 4);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(23, 20);
             this.label1.TabIndex = 51;
             this.label1.Text = "or";
             // 
-            // label7
+            // tabPageGUI
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(2, 70);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 20);
-            this.label7.TabIndex = 55;
-            this.label7.Text = "mintty.exe";
-            this.toolTip.SetToolTip(this.label7, "Alternative to putty-cyg for local access");
+            this.tabPageGUI.Controls.Add(this.groupBox10);
+            this.tabPageGUI.Controls.Add(this.groupBox8);
+            this.tabPageGUI.Controls.Add(this.groupBox7);
+            this.tabPageGUI.Controls.Add(this.groupBox6);
+            this.tabPageGUI.Controls.Add(this.groupBox3);
+            this.tabPageGUI.Controls.Add(this.groupBox2);
+            this.tabPageGUI.Controls.Add(this.groupBox1);
+            this.tabPageGUI.Location = new System.Drawing.Point(4, 29);
+            this.tabPageGUI.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPageGUI.Name = "tabPageGUI";
+            this.tabPageGUI.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPageGUI.Size = new System.Drawing.Size(772, 482);
+            this.tabPageGUI.TabIndex = 1;
+            this.tabPageGUI.Text = "GUI";
+            this.tabPageGUI.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // groupBox10
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(23, 239);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(176, 20);
-            this.label3.TabIndex = 52;
-            this.label3.Text = "Settings folder (required)";
-            this.toolTip.SetToolTip(this.label3, "Where sessions and layout config files are stored");
+            this.groupBox10.Controls.Add(this.optDarkBlueTheme);
+            this.groupBox10.Controls.Add(this.optLightTheme);
+            this.groupBox10.Controls.Add(this.optDarkTheme);
+            this.groupBox10.Location = new System.Drawing.Point(4, 4);
+            this.groupBox10.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox10.Size = new System.Drawing.Size(444, 52);
+            this.groupBox10.TabIndex = 44;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Interface theme";
+            // 
+            // optDarkBlueTheme
+            // 
+            this.optDarkBlueTheme.AutoSize = true;
+            this.optDarkBlueTheme.Location = new System.Drawing.Point(154, 20);
+            this.optDarkBlueTheme.Margin = new System.Windows.Forms.Padding(4);
+            this.optDarkBlueTheme.Name = "optDarkBlueTheme";
+            this.optDarkBlueTheme.Size = new System.Drawing.Size(140, 24);
+            this.optDarkBlueTheme.TabIndex = 2;
+            this.optDarkBlueTheme.TabStop = true;
+            this.optDarkBlueTheme.Text = "Dark blue theme";
+            this.optDarkBlueTheme.UseVisualStyleBackColor = true;
+            // 
+            // optLightTheme
+            // 
+            this.optLightTheme.AutoSize = true;
+            this.optLightTheme.Location = new System.Drawing.Point(325, 20);
+            this.optLightTheme.Margin = new System.Windows.Forms.Padding(4);
+            this.optLightTheme.Name = "optLightTheme";
+            this.optLightTheme.Size = new System.Drawing.Size(109, 24);
+            this.optLightTheme.TabIndex = 1;
+            this.optLightTheme.TabStop = true;
+            this.optLightTheme.Text = "Light theme";
+            this.optLightTheme.UseVisualStyleBackColor = true;
+            // 
+            // optDarkTheme
+            // 
+            this.optDarkTheme.AutoSize = true;
+            this.optDarkTheme.Location = new System.Drawing.Point(18, 20);
+            this.optDarkTheme.Margin = new System.Windows.Forms.Padding(4);
+            this.optDarkTheme.Name = "optDarkTheme";
+            this.optDarkTheme.Size = new System.Drawing.Size(107, 24);
+            this.optDarkTheme.TabIndex = 0;
+            this.optDarkTheme.TabStop = true;
+            this.optDarkTheme.Text = "Dark theme";
+            this.optDarkTheme.UseVisualStyleBackColor = true;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.label20);
+            this.groupBox8.Controls.Add(this.label19);
+            this.groupBox8.Controls.Add(this.numericUpDown1);
+            this.groupBox8.Controls.Add(this.checkBoxPersistTsHistory);
+            this.groupBox8.Location = new System.Drawing.Point(459, 188);
+            this.groupBox8.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox8.Size = new System.Drawing.Size(304, 69);
+            this.groupBox8.TabIndex = 43;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Command bar";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(228, 32);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(39, 20);
+            this.label20.TabIndex = 3;
+            this.label20.Text = "days";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(125, 32);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(28, 20);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "for";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.textBoxRootDirPrefix);
+            this.groupBox7.Controls.Add(this.label17);
+            this.groupBox7.Controls.Add(this.textBoxHomeDirPrefix);
+            this.groupBox7.Controls.Add(this.label16);
+            this.groupBox7.Location = new System.Drawing.Point(459, 60);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox7.Size = new System.Drawing.Size(304, 120);
+            this.groupBox7.TabIndex = 42;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "File transfer options";
+            // 
+            // textBoxRootDirPrefix
+            // 
+            this.textBoxRootDirPrefix.Location = new System.Drawing.Point(166, 66);
+            this.textBoxRootDirPrefix.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxRootDirPrefix.Name = "textBoxRootDirPrefix";
+            this.textBoxRootDirPrefix.Size = new System.Drawing.Size(124, 27);
+            this.textBoxRootDirPrefix.TabIndex = 3;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(12, 70);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(149, 20);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "Root directory prefix:";
+            // 
+            // textBoxHomeDirPrefix
+            // 
+            this.textBoxHomeDirPrefix.Location = new System.Drawing.Point(166, 24);
+            this.textBoxHomeDirPrefix.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxHomeDirPrefix.Name = "textBoxHomeDirPrefix";
+            this.textBoxHomeDirPrefix.Size = new System.Drawing.Size(124, 27);
+            this.textBoxHomeDirPrefix.TabIndex = 1;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(12, 31);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(158, 20);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Home directory prefix:";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox6.Controls.Add(this.checkPuttyEnableNewSessionMenu);
+            this.groupBox6.Controls.Add(this.label18);
+            this.groupBox6.Location = new System.Drawing.Point(459, 4);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox6.Size = new System.Drawing.Size(304, 52);
+            this.groupBox6.TabIndex = 41;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Session panel";
+            // 
+            // checkPuttyEnableNewSessionMenu
+            // 
+            this.checkPuttyEnableNewSessionMenu.AutoSize = true;
+            this.checkPuttyEnableNewSessionMenu.Location = new System.Drawing.Point(89, 20);
+            this.checkPuttyEnableNewSessionMenu.Margin = new System.Windows.Forms.Padding(4);
+            this.checkPuttyEnableNewSessionMenu.Name = "checkPuttyEnableNewSessionMenu";
+            this.checkPuttyEnableNewSessionMenu.Size = new System.Drawing.Size(199, 24);
+            this.checkPuttyEnableNewSessionMenu.TabIndex = 37;
+            this.checkPuttyEnableNewSessionMenu.Text = "Enable new session menu";
+            this.checkPuttyEnableNewSessionMenu.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.checkShowDocumentIcons);
+            this.groupBox3.Controls.Add(this.label15);
+            this.groupBox3.Controls.Add(this.checkQuickSelectorCaseSensitiveSearch);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Controls.Add(this.numericUpDownOpacity);
+            this.groupBox3.Controls.Add(this.checkMinimizeToTray);
+            this.groupBox3.Location = new System.Drawing.Point(459, 264);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Size = new System.Drawing.Size(304, 196);
+            this.groupBox3.TabIndex = 40;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Misc";
+            // 
+            // checkShowDocumentIcons
+            // 
+            this.checkShowDocumentIcons.AutoSize = true;
+            this.checkShowDocumentIcons.Location = new System.Drawing.Point(89, 90);
+            this.checkShowDocumentIcons.Margin = new System.Windows.Forms.Padding(4);
+            this.checkShowDocumentIcons.Name = "checkShowDocumentIcons";
+            this.checkShowDocumentIcons.Size = new System.Drawing.Size(176, 24);
+            this.checkShowDocumentIcons.TabIndex = 39;
+            this.checkShowDocumentIcons.Text = "Show document icons";
+            this.checkShowDocumentIcons.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(12, 121);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(148, 20);
+            this.label15.TabIndex = 38;
+            this.label15.Text = "Open/Switch session:";
+            // 
+            // checkQuickSelectorCaseSensitiveSearch
+            // 
+            this.checkQuickSelectorCaseSensitiveSearch.AutoSize = true;
+            this.checkQuickSelectorCaseSensitiveSearch.Location = new System.Drawing.Point(89, 149);
+            this.checkQuickSelectorCaseSensitiveSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.checkQuickSelectorCaseSensitiveSearch.Name = "checkQuickSelectorCaseSensitiveSearch";
+            this.checkQuickSelectorCaseSensitiveSearch.Size = new System.Drawing.Size(170, 24);
+            this.checkQuickSelectorCaseSensitiveSearch.TabIndex = 37;
+            this.checkQuickSelectorCaseSensitiveSearch.Text = "Case-sensitive search";
+            this.checkQuickSelectorCaseSensitiveSearch.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(12, 61);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(49, 20);
+            this.label13.TabIndex = 36;
+            this.label13.Text = "Other:";
+            // 
+            // numericUpDownOpacity
+            // 
+            this.numericUpDownOpacity.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numericUpDownOpacity.Location = new System.Drawing.Point(89, 20);
+            this.numericUpDownOpacity.Margin = new System.Windows.Forms.Padding(4);
+            this.numericUpDownOpacity.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numericUpDownOpacity.Name = "numericUpDownOpacity";
+            this.numericUpDownOpacity.Size = new System.Drawing.Size(150, 27);
+            this.numericUpDownOpacity.TabIndex = 32;
+            this.numericUpDownOpacity.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.checkRestrictFloatingWindows);
+            this.groupBox2.Controls.Add(this.checkConfirmTabClose);
+            this.groupBox2.Controls.Add(this.checkConstrainPuttyDocking);
+            this.groupBox2.Controls.Add(this.comboBoxTabText);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.comboBoxTabSwitching);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Location = new System.Drawing.Point(4, 275);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(444, 185);
+            this.groupBox2.TabIndex = 39;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Tabs and docking";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.checkFilterWhileTyping);
+            this.groupBox1.Controls.Add(this.checkSessionTreeFoldersFirst);
+            this.groupBox1.Controls.Add(this.checkSessionsShowSearch);
+            this.groupBox1.Controls.Add(this.comboSearchMode);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.btnFont);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.checkSessionsTreeShowLines);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.checkExpandTree);
+            this.groupBox1.Location = new System.Drawing.Point(4, 60);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(444, 208);
+            this.groupBox1.TabIndex = 38;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Session tree";
+            // 
+            // comboSearchMode
+            // 
+            this.comboSearchMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboSearchMode.FormattingEnabled = true;
+            this.comboSearchMode.Location = new System.Drawing.Point(95, 55);
+            this.comboSearchMode.Margin = new System.Windows.Forms.Padding(4);
+            this.comboSearchMode.Name = "comboSearchMode";
+            this.comboSearchMode.Size = new System.Drawing.Size(342, 28);
+            this.comboSearchMode.TabIndex = 41;
+            // 
+            // btnFont
+            // 
+            this.btnFont.Location = new System.Drawing.Point(95, 20);
+            this.btnFont.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFont.Name = "btnFont";
+            this.btnFont.Size = new System.Drawing.Size(342, 29);
+            this.btnFont.TabIndex = 39;
+            this.btnFont.Text = "Choose font";
+            this.btnFont.UseVisualStyleBackColor = true;
+            this.btnFont.Click += new System.EventHandler(this.btnFont_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(14, 89);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(64, 20);
+            this.label11.TabIndex = 37;
+            this.label11.Text = "Options:";
+            // 
+            // tabPageShortcuts
+            // 
+            this.tabPageShortcuts.Controls.Add(this.dataGridViewShortcuts);
+            this.tabPageShortcuts.Location = new System.Drawing.Point(4, 29);
+            this.tabPageShortcuts.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPageShortcuts.Name = "tabPageShortcuts";
+            this.tabPageShortcuts.Size = new System.Drawing.Size(772, 482);
+            this.tabPageShortcuts.TabIndex = 3;
+            this.tabPageShortcuts.Text = "Shortcuts";
+            this.tabPageShortcuts.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewShortcuts
+            // 
+            this.dataGridViewShortcuts.AllowUserToAddRows = false;
+            this.dataGridViewShortcuts.AllowUserToDeleteRows = false;
+            this.dataGridViewShortcuts.AutoGenerateColumns = false;
+            this.dataGridViewShortcuts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewShortcuts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn,
+            this.keyDataGridViewTextBoxColumn,
+            this.modifiersDataGridViewTextBoxColumn,
+            this.shortcutStringDataGridViewTextBoxColumn,
+            this.colEdit,
+            this.colClear});
+            this.dataGridViewShortcuts.DataSource = this.keyboardShortcutBindingSource;
+            this.dataGridViewShortcuts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewShortcuts.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewShortcuts.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridViewShortcuts.Name = "dataGridViewShortcuts";
+            this.dataGridViewShortcuts.ReadOnly = true;
+            this.dataGridViewShortcuts.RowHeadersWidth = 51;
+            this.dataGridViewShortcuts.Size = new System.Drawing.Size(772, 482);
+            this.dataGridViewShortcuts.TabIndex = 0;
+            this.dataGridViewShortcuts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewShortcuts_CellClick);
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -1486,9 +1384,111 @@
             this.shortcutStringDataGridViewTextBoxColumn.Name = "shortcutStringDataGridViewTextBoxColumn";
             this.shortcutStringDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // colEdit
+            // 
+            this.colEdit.HeaderText = "";
+            this.colEdit.MinimumWidth = 6;
+            this.colEdit.Name = "colEdit";
+            this.colEdit.ReadOnly = true;
+            this.colEdit.Text = "Edit";
+            this.colEdit.UseColumnTextForButtonValue = true;
+            this.colEdit.Width = 50;
+            // 
+            // colClear
+            // 
+            this.colClear.HeaderText = "";
+            this.colClear.MinimumWidth = 6;
+            this.colClear.Name = "colClear";
+            this.colClear.ReadOnly = true;
+            this.colClear.Text = "Clear";
+            this.colClear.UseColumnTextForButtonValue = true;
+            this.colClear.Width = 50;
+            // 
             // keyboardShortcutBindingSource
             // 
             this.keyboardShortcutBindingSource.DataSource = typeof(SuperPutty.Data.KeyboardShortcut);
+            // 
+            // tabPageAdvanced
+            // 
+            this.tabPageAdvanced.Controls.Add(this.groupBox9);
+            this.tabPageAdvanced.Controls.Add(this.groupBox5);
+            this.tabPageAdvanced.Controls.Add(this.groupBox4);
+            this.tabPageAdvanced.Location = new System.Drawing.Point(4, 29);
+            this.tabPageAdvanced.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPageAdvanced.Name = "tabPageAdvanced";
+            this.tabPageAdvanced.Size = new System.Drawing.Size(772, 482);
+            this.tabPageAdvanced.TabIndex = 2;
+            this.tabPageAdvanced.Text = "Advanced";
+            this.tabPageAdvanced.UseVisualStyleBackColor = true;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.checkBoxAllowPuttyPWArg);
+            this.groupBox9.Location = new System.Drawing.Point(4, 126);
+            this.groupBox9.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox9.Size = new System.Drawing.Size(762, 60);
+            this.groupBox9.TabIndex = 45;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Security";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Controls.Add(this.comboBoxActivatorType);
+            this.groupBox5.Controls.Add(this.label6);
+            this.groupBox5.Location = new System.Drawing.Point(4, 194);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox5.Size = new System.Drawing.Size(762, 66);
+            this.groupBox5.TabIndex = 29;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Focus";
+            // 
+            // comboBoxActivatorType
+            // 
+            this.comboBoxActivatorType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxActivatorType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxActivatorType.FormattingEnabled = true;
+            this.comboBoxActivatorType.Location = new System.Drawing.Point(99, 21);
+            this.comboBoxActivatorType.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxActivatorType.Name = "comboBoxActivatorType";
+            this.comboBoxActivatorType.Size = new System.Drawing.Size(655, 28);
+            this.comboBoxActivatorType.TabIndex = 1;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Controls.Add(this.checkBoxCheckForUpdates);
+            this.groupBox4.Controls.Add(this.checkEnableKeyboardShortcuts);
+            this.groupBox4.Controls.Add(this.checkEnableControlTabSwitching);
+            this.groupBox4.Controls.Add(this.checkSingleInstanceMode);
+            this.groupBox4.Controls.Add(this.checkExitConfirmation);
+            this.groupBox4.Controls.Add(this.checkRestoreWindow);
+            this.groupBox4.Location = new System.Drawing.Point(4, 4);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox4.Size = new System.Drawing.Size(762, 115);
+            this.groupBox4.TabIndex = 28;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Application behavior";
+            // 
+            // panelBottom
+            // 
+            this.panelBottom.Controls.Add(this.buttonCancel);
+            this.panelBottom.Controls.Add(this.buttonOk);
+            this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelBottom.Location = new System.Drawing.Point(6, 521);
+            this.panelBottom.Margin = new System.Windows.Forms.Padding(4);
+            this.panelBottom.Name = "panelBottom";
+            this.panelBottom.Size = new System.Drawing.Size(780, 34);
+            this.panelBottom.TabIndex = 39;
             // 
             // dlgFindPutty
             // 
@@ -1502,11 +1502,11 @@
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "dlgFindPutty";
-            this.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Padding = new System.Windows.Forms.Padding(6);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -1515,6 +1515,8 @@
             this.tabControl.ResumeLayout(false);
             this.tabPageGeneral.ResumeLayout(false);
             this.tabPageGeneral.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tabPageGUI.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
@@ -1533,6 +1535,7 @@
             this.groupBox1.PerformLayout();
             this.tabPageShortcuts.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewShortcuts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.keyboardShortcutBindingSource)).EndInit();
             this.tabPageAdvanced.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
@@ -1541,9 +1544,6 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.panelBottom.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.keyboardShortcutBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

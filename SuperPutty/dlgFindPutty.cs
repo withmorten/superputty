@@ -477,8 +477,8 @@ namespace SuperPutty
 
         private void buttonBrowse_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = "KiTTY|kitty*.exe|PuTTY|putty.exe";
-            openFileDialog1.FileName = "kitty*.exe";
+            openFileDialog1.Filter = "PuTTY|putty*.exe|KiTTY|kitty*.exe";
+            openFileDialog1.FileName = "putty*.exe";
             if (File.Exists(textBoxPuttyLocation.Text))
             {
                 openFileDialog1.FileName = Path.GetFileName(textBoxPuttyLocation.Text);
