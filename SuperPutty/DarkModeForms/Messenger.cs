@@ -15,6 +15,9 @@ namespace DarkModeForms
 	/* Author: BlueMystic (bluemystic.play@gmail.com)  2024 */
 	public static class Messenger
 	{
+		public const int MESSAGEBOX_WIDTH = 500;
+		public const int FONT_SIZE = 10;
+
 		#region Events
 		/// <summary>Manejador de Eventos para los Click en Botones</summary>
 		private static Action<object, ValidateEventArgs> ValidateControlsHandler;
@@ -112,7 +115,7 @@ namespace DarkModeForms
 				MaximizeBox = false,
 				MinimizeBox = false,
 				Text = title,
-				Width = 340,
+				Width = MESSAGEBOX_WIDTH,
 				Height = 170,
 				KeyPreview = true //<- allows the form to receive key events before they are passed to the controls
 			};
@@ -123,7 +126,7 @@ namespace DarkModeForms
 
 			Base64Icons _Icons = new Base64Icons();
 
-			Font systemFont = SystemFonts.DefaultFont;
+			Font systemFont = new Font("SegoeUI", FONT_SIZE, FontStyle.Regular);
 			int fontHeight = systemFont.Height;
 
 			#region Bottom Panel & Buttons
@@ -297,8 +300,7 @@ namespace DarkModeForms
 			int Padding = 4;
 			int LastPos = form.ClientSize.Width;
 
-			// Fall back to DefaultFont if MessageBoxFont is null
-			systemFont = SystemFonts.MessageBoxFont ?? SystemFonts.DefaultFont;
+			systemFont = new Font("SegoeUI", FONT_SIZE, FontStyle.Regular);
 
 			// Create the Graphics object once, not mutiple times in the for loop
 			using (Graphics g = form.CreateGraphics())
@@ -365,6 +367,7 @@ namespace DarkModeForms
 				AutoSize = true,
 				//BackColor = Color.Fuchsia,
 				ForeColor = DMode.OScolors.TextActive,
+				Font = systemFont,
 				TextAlign = ContentAlignment.MiddleLeft,  // Align left like standard Winforms MessageBox
 				Location = new Point(picBox.X + picBox.Width + 4, picBox.Y),
 				MaximumSize = new Size(form.ClientSize.Width - (picBox.X + picBox.Width) + 8, 0),
@@ -375,7 +378,7 @@ namespace DarkModeForms
 
 			#endregion Prompt Text
 
-			form.ClientSize = new Size(340,
+			form.ClientSize = new Size(MESSAGEBOX_WIDTH,
 				bottomPanel.Height +
 				lblPrompt.Height +
 				20
@@ -437,7 +440,7 @@ namespace DarkModeForms
 				MaximizeBox = false,
 				MinimizeBox = false,
 				Text = title,
-				Width = 340,
+				Width = MESSAGEBOX_WIDTH,
 				Height = 170
 			};
 
@@ -914,7 +917,7 @@ namespace DarkModeForms
 
 			#endregion Controls for KeyValues
 
-			form.ClientSize = new Size(340,
+			form.ClientSize = new Size(MESSAGEBOX_WIDTH,
 				bottomPanel.Height +
 				lblPrompt.Height +
 				Contenedor.Height +
