@@ -823,6 +823,9 @@ namespace SuperPutty
         /// <summary>true if the application has defined where the winSCP program is located</summary>
         public static bool IsWinSCPEnabled { get { return File.Exists(SuperPuTTY.Settings.WinSCPExe); } }
 
+        /// <summary>true if the application has defined where the Xorg program is located</summary>
+        public static bool IsXorgEnabled { get { return File.Exists(SuperPuTTY.Settings.XorgExe); } }
+
         /// <summary>Returns a string containing the current version of SuperPuTTY</summary>
         public static string Version { get { return Assembly.GetExecutingAssembly().GetName().Version.ToString(); } }
 

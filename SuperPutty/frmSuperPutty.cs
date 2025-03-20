@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2009 - 2015 Jim Radford http://www.jimradford.com
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -2058,6 +2058,85 @@ namespace SuperPutty
                 if (newBounds.Top > nextScreen.Bounds.Bottom)
                     newBounds.Y = nextScreen.Bounds.Bottom - newBounds.Height;
                 this.Bounds = newBounds;
+            }
+        }
+
+        private bool IsXRunning()
+        {
+            Process[] processes = Process.GetProcessesByName("vcxsrv");
+            foreach (Process process in processes)
+            {
+                try
+                {
+                    if (process.MainModule.FileName.Equals(SuperPuTTY.Settings.XorgExe, StringComparison.OrdinalIgnoreCase))
+                    {
+                        return true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log.WarnFormat("Could not access process information for vcxsrv: {0}", ex.Message);
+                }
+            }
+            return false;
+        }
+
+        private void StopXProcess()
+        {
+            Process[] processes = Process.GetProcessesByName("vcxsrv");
+            foreach (Process process in processes)
+            {
+                try
+                {
+                    if (process.MainModule.FileName.Equals(SuperPuTTY.Settings.XorgExe, StringComparison.OrdinalIgnoreCase))
+                    {
+                        process.Kill();
+                        Log.InfoFormat("Stopped vcxsrv process with ID: {0}", process.Id);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log.WarnFormat("Could not stop vcxsrv process with ID: {0}. Error: {1}", process.Id, ex.Message);
+                }
+            }
+        }
+
+        private void StartXProcess()
+        {
+            Process.Start(SuperPuTTY.Settings.XorgExe, "-multiwindow -clipboard -wgl");
+        }
+
+        private void toolsToolStripMenuItem_Opening(object sender, EventArgs e)
+        {
+            // Disable Xorg menu if not configured
+            if (!SuperPuTTY.IsXorgEnabled)
+            {
+                XorgToolStripMenuItem.Enabled = false;
+                XorgToolStripMenuItem.Text = "X11 server not configured";
+            }
+            else
+            {
+                XorgToolStripMenuItem.Enabled = true;
+                if (IsXRunning())
+                {
+                    XorgToolStripMenuItem.Text = "Stop X11 Server";
+                }
+                else
+                {
+                    XorgToolStripMenuItem.Text = "Start X11 Server";
+                }
+            }
+        }
+
+        private void XorgToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (XorgToolStripMenuItem.Text == "Start X11 Server")
+            {
+                StartXProcess();
+            }
+            else
+            {
+                StopXProcess();
             }
         }
     }

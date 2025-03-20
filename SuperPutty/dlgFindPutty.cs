@@ -61,6 +61,7 @@ namespace SuperPutty
             textBoxWinSCPLocation.Text = getPathExe(@"\WinSCP\WinSCP.exe", SuperPuTTY.Settings.WinSCPExe, firstExecution);
             textBoxVNCLocation.Text = getPathExe(@"\TightVNC\tvnviewer.exe", SuperPuTTY.Settings.VNCExe, firstExecution);
             textBoxRDPLocation.Text = getPathExe(Environment.ExpandEnvironmentVariables("%systemroot%\\system32\\mstsc.exe"), SuperPuTTY.Settings.RDPExe, firstExecution);
+            textBoxXorgLocation.Text = getPathExe(@"\VcXsrv\vcxsrv.exe", SuperPuTTY.Settings.XorgExe, firstExecution);
 
             // check for location of putty/pscp
             if (!String.IsNullOrEmpty(puttyExe) && File.Exists(puttyExe))
@@ -356,6 +357,11 @@ namespace SuperPutty
                 SuperPuTTY.Settings.RDPExe = textBoxRDPLocation.Text;
             }
 
+            if (String.IsNullOrEmpty(textBoxXorgLocation.Text) || File.Exists(textBoxXorgLocation.Text))
+            {
+                SuperPuTTY.Settings.XorgExe = textBoxXorgLocation.Text;
+            }
+
             string settingsDir = textBoxSettingsFolder.Text;
             if (String.IsNullOrEmpty(settingsDir) || !Directory.Exists(settingsDir))
             {
@@ -522,6 +528,11 @@ namespace SuperPutty
             dialogBrowseExe("RDP Client|mstsc.exe;wfreerdp.exe", "mstsc.exe", textBoxRDPLocation);
         }
 
+        private void btnBrowseXorg_Click(object sender, EventArgs e)
+        {
+            dialogBrowseExe("Xorg|vcxsrv.exe", "vcxsrv.exe", textBoxXorgLocation);
+        }
+
         private void dialogBrowseExe(String filter, string filename, TextBox textbox)
         {
             openFileDialog1.Filter = filter;
@@ -563,6 +574,11 @@ namespace SuperPutty
             textBoxRDPLocation.Text = getPathExe(Environment.ExpandEnvironmentVariables("%systemroot%\\system32\\mstsc.exe"), SuperPuTTY.Settings.RDPExe, true);
         }
 
+        //Search automatically the path of Xorg when doubleClick when it is empty
+        private void textBoxXorgLocation_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            textBoxXorgLocation.Text = getPathExe(@"\VcXsrv\vcxsrv.exe", SuperPuTTY.Settings.XorgExe, true);
+        }
 
         /// <summary>
         /// Check that putty can be found.  If not, prompt the user
@@ -686,6 +702,10 @@ namespace SuperPutty
         {
             Process.Start("https://www.tightvnc.com/download.php");
         }
-    }
 
+        private void linkXorg_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/marchaesen/vcxsrv/releases");
+        }
+    }
 }

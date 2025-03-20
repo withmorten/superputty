@@ -645,10 +645,10 @@ namespace SuperPutty
         {
             // disable file transfers if pscp isn't configured.
             fileBrowserToolStripMenuItem.Enabled = SuperPuTTY.IsScpEnabled;
-            this.fileZillaToolStripMenuItem.Enabled = SuperPuTTY.IsFilezillaEnabled;
-            this.winSCPToolStripMenuItem.Enabled = SuperPuTTY.IsWinSCPEnabled;
-            this.fileZillaToolStripMenuItem.Visible = SuperPuTTY.IsFilezillaEnabled;
-            this.winSCPToolStripMenuItem.Visible = SuperPuTTY.IsWinSCPEnabled;
+            fileZillaToolStripMenuItem.Enabled = SuperPuTTY.IsFilezillaEnabled;
+            winSCPToolStripMenuItem.Enabled = SuperPuTTY.IsWinSCPEnabled;
+            fileZillaToolStripMenuItem.Visible = SuperPuTTY.IsFilezillaEnabled;
+            winSCPToolStripMenuItem.Visible = SuperPuTTY.IsWinSCPEnabled;
 
             connectInNewSuperPuTTYToolStripMenuItem.Enabled = !SuperPuTTY.Settings.SingleInstanceMode;
         }

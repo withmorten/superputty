@@ -62,6 +62,9 @@
     <Setting Name="RDPExe" Provider="SuperPutty.Utils.PortableSettingsProvider" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="XorgExe" Provider="SuperPutty.Utils.PortableSettingsProvider" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
     <Setting Name="TabTextBehavior" Provider="SuperPutty.Utils.PortableSettingsProvider" Type="System.String" Scope="User">
       <Value Profile="(Default)">Static</Value>
     </Setting>
