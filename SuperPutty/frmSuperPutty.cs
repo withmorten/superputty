@@ -1075,7 +1075,15 @@ namespace SuperPutty
             String host = this.tbTxtBoxHost.Text;
             String protoString = (string)this.tbComboProtocol.SelectedItem;
 
-            if (!String.IsNullOrEmpty(host))
+            if (protoString == "WINCMD" || protoString == "PS" || protoString == "WSL" || protoString == "Mintty" || protoString == "Cygterm")
+            {
+                if (string.IsNullOrEmpty(host))
+                {
+                    host = protoString + " localhost";
+                }
+            }
+
+            if (!string.IsNullOrEmpty(host))
             {
                 bool isScp = "SCP" == protoString;
                 HostConnectionString connStr = new HostConnectionString(host);
