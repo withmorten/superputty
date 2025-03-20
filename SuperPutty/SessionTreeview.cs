@@ -1146,6 +1146,22 @@ namespace SuperPutty
                 }
             }
         }
+
+        private void treeView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                if (IsFolderNode(treeView1.SelectedNode))
+                {
+                    removeFolderToolStripMenuItem_Click(removeFolderToolStripMenuItem, e);
+                }
+                else
+                {
+                    deleteToolStripMenuItem_Click(deleteToolStripMenuItem, e);
+                }
+                e.Handled = true;
+            }
+        }
         #endregion
 
         private void winSCPToolStripMenuItem_Click(object sender, EventArgs e)
