@@ -1,6 +1,8 @@
 ﻿using System;
 using SuperPutty.Data;
 using log4net;
+using DarkModeForms;
+using System.Windows.Forms;
 
 namespace SuperPutty.Utils
 {
@@ -18,7 +20,15 @@ namespace SuperPutty.Utils
             if (idx != -1)
             {
                 // ssh://localhost:2020, or ssh2://localhost:2020
-                this.Protocol = (ConnectionProtocol)Enum.Parse(typeof(ConnectionProtocol), hostString.Substring(0, idx), true);
+                if (Enum.TryParse(hostString.Substring(0, idx), true, out ConnectionProtocol protocol))
+                {
+                    Protocol = protocol;
+                }
+                else
+                {
+                    Messenger.MessageBox("Unknown protocol: " + hostString.Substring(0, idx) + ". Will default to ssh.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Protocol = null;
+                }
                 hostPort = hostString.Substring(idx + 3);
             }
 
