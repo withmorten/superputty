@@ -141,7 +141,6 @@ namespace SuperPutty
             this.protoTypesMap["RDP"] = ConnectionProtocol.RDP;
             this.protoTypesMap["Win CMD"] = ConnectionProtocol.WINCMD;
             this.protoTypesMap["PowerShell"] = ConnectionProtocol.PS;
-            this.protoTypesMap["SSH.Net"] = ConnectionProtocol.SSHNet;
 
             foreach (System.Collections.DictionaryEntry protoEntry in this.protoTypesMap)
                 comboBoxProto.Items.Add(protoEntry.Key);

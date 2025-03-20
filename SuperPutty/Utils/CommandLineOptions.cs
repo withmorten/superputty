@@ -81,7 +81,6 @@ namespace SuperPutty.Utils
                         this.SessionId = queue.Dequeue();
                         break;
                     case "-ssh":
-                    case "-ssh2":
                         this.Protocol = ConnectionProtocol.SSH;
                         break;
                     case "-telnet":
@@ -103,7 +102,7 @@ namespace SuperPutty.Utils
                         this.Protocol = ConnectionProtocol.VNC;
                         break;
                     case "-rdp":
-                        this.Protocol = ConnectionProtocol.RDP;     
+                        this.Protocol = ConnectionProtocol.RDP;
                         break; 
                     case "-scp":
                         this.UseScp = true;
@@ -268,7 +267,7 @@ namespace SuperPutty.Utils
             sb.AppendLine("  SESSION\t\t - Session id");
             sb.AppendLine("  LAYOUT\t\t - Layout name");
             sb.AppendLine("  SETTINGS\t - Putty Saved Session Profile");
-            sb.AppendLine("  PROTO\t\t - Protocol - (ssh|ssh2|telnet|serial|raw|scp|cygterm|rlogin|mintty|vnc)");
+            sb.AppendLine("  PROTO\t\t - Protocol - (ssh|telnet|serial|raw|scp|cygterm|rlogin|mintty|vnc|rdp)");
             sb.AppendLine("  USER\t\t - User name");
             sb.AppendLine("  PASSWORD\t - Login Password");
             sb.AppendLine("  HOST\t\t - Hostname");

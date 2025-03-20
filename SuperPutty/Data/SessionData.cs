@@ -42,18 +42,16 @@ namespace SuperPutty.Data
     public enum ConnectionProtocol
     {
         SSH,
-        SSH2,
         Telnet,
         Rlogin,
         Raw,
         Serial,
-        Cygterm,
-        Mintty,
         VNC,
         RDP,
+        Mintty,
+        Cygterm,
         WINCMD,
-        PS,
-        SSHNet
+        PS
     }
 
     /// <summary>The main class containing configuration settings for a session</summary>

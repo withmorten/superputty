@@ -19,11 +19,6 @@ namespace SuperPutty.Utils
             {
                 // ssh://localhost:2020, or ssh2://localhost:2020
                 this.Protocol = (ConnectionProtocol)Enum.Parse(typeof(ConnectionProtocol), hostString.Substring(0, idx), true);
-                if (this.Protocol == ConnectionProtocol.SSH2)
-                {
-                    // ssh2 is accepted only as a compatibility feature
-                    this.Protocol = ConnectionProtocol.SSH;
-                }
                 hostPort = hostString.Substring(idx + 3);
             }
 
