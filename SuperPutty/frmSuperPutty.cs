@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2009 - 2015 Jim Radford http://www.jimradford.com
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -122,6 +122,8 @@ namespace SuperPutty
 
             // keep menubar first
             menuStrip1.Location = new System.Drawing.Point(0, 0);
+            tsConnect.Location = new System.Drawing.Point(0, menuStrip1.Height);
+            tsCommands.Location = new System.Drawing.Point(0, menuStrip1.Height + tsConnect.Height); 
 
             if (this.DesignMode) return;
 
