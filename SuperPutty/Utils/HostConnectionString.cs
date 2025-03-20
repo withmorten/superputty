@@ -11,9 +11,8 @@ namespace SuperPutty.Utils
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(HostConnectionString));
 
-        public HostConnectionString(string hostString, bool ignorePort = false)
+        public HostConnectionString(string hostString)
         {
-
             int idx = hostString.IndexOf("://");
             string hostPort = hostString;
             if (idx != -1)
@@ -34,8 +33,7 @@ namespace SuperPutty.Utils
             if (idxPort != -1)
             {
                 // localhost:2020
-                int port;
-                if (!ignorePort && (int.TryParse(hostPort.Substring(idxPort + 1), out port)))
+                if (int.TryParse(hostPort.Substring(idxPort + 1), out int port))
                 {
                     this.Host = hostPort.Substring(0, idxPort);
                     this.Port = port;

@@ -1078,8 +1078,7 @@ namespace SuperPutty
             if (!String.IsNullOrEmpty(host))
             {
                 bool isScp = "SCP" == protoString;
-                bool isVnc = "VNC" == protoString;
-                HostConnectionString connStr = new HostConnectionString(host, isVnc);
+                HostConnectionString connStr = new HostConnectionString(host);
                 ConnectionProtocol proto = isScp
                     ? ConnectionProtocol.SSH
                     : connStr.Protocol.GetValueOrDefault((ConnectionProtocol)Enum.Parse(typeof(ConnectionProtocol), protoString));
