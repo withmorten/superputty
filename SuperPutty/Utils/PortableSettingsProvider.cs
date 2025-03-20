@@ -77,7 +77,7 @@ namespace SuperPutty.Utils
         public virtual string[] GetAppSettingsPaths()
         {
             string[] paths = new string[2];
-            paths[0] = Environment.GetEnvironmentVariable("USERPROFILE");
+            paths[0] = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + ApplicationName;
             paths[1] = Path.GetDirectoryName(Application.ExecutablePath);
             return paths;
         }
