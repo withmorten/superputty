@@ -130,17 +130,19 @@ namespace SuperPutty
         private void PopulateProtoList()
         {
             this.protoTypesMap = new System.Collections.Hashtable();
-            this.protoTypesMap["Raw"] = ConnectionProtocol.Raw;
-            this.protoTypesMap["Telnet"] = ConnectionProtocol.Telnet;  
-            this.protoTypesMap["Rlogin"] = ConnectionProtocol.Rlogin;
             this.protoTypesMap["SSH"] = ConnectionProtocol.SSH;
+            this.protoTypesMap["Telnet"] = ConnectionProtocol.Telnet;
+            this.protoTypesMap["Rlogin"] = ConnectionProtocol.Rlogin;
+            this.protoTypesMap["Raw"] = ConnectionProtocol.Raw;
             this.protoTypesMap["Serial"] = ConnectionProtocol.Serial;
-            this.protoTypesMap["CygTerm"] = ConnectionProtocol.Cygterm;
-            this.protoTypesMap["MinTTY"] = ConnectionProtocol.Mintty;
             this.protoTypesMap["VNC"] = ConnectionProtocol.VNC;
             this.protoTypesMap["RDP"] = ConnectionProtocol.RDP;
+            this.protoTypesMap["CygTerm"] = ConnectionProtocol.Cygterm;
+            this.protoTypesMap["MinTTY"] = ConnectionProtocol.Mintty;
+            this.protoTypesMap["WSL"] = ConnectionProtocol.WSL;
             this.protoTypesMap["Win CMD"] = ConnectionProtocol.WINCMD;
             this.protoTypesMap["PowerShell"] = ConnectionProtocol.PS;
+
 
             foreach (System.Collections.DictionaryEntry protoEntry in this.protoTypesMap)
                 comboBoxProto.Items.Add(protoEntry.Key);
@@ -205,7 +207,7 @@ namespace SuperPutty
                 return;
 
             ConnectionProtocol proto = this.protoTypesMap.ContainsKey(comboBoxProto.SelectedItem) ? (ConnectionProtocol)this.protoTypesMap[comboBoxProto.SelectedItem] : ConnectionProtocol.SSH;
-            if (proto == ConnectionProtocol.Cygterm || proto == ConnectionProtocol.Mintty || proto == ConnectionProtocol.WINCMD || proto == ConnectionProtocol.PS)
+            if (proto == ConnectionProtocol.Cygterm || proto == ConnectionProtocol.Mintty || proto == ConnectionProtocol.WINCMD || proto == ConnectionProtocol.PS || proto == ConnectionProtocol.WSL)
             {
                 this.textBoxPort.Enabled = false;
                 this.textBoxUsername.Enabled = false;
@@ -252,6 +254,7 @@ namespace SuperPutty
                     break;
                 case ConnectionProtocol.WINCMD:
                 case ConnectionProtocol.PS:
+                case ConnectionProtocol.WSL:
                     port = 0;
                     break;
             }
@@ -331,7 +334,7 @@ namespace SuperPutty
             if (!Int32.TryParse(this.textBoxPort.Text, out val))
             {
                 if (this.textBoxPort.Text == "")
-                    if (proto == ConnectionProtocol.Mintty || proto == ConnectionProtocol.Cygterm || proto == ConnectionProtocol.RDP || proto == ConnectionProtocol.WINCMD || proto == ConnectionProtocol.PS)
+                    if (proto == ConnectionProtocol.Mintty || proto == ConnectionProtocol.Cygterm || proto == ConnectionProtocol.RDP || proto == ConnectionProtocol.WINCMD || proto == ConnectionProtocol.PS || proto == ConnectionProtocol.WSL)
                         return;
 
                 e.Cancel = true;

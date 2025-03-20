@@ -27,8 +27,12 @@ namespace SuperPutty.Utils
                 case ConnectionProtocol.RDP:
                     return TryParseEnvVars(SuperPuTTY.Settings.RDPExe);
 
+                case ConnectionProtocol.WSL:
+                    return Environment.ExpandEnvironmentVariables("%systemroot%\\system32\\wsl.exe");
+
                 case ConnectionProtocol.WINCMD:
                     return Environment.ExpandEnvironmentVariables("%systemroot%\\system32\\cmd.exe");
+                
                 case ConnectionProtocol.PS:
                     return Environment.ExpandEnvironmentVariables("%systemroot%\\system32\\windowspowershell\\v1.0\\powershell.exe");
 
@@ -76,6 +80,12 @@ namespace SuperPutty.Utils
             else if (session.Proto == ConnectionProtocol.PS)
             {
                 PSStartInfo ps = new PSStartInfo(session);
+                this.Args = ps.Args;
+                this.WorkingDir = ps.StartingDir;
+            }
+            else if (session.Proto == ConnectionProtocol.WSL)
+            {
+                WSLStartInfo ps = new WSLStartInfo(session);
                 this.Args = ps.Args;
                 this.WorkingDir = ps.StartingDir;
             }

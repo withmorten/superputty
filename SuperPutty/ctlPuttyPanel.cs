@@ -121,7 +121,8 @@ namespace SuperPutty
                 Session.Proto == ConnectionProtocol.Mintty ||
                 Session.Proto == ConnectionProtocol.RDP ||
                 Session.Proto == ConnectionProtocol.WINCMD ||
-                Session.Proto == ConnectionProtocol.PS)
+                Session.Proto == ConnectionProtocol.PS ||
+                Session.Proto == ConnectionProtocol.WSL)
             {
                 this.toolStripPuttySep1.Visible = false;
                 this.eventLogToolStripMenuItem.Visible = false;

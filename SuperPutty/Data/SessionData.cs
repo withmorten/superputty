@@ -50,6 +50,7 @@ namespace SuperPutty.Data
         RDP,
         Mintty,
         Cygterm,
+        WSL,
         WINCMD,
         PS
     }
