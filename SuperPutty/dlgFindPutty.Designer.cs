@@ -142,6 +142,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.panelBottom = new System.Windows.Forms.Panel();
             this.fontDialog = new System.Windows.Forms.FontDialog();
+            this.label21 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabControl.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
@@ -820,6 +821,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label21);
             this.panel1.Controls.Add(this.linkTightVnc);
             this.panel1.Controls.Add(this.linkFilezilla);
             this.panel1.Controls.Add(this.linkWinScp);
@@ -850,6 +852,7 @@
             this.linkTightVnc.TabIndex = 65;
             this.linkTightVnc.TabStop = true;
             this.linkTightVnc.Text = "tvnviewer.exe";
+            this.linkTightVnc.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkTightVnc_LinkClicked);
             // 
             // linkFilezilla
             // 
@@ -861,6 +864,7 @@
             this.linkFilezilla.TabIndex = 64;
             this.linkFilezilla.TabStop = true;
             this.linkFilezilla.Text = "filezilla.exe";
+            this.linkFilezilla.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkFilezilla_LinkClicked);
             // 
             // linkWinScp
             // 
@@ -872,6 +876,7 @@
             this.linkWinScp.TabIndex = 63;
             this.linkWinScp.TabStop = true;
             this.linkWinScp.Text = "WinSCP.exe";
+            this.linkWinScp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkWinScp_LinkClicked);
             // 
             // linkCygwin
             // 
@@ -883,6 +888,7 @@
             this.linkCygwin.TabIndex = 62;
             this.linkCygwin.TabStop = true;
             this.linkCygwin.Text = "Cygwin";
+            this.linkCygwin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkCygwin_LinkClicked);
             // 
             // linkMsys
             // 
@@ -894,6 +900,7 @@
             this.linkMsys.TabIndex = 61;
             this.linkMsys.TabStop = true;
             this.linkMsys.Text = "MSYS2";
+            this.linkMsys.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkMsys_LinkClicked);
             // 
             // label2
             // 
@@ -916,28 +923,31 @@
             this.linkPscp.TabIndex = 59;
             this.linkPscp.TabStop = true;
             this.linkPscp.Text = "pscp.exe";
+            this.linkPscp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.puttyLink_LinkClicked);
             // 
             // kittyLink
             // 
             this.kittyLink.AutoSize = true;
-            this.kittyLink.Location = new System.Drawing.Point(135, 4);
+            this.kittyLink.Location = new System.Drawing.Point(92, 4);
             this.kittyLink.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.kittyLink.Name = "kittyLink";
             this.kittyLink.Size = new System.Drawing.Size(63, 20);
             this.kittyLink.TabIndex = 58;
             this.kittyLink.TabStop = true;
             this.kittyLink.Text = "kitty.exe";
+            this.kittyLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.kittyLink_LinkClicked);
             // 
             // puttyLink
             // 
             this.puttyLink.AutoSize = true;
-            this.puttyLink.Location = new System.Drawing.Point(41, 4);
+            this.puttyLink.Location = new System.Drawing.Point(2, 4);
             this.puttyLink.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.puttyLink.Name = "puttyLink";
             this.puttyLink.Size = new System.Drawing.Size(69, 20);
             this.puttyLink.TabIndex = 57;
             this.puttyLink.TabStop = true;
             this.puttyLink.Text = "putty.exe";
+            this.puttyLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.puttyLink_LinkClicked);
             // 
             // PuttyDefParamLbl
             // 
@@ -965,7 +975,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(111, 4);
+            this.label1.Location = new System.Drawing.Point(70, 4);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(23, 20);
@@ -1490,6 +1500,15 @@
             this.panelBottom.Size = new System.Drawing.Size(780, 34);
             this.panelBottom.TabIndex = 39;
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(154, 4);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(44, 20);
+            this.label21.TabIndex = 66;
+            this.label21.Text = "(req.)";
+            // 
             // dlgFindPutty
             // 
             this.AcceptButton = this.buttonOk;
@@ -1662,5 +1681,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label21;
     }
 }
