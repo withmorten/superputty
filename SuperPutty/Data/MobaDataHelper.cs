@@ -35,6 +35,7 @@ namespace SuperPutty.Data
                     if (line.StartsWith("SubRep="))
                     {
                         subrep = line.Split('=')[1].Trim();
+                        subrep = subrep.Replace("\\", "/"); // Moba path separator is backslash
                         continue;
                     }
                     if (line.StartsWith("ImgNum="))
@@ -50,33 +51,49 @@ namespace SuperPutty.Data
 
         private static SessionData ParseEntry(string entry, string subrep)
         {
-            var match = Regex.Match(entry, "(.*?)=#(\\d+)#(.*?)%([^%]+)%([^%]*)%([^%]*)%");
+            var match = Regex.Match(entry, "(.*?)=\\s*#(\\d+)#(.*?)%([^%]+)%([^%]*)%([^%]*)%");
             if (!match.Success)
-                return null;
-
-            string sessionName = match.Groups[1].Value;
-            int protoId = int.Parse(match.Groups[2].Value);
-            string host = match.Groups[4].Value;
-            int port = 0;
-            if (!string.IsNullOrEmpty(match.Groups[5].Value))
             {
-                if (!int.TryParse(match.Groups[5].Value, out port))
-                {
-                    port = 0;
-                }
+                match = Regex.Match(entry, "(.*?)=\\s*#(\\d+)#"); // WSL sessions are shorter
+                if (!match.Success)
+                    return null;
             }
-            string username = match.Groups[6].Value.Trim();
-            string extraArgs = ""; // no extraArgs for now
 
+            string host = "";
+            int port = 0;
+            string username = "";
+            string extraArgs = ""; // no extraArgs for now
             string imageKey;
             ConnectionProtocol proto;
 
+            string sessionName = match.Groups[1].Value;
+            int protoId = int.Parse(match.Groups[2].Value);
+
+            if (match.Groups.Count > 3)
+            {
+                host = match.Groups[4].Value;
+                if (!string.IsNullOrEmpty(match.Groups[5].Value))
+                {
+                    if (!int.TryParse(match.Groups[5].Value, out port))
+                    {
+                        port = 0;
+                    }
+                }
+                username = match.Groups[6].Value.Trim();
+            }
+            
             // Supported MobaXterm protocol IDs
             switch (protoId)
             {
                 case 98:
                     proto = ConnectionProtocol.Telnet;
                     imageKey = "application_xp_terminal";
+                    break;
+                case 105:
+                    proto = ConnectionProtocol.WSL;
+                    imageKey = "application_osx_terminal";
+                    host = "";
+                    username = "";
                     break;
                 case 109:
                     proto = ConnectionProtocol.SSH;
@@ -88,6 +105,12 @@ namespace SuperPutty.Data
                     if (username == "-1")
                         username = "";
                     break;
+                case 129:
+                    proto = ConnectionProtocol.WINCMD;
+                    imageKey = "application_osx_terminal";
+                    host = "";
+                    username = "";
+                    break;
                 case 131:
                     proto = ConnectionProtocol.Serial;
                     imageKey = "telephone";
@@ -95,6 +118,12 @@ namespace SuperPutty.Data
                     username = "";
                     // serial port speed start with 1, remove that.
                     port -= 1000000;
+                    break;
+                case 192:
+                    proto = ConnectionProtocol.PS;
+                    imageKey = "application_osx_terminal";
+                    host = "";
+                    username = "";
                     break;
                 default:
                     proto = ConnectionProtocol.SSH;
