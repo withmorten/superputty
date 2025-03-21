@@ -137,7 +137,7 @@ namespace SuperPutty
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1260, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1260, 30);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.MenuDeactivate += new System.EventHandler(this.menuStrip1_MenuDeactivate);
@@ -545,7 +545,7 @@ namespace SuperPutty
             this.DockPanel.Location = new System.Drawing.Point(0, 0);
             this.DockPanel.Margin = new System.Windows.Forms.Padding(4);
             this.DockPanel.Name = "DockPanel";
-            this.DockPanel.Size = new System.Drawing.Size(1260, 779);
+            this.DockPanel.Size = new System.Drawing.Size(1260, 770);
             this.DockPanel.TabIndex = 3;
             this.DockPanel.ActiveDocumentChanged += new System.EventHandler(this.dockPanel1_ActiveDocumentChanged);
             // 
@@ -557,7 +557,7 @@ namespace SuperPutty
             this.toolStripContainer1.ContentPanel.Controls.Add(this.DockPanel);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.statusStrip1);
             this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(4);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1260, 805);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1260, 796);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.LeftToolStripPanelVisible = false;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
@@ -582,7 +582,7 @@ namespace SuperPutty
             this.toolStripStatusLabelMessage,
             this.toolStripStatusLabelVersion,
             this.toolStripStatusLabelLayout});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 779);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 770);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 18, 0);
             this.statusStrip1.Size = new System.Drawing.Size(1260, 26);
@@ -624,9 +624,9 @@ namespace SuperPutty
             this.tbBtnSelectDocs,
             this.toolStripButtonChooseIconGroup});
             this.tsCommands.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.tsCommands.Location = new System.Drawing.Point(0, 28);
+            this.tsCommands.Location = new System.Drawing.Point(0, 30);
             this.tsCommands.Name = "tsCommands";
-            this.tsCommands.Size = new System.Drawing.Size(1260, 27);
+            this.tsCommands.Size = new System.Drawing.Size(1260, 31);
             this.tsCommands.Stretch = true;
             this.tsCommands.TabIndex = 6;
             // 
@@ -721,9 +721,9 @@ namespace SuperPutty
             this.tbBtnConnect,
             this.toolStripButtonClearFields});
             this.tsConnect.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.tsConnect.Location = new System.Drawing.Point(0, 55);
+            this.tsConnect.Location = new System.Drawing.Point(0, 61);
             this.tsConnect.Name = "tsConnect";
-            this.tsConnect.Size = new System.Drawing.Size(1260, 28);
+            this.tsConnect.Size = new System.Drawing.Size(1260, 31);
             this.tsConnect.Stretch = true;
             this.tsConnect.TabIndex = 5;
             this.tsConnect.Text = "Connect";
@@ -741,7 +741,7 @@ namespace SuperPutty
             this.tbComboProtocol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tbComboProtocol.DropDownWidth = 75;
             this.tbComboProtocol.Name = "tbComboProtocol";
-            this.tbComboProtocol.Size = new System.Drawing.Size(70, 28);
+            this.tbComboProtocol.Size = new System.Drawing.Size(80, 28);
             this.tbComboProtocol.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbItemConnect_KeyPress);
             // 
             // toolStripLabel2
@@ -767,7 +767,7 @@ namespace SuperPutty
             // 
             this.tbTxtBoxLogin.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbTxtBoxLogin.Name = "tbTxtBoxLogin";
-            this.tbTxtBoxLogin.Size = new System.Drawing.Size(100, 28);
+            this.tbTxtBoxLogin.Size = new System.Drawing.Size(110, 31);
             this.tbTxtBoxLogin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbItemConnect_KeyPress);
             // 
             // toolStripLabel4
@@ -780,7 +780,7 @@ namespace SuperPutty
             // 
             this.tbTxtBoxPassword.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbTxtBoxPassword.Name = "tbTxtBoxPassword";
-            this.tbTxtBoxPassword.Size = new System.Drawing.Size(100, 28);
+            this.tbTxtBoxPassword.Size = new System.Drawing.Size(110, 31);
             this.tbTxtBoxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbItemConnect_KeyPress);
             // 
             // toolStripLabel5
@@ -795,7 +795,7 @@ namespace SuperPutty
             this.tbComboSession.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tbComboSession.DropDownWidth = 250;
             this.tbComboSession.Name = "tbComboSession";
-            this.tbComboSession.Size = new System.Drawing.Size(110, 28);
+            this.tbComboSession.Size = new System.Drawing.Size(120, 31);
             this.tbComboSession.Sorted = true;
             this.tbComboSession.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbItemConnect_KeyPress);
             // 
