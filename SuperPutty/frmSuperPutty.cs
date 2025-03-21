@@ -219,6 +219,8 @@ namespace SuperPutty
             puTTYConfigurationToolStripMenuItem.Text = "&" + SuperPuTTY.PuTTYAppName + " configuration";
             aboutSuperPuTTYToolStripMenuItem.Text = "About " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Name;
             Text = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name;
+
+            DockPanel.Theme.Skin.DockPaneStripSkin.TextFont = new Font("Segoe UI", 10.0f, FontStyle.Regular);
         }
 
         private void FixDpiScalingIssues()
