@@ -1861,10 +1861,10 @@ namespace SuperPutty
 
                         if (latest_version.CompareTo(SuperPuTTY_version) > 0)
                         {
-                            Log.Info("New Application version found! " + latest.version);
+                            Log.Info("New application version found! " + latest.version);
 
-                            if (Messenger.MessageBox("An updated version of SuperPuTTY (" + latest.version + ") is Available Would you like to visit the download page to upgrade?",
-                                "SuperPutty Update Found",
+                            if (Messenger.MessageBox("An updated version of SuperXPuTTY (" + latest.version + ") is available. Would you like to visit the download page to upgrade?",
+                                "SuperXPutty update found",
                                 MessageBoxButtons.YesNo,
                                 MessageBoxIcon.Question) == DialogResult.Yes)
                             {
@@ -1875,14 +1875,14 @@ namespace SuperPutty
                         {
                             if (sender.ToString().Equals(checkForUpdatesToolStripMenuItem.Text))
                             {
-                                Messenger.MessageBox("You are running the latest version of SuperPutty", "SuperPuTTY Update Check", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                Messenger.MessageBox("You are running the latest version of SuperXPutty", "SuperXPutty update check", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
                     }
                     else
                     {
                         Messenger.MessageBox("There was an error while checking for updates. Please try again later.", "Error during update check", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        Log.Warn("An Error occurred trying to check for program updates: " + content);                        
+                        Log.Warn("An error occurred trying to check for program updates: " + content);
                     }
                 });
             }
