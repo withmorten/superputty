@@ -161,7 +161,7 @@ namespace SuperPutty
         {
             treeView1.Nodes.Clear();
 
-            this.nodeRoot = treeView1.Nodes.Add("root", "PuTTY Sessions", ImageKeyFolder, ImageKeyFolder);
+            this.nodeRoot = treeView1.Nodes.Add("root", "Saved sessions", ImageKeyFolder, ImageKeyFolder);
             this.nodeRoot.ContextMenuStrip = this.contextMenuStripFolder;
 
             foreach (SessionData session in SuperPuTTY.GetAllSessions())

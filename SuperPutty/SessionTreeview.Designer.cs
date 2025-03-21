@@ -362,7 +362,7 @@
             this.Name = "SessionTreeview";
             this.ShowIcon = false;
             this.TabText = "Sessions";
-            this.Text = "PuTTY Sessions";
+            this.Text = "Saved sessions";
             this.contextMenuStripAddTreeItem.ResumeLayout(false);
             this.contextMenuStripFolder.ResumeLayout(false);
             this.panelSearch.ResumeLayout(false);

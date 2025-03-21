@@ -12,7 +12,7 @@ namespace SuperPutty.Utils
     {
         private static readonly ILog Log = LogManager.GetLogger(typeof(SingleInstanceHelper));
 
-        public const string ChannelName = "SuperPuTTY";
+        public const string ChannelName = "SuperXPuTTY";
         public const string SingleInstanceServiceName = "SingleInstance";
 
         public static void RegisterRemotingService()

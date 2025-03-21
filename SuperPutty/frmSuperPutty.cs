@@ -217,6 +217,8 @@ namespace SuperPutty
             this.toolStripButtonChooseIconGroup.ImageKey = "stop";
 
             puTTYConfigurationToolStripMenuItem.Text = "&" + SuperPuTTY.PuTTYAppName + " configuration";
+            aboutSuperPuTTYToolStripMenuItem.Text = "About " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Name;
+            Text = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name;
         }
 
         private void FixDpiScalingIssues()
@@ -288,7 +290,7 @@ namespace SuperPutty
 
         void UpdateWindowText(string text)
         {
-            this.Text = string.Format("SuperPuTTY - {0}", text);
+            this.Text = string.Format(System.Reflection.Assembly.GetExecutingAssembly().GetName().Name + " - {0}", text);
         }
 
         private void frmSuperPutty_Load(object sender, EventArgs e)
@@ -336,7 +338,8 @@ namespace SuperPutty
         {
             if (SuperPuTTY.Settings.ExitConfirmation && !forceClose)
             {
-                if (Messenger.MessageBox("Exit SuperPuTTY?", "Exit confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+                if (Messenger.MessageBox("Exit " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Name + "?",
+                    "Exit confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
                 {
                     e.Cancel = true;
                 }
@@ -357,7 +360,7 @@ namespace SuperPutty
         {
             if (this.DockPanel.ActiveDocument == null)
             {
-                this.Text = "SuperPuTTY";
+                this.Text = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name;
             }
             else
             {
@@ -439,7 +442,7 @@ namespace SuperPutty
         {
             DialogResult res = Messenger.MessageBox(
                 "Do you want to copy all sessions from PuTTY/KiTTY?  Duplicates may be created.",
-                "SuperPuTTY",
+                "SuperXPuTTY",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
             if (res == DialogResult.Yes)
@@ -466,7 +469,7 @@ namespace SuperPutty
         {
             DialogResult res = Messenger.MessageBox(
                 "Do you want to copy all RDP sessions from registry cache? Duplicates may be created.",
-                "SuperPuTTY",
+                "SuperXPuTTY",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
             if (res == DialogResult.Yes)
@@ -558,7 +561,7 @@ namespace SuperPutty
 
         private void editSessionsInNotepadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start(XmlEditor ?? "notepad", Path.Combine(SuperPuTTY.Settings.SettingsFolder, "Sessions.XML"));
+            Process.Start(XmlEditor ?? "notepad", Path.Combine(SuperPuTTY.Settings.SettingsFolder, "sessions.xml"));
         }
 
         private void reloadSessionsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1030,11 +1033,6 @@ namespace SuperPutty
             about = null;
         }
 
-        private void superPuttyWebsiteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Process.Start("https://github.com/jimradford/superputty/");
-        }
-
         private void helpToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (File.Exists(Application.StartupPath + @"\superputty.chm"))
@@ -1046,7 +1044,7 @@ namespace SuperPutty
                 DialogResult result = Messenger.MessageBox("Local documentation could not be found. Would you like to view the documentation online instead?", "Documentation Not Found", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    Process.Start("https://github.com/jimradford/superputty/wiki/Documentation");
+                    Process.Start("https://github.com/SilverGreen93/superputty/wiki/Documentation");
                 }
             }
         }
