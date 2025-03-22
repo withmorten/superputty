@@ -236,14 +236,22 @@ namespace SuperPutty.Scp
             StringBuilder sb = new StringBuilder();
 
             sb.Append("-r -agent ");  // default arguments
-            if (!String.IsNullOrEmpty(session.PuttySession))
+
+            if (!string.IsNullOrEmpty(session.PuttySession))
             {
                 sb.Append("-load \"").Append(session.PuttySession).Append("\" ");
             }
-            if (!String.IsNullOrEmpty(password))
+
+            if (!string.IsNullOrEmpty(password))
             {
                 sb.Append("-pw ").Append(password).Append(" ");
             }
+
+            if (!string.IsNullOrEmpty(session.ExtraArgs.ToString()))
+            {
+                sb.AppendFormat(" {0} ", session.ExtraArgs.ToString());
+            }
+
             sb.AppendFormat("-P {0} ", session.Port);
 
             if (target.Source == SourceType.Remote)
