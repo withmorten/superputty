@@ -22,7 +22,7 @@ namespace SuperPutty
             this.linkLabelCompany.Text = AssemblyCompany;
             this.linkLabelCompany2.Text = "https://github.com/SilverGreen93/superputty";            
 
-            textBoxSupportText.AppendText("SuperPuTTY Version: " + SuperPuTTY.Version + System.Environment.NewLine);
+            textBoxSupportText.AppendText("SuperXPuTTY Version: " + SuperPuTTY.Version + System.Environment.NewLine);
             Assembly[] asms = AppDomain.CurrentDomain.GetAssemblies();
             foreach(var a in asms)
             {                
