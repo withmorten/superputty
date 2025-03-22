@@ -419,7 +419,8 @@ namespace SuperPutty
             dlgRenameItem dialog = new dlgRenameItem
             {
                 ItemName = this.Text,
-                DetailName = this.Session.SessionId
+                DetailName = this.Session.SessionId,
+                Text = "Rename tab"
             };
 
             if (dialog.ShowDialog(this) == DialogResult.OK)

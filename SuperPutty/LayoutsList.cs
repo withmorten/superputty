@@ -30,12 +30,13 @@ namespace SuperPutty
 
             if (e.Cancel)
                 return;
-            
-            LayoutData layout = (LayoutData) this.listBoxLayouts.Items[idx];
+
+            LayoutData layout = (LayoutData)this.listBoxLayouts.Items[idx];
 
             loadInNewInstanceToolStripMenuItem.Enabled = !SuperPuTTY.Settings.SingleInstanceMode;
             renameToolStripMenuItem.Enabled = !layout.IsReadOnly;
             deleteToolStripMenuItem.Enabled = !layout.IsReadOnly;
+            setAsDefaultLayoutToolStripMenuItem.Enabled = !layout.IsDefault;
         }
 
         private void listBoxLayouts_MouseDown(object sender, MouseEventArgs e)
@@ -103,9 +104,15 @@ namespace SuperPutty
             LayoutData layout = (LayoutData)this.listBoxLayouts.SelectedItem;
             if (layout != null)
             {
-                if (layout.Name == SuperPuTTY.Settings.DefaultLayoutName)
+                if (layout.IsDefault)
                 {
                     Messenger.MessageBox("Cannot delete the default layout", "Delete layout", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (layout.IsReadOnly)
+                {
+                    Messenger.MessageBox("Cannot delete automatic layout", "Delete layout", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -125,7 +132,8 @@ namespace SuperPutty
                 {
                     DetailName = String.Empty,
                     ItemName = layout.Name,
-                    ItemNameValidator = this.ValidateLayoutName
+                    ItemNameValidator = this.ValidateLayoutName,
+                    Text = "Rename layout"
                 };
                 if (DialogResult.OK == renameDialog.ShowDialog(this))
                 {
@@ -140,7 +148,7 @@ namespace SuperPutty
             LayoutData layout = SuperPuTTY.FindLayout(name);
             if (layout != null)
             {
-                error = "Layout exists with same name";
+                error = "A layout with the same name already exists";
                 return false;
             }
 
