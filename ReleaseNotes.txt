@@ -1,3 +1,16 @@
+2.0.0.0
+ - Added dark theme
+ - Added new protocol: Windows Subsystem for Linux
+ - Added option to start/stop X11 server in the Tools menu
+ - Support for importing RDP, WSL, PS and CMD sessions from MobaXterm
+ - Made tab titles larger and Command bar font larger
+ - Fixed VNC contents drifting when changing tabs on HiDPI displays
+ - Fixed VNC connection with password from Quick Connect bar
+ - Fixed some issues in session list related to filter by typing
+ - Allowed pressing Del key to delete saved sessions, folders or layouts
+ - Removed extra context menu items for protocols that don't support then (i.e. Copy all text for VNC)
+ - Removed SSH2 and SSH.NET from protocol list
+
 1.6.0
  - Fixed TightVNC does not open host error
  - Added MobaXterm sessions import option
