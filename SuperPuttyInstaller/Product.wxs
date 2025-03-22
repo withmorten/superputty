@@ -83,7 +83,7 @@
         <File Id="Renci.SshNet.dll" Source="$(var.SuperPutty.TargetDir)\Renci.SshNet.dll" />
       </Component>
       <Component Id="ProductLibUITheme">
-        <File Id="WeifenLuo.WinFormsUI.Docking.ThemeVS2005.dll" Source="$(var.SuperPutty.TargetDir)\WeifenLuo.WinFormsUI.Docking.ThemeVS2005.dll" />
+        <File Id="WeifenLuo.WinFormsUI.Docking.ThemeVS2015.dll" Source="$(var.SuperPutty.TargetDir)\WeifenLuo.WinFormsUI.Docking.ThemeVS2015.dll" />
       </Component>
     </ComponentGroup>    
     <ComponentGroup Id="DefaultTheme" Directory="INSTALLTHEMEICONSFOLDER">
