@@ -280,7 +280,7 @@ namespace SuperPutty
         #region Sessions
 
         /// <summary>Returns A string containing the path to the saved sessions database on disk</summary>
-        private static string SessionsFileName { get { return Path.Combine(Settings.SettingsFolder, "Sessions.XML"); } }
+        private static string SessionsFileName { get { return Path.Combine(Settings.SettingsFolder, "Sessions.xml"); } }
 
         /// <summary>Load sessions database from file into the application</summary>
         public static void LoadSessions()

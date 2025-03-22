@@ -48,8 +48,6 @@ namespace SuperPutty
     {
         private static readonly ILog Log = LogManager.GetLogger(typeof(frmSuperPutty));
 
-        private static string XmlEditor = ConfigurationManager.AppSettings["SuperPuTTY.XmlEditor"];
-
         //internal DockPanel DockPanel { get; private set; }
 
         public ToolWindowDocument CurrentPanel { get; set; }
@@ -402,7 +400,7 @@ namespace SuperPutty
             SaveFileDialog saveDialog = new SaveFileDialog
             {
                 Filter = "XML Files|*.xml|All files|*.*",
-                FileName = "Sessions.XML",
+                FileName = "Sessions.xml",
             };
             if (saveDialog.ShowDialog(this) == DialogResult.OK)
             {
@@ -415,7 +413,7 @@ namespace SuperPutty
             OpenFileDialog openDialog = new OpenFileDialog
             {
                 Filter = "XML Files|*.xml|All files|*.*",
-                FileName = "Sessions.XML",
+                FileName = "Sessions.xml",
                 CheckFileExists = true,
             };
             if (openDialog.ShowDialog(this) == DialogResult.OK)
@@ -563,7 +561,7 @@ namespace SuperPutty
 
         private void editSessionsInNotepadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start(XmlEditor ?? "notepad", Path.Combine(SuperPuTTY.Settings.SettingsFolder, "sessions.xml"));
+            Process.Start(Path.Combine(SuperPuTTY.Settings.SettingsFolder, "Sessions.xml"));
         }
 
         private void reloadSessionsToolStripMenuItem_Click(object sender, EventArgs e)

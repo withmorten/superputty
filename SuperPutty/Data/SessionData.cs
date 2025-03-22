@@ -610,11 +610,11 @@ namespace SuperPutty.Data
                     // backup
                     string fileBaseName = Path.GetFileNameWithoutExtension(fileName);
                     string dirName = Path.GetDirectoryName(fileName);
-                    string backupName = Path.Combine(dirName, string.Format("{0}.{1:yyyyMMdd_hhmmss}.XML", fileBaseName, DateTime.Now));
+                    string backupName = Path.Combine(dirName, string.Format("{0}.{1:yyyyMMdd_hhmmss}.xml", fileBaseName, DateTime.Now));
                     File.Copy(fileName, backupName, true);
 
                     // limit last count saves
-                    List<string> oldFiles = new List<string>(Directory.GetFiles(dirName, fileBaseName + ".*.XML"));
+                    List<string> oldFiles = new List<string>(Directory.GetFiles(dirName, fileBaseName + ".*.xml"));
                     oldFiles.Sort();
                     oldFiles.Reverse();
                     if (oldFiles.Count > count)
