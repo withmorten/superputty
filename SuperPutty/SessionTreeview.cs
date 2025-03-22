@@ -446,7 +446,7 @@ namespace SuperPutty
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SessionData session = (SessionData)treeView1.SelectedNode.Tag;
-            if (Messenger.MessageBox("Are you sure you want to delete " + session.SessionName + "?", "Delete Session?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (Messenger.MessageBox("Are you sure you want to delete session \"" + session.SessionName + "\"?", "Delete session", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 //session.RegistryRemove(session.SessionName);
                 treeView1.SelectedNode.Remove();
@@ -584,8 +584,8 @@ namespace SuperPutty
                     List<SessionData> sessions = new List<SessionData>();
                     GetAllSessions(node, sessions);
                     if (DialogResult.Yes == Messenger.MessageBox(
-                        "Remove Folder [" + node.Text + "] and " + sessions.Count + " sessions?",
-                        "Remove Folder?", 
+                        "Are you sure you want to remove folder \"" + node.Text + "\" and its " + sessions.Count + " sessions?",
+                        "Remove folder", 
                         MessageBoxButtons.YesNo,
                         MessageBoxIcon.Question))
                     {
