@@ -103,7 +103,13 @@ namespace SuperPutty
             LayoutData layout = (LayoutData)this.listBoxLayouts.SelectedItem;
             if (layout != null)
             {
-                if (DialogResult.Yes == Messenger.MessageBox("Delete Layout (" + layout.Name + ")?", "Delete Layout", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+                if (layout.Name == SuperPuTTY.Settings.DefaultLayoutName)
+                {
+                    Messenger.MessageBox("Cannot delete the default layout", "Delete layout", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (DialogResult.Yes == Messenger.MessageBox("Are you sure you want to delete layout \"" + layout.Name + "\"?", "Delete layout", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
                 {
                     SuperPuTTY.RemoveLayout(layout.Name, true);
                 }
@@ -140,6 +146,15 @@ namespace SuperPutty
 
             error = null;
             return true;
+        }
+
+        private void listBoxLayouts_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                deleteToolStripMenuItem_Click(deleteToolStripMenuItem, e);
+                e.Handled = true;
+            }
         }
     }
 }
