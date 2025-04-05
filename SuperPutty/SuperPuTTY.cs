@@ -857,10 +857,28 @@ namespace SuperPutty
             }
         }
 
+        /// <summary>true of PuTTY Plus is being used instead of putty</summary>
+        public static bool IsPuTTYPlus
+        {
+            get
+            {
+                bool isPuttyPlus = false;
+                if (File.Exists(Settings.PuttyExe))
+                {
+                    string exe = Path.GetFileName(Settings.PuttyExe);
+                    isPuttyPlus = exe != null && exe.ToLower().StartsWith("putty-plus");
+                }
+                return isPuttyPlus;
+            }
+        }
+
         public static string PuTTYAppName
         {
             get
             {
+                if (IsPuTTYPlus)
+                    return "PuTTY Plus";
+
                 if (IsKiTTY)
                     return "KiTTY";
 

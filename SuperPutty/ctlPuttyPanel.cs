@@ -393,13 +393,17 @@ namespace SuperPutty
 
         private void aboutPuttyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (SuperPuTTY.PuTTYAppName == "PuTTY")
+            if (SuperPuTTY.PuTTYAppName == "PuTTY Plus")
             {
-                Process.Start("http://www.chiark.greenend.org.uk/~sgtatham/putty/");
+                Process.Start("https://github.com/SilverGreen93/putty");
             }
             else if (SuperPuTTY.PuTTYAppName == "KiTTY")
             {
                 Process.Start("https://www.9bis.net/kitty/index.html");
+            }
+            else if (SuperPuTTY.PuTTYAppName == "PuTTY")
+            {
+                Process.Start("http://www.chiark.greenend.org.uk/~sgtatham/putty/");
             }
             else
             {
