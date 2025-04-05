@@ -101,11 +101,9 @@
             this.linkMsys = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.linkPscp = new System.Windows.Forms.LinkLabel();
-            this.kittyLink = new System.Windows.Forms.LinkLabel();
             this.puttyLink = new System.Windows.Forms.LinkLabel();
             this.PuttyDefParamLbl = new System.Windows.Forms.Label();
             this.labelRDP = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabPageGUI = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.optDarkBlueTheme = new System.Windows.Forms.RadioButton();
@@ -648,7 +646,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(2, 70);
+            this.label7.Location = new System.Drawing.Point(0, 70);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 20);
@@ -864,12 +862,10 @@
             this.panel1.Controls.Add(this.linkMsys);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.linkPscp);
-            this.panel1.Controls.Add(this.kittyLink);
             this.panel1.Controls.Add(this.puttyLink);
             this.panel1.Controls.Add(this.PuttyDefParamLbl);
             this.panel1.Controls.Add(this.labelRDP);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(9, 135);
@@ -889,7 +885,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(36, 206);
+            this.label22.Location = new System.Drawing.Point(34, 207);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(87, 20);
             this.label22.TabIndex = 68;
@@ -910,11 +906,11 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(154, 4);
+            this.label21.Location = new System.Drawing.Point(121, 4);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(44, 20);
+            this.label21.Size = new System.Drawing.Size(75, 20);
             this.label21.TabIndex = 66;
-            this.label21.Text = "(req.)";
+            this.label21.Text = "(required)";
             // 
             // linkTightVnc
             // 
@@ -955,7 +951,7 @@
             // linkCygwin
             // 
             this.linkCygwin.AutoSize = true;
-            this.linkCygwin.Location = new System.Drawing.Point(74, 70);
+            this.linkCygwin.Location = new System.Drawing.Point(72, 70);
             this.linkCygwin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkCygwin.Name = "linkCygwin";
             this.linkCygwin.Size = new System.Drawing.Size(57, 20);
@@ -999,28 +995,16 @@
             this.linkPscp.Text = "pscp.exe";
             this.linkPscp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.puttyLink_LinkClicked);
             // 
-            // kittyLink
-            // 
-            this.kittyLink.AutoSize = true;
-            this.kittyLink.Location = new System.Drawing.Point(92, 4);
-            this.kittyLink.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.kittyLink.Name = "kittyLink";
-            this.kittyLink.Size = new System.Drawing.Size(63, 20);
-            this.kittyLink.TabIndex = 58;
-            this.kittyLink.TabStop = true;
-            this.kittyLink.Text = "kitty.exe";
-            this.kittyLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.kittyLink_LinkClicked);
-            // 
             // puttyLink
             // 
             this.puttyLink.AutoSize = true;
-            this.puttyLink.Location = new System.Drawing.Point(2, 4);
+            this.puttyLink.Location = new System.Drawing.Point(19, 4);
             this.puttyLink.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.puttyLink.Name = "puttyLink";
-            this.puttyLink.Size = new System.Drawing.Size(69, 20);
+            this.puttyLink.Size = new System.Drawing.Size(102, 20);
             this.puttyLink.TabIndex = 57;
             this.puttyLink.TabStop = true;
-            this.puttyLink.Text = "putty.exe";
+            this.puttyLink.Text = "putty-plus.exe";
             this.puttyLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.puttyLink_LinkClicked);
             // 
             // PuttyDefParamLbl
@@ -1044,17 +1028,6 @@
             this.labelRDP.Size = new System.Drawing.Size(77, 20);
             this.labelRDP.TabIndex = 54;
             this.labelRDP.Text = "RDP client";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(70, 4);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 20);
-            this.label1.TabIndex = 51;
-            this.label1.Text = "or";
             // 
             // tabPageGUI
             // 
@@ -1594,7 +1567,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "SuperPuTTY Options";
+            this.Text = "SuperXPuTTY Options";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.tabControl.ResumeLayout(false);
             this.tabPageGeneral.ResumeLayout(false);
@@ -1738,12 +1711,10 @@
         private System.Windows.Forms.LinkLabel linkMsys;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.LinkLabel linkPscp;
-        private System.Windows.Forms.LinkLabel kittyLink;
         private System.Windows.Forms.LinkLabel puttyLink;
         private System.Windows.Forms.Label PuttyDefParamLbl;
         private System.Windows.Forms.Label labelRDP;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label21;

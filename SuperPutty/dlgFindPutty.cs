@@ -668,14 +668,9 @@ namespace SuperPutty
             return String.Format("{0}, {1} pt, {2}", font.FontFamily.Name, font.Size, font.Style);
         }
 
-        private void kittyLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start("https://www.9bis.net/kitty/#!pages/download.md");
-        }
-
         private void puttyLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html");
+            Process.Start("https://github.com/SilverGreen93/putty/releases");
         }
 
         private void linkCygwin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -121,9 +121,8 @@
     <value>17, 17</value>
   </metadata>
   <data name="richTextBox1.Text" xml:space="preserve">
-    <value>This application requires at least the PuTTY or KiTTY application to run. 
-KiTTY offers more options such as customizable scroll lines.
-PuTTY is actively developped and patched for vulnerabilities.
+    <value>This application requires at least PuTTY or a compatible fork application to run (PuTTY Plus, KiTTY or PuTTY).
+PuTTY Plus is recommended as if offers more options such as easy zooming or non-disruptive messages.
 To enable file transfer capabilities the pscp program included with PuTTY is also required.
 You can download all the required third party software by clicking on the executable names below.</value>
   </data>
