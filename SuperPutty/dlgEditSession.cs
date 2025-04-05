@@ -164,7 +164,7 @@ namespace SuperPutty
                 if (Messenger.MessageBox("SuperPutty saves the extra arguments Sessions.xml file in plain text.\n" +
                                          "Use of -pw password in 'Extra arguments' is very insecure.\n" +
                                          "For a secure connection use SSH authentication with Pageant.\n" +
-                                         "Alternatively, use -pwfile to specify a password file.\n" +
+                                         "Alternatively, use -pwfile to specify a password file or enable -pw in Tools->Options->Advanced.\n" +
                                          "\nSelect Yes, if you still want save the password.",
                                          "Are you sure that you want to save the password?",
                                          MessageBoxButtons.YesNo,
