@@ -175,7 +175,8 @@ namespace SuperPutty
                 Log.Info("Automatic Update Check Disabled in DEBUG mode");
 #else
                 Log.Info("Checking for updates");
-                this.checkForUpdatesToolStripMenuItem_Click(this, new EventArgs());
+                checkForSuperXPuttyUpdates(this, new EventArgs());
+                checkForPuttyPlusUpdates(this, new EventArgs());
 #endif
             }
             // Hook into LayoutChanging/Changed
@@ -1839,13 +1840,14 @@ namespace SuperPutty
             menuStrip1.Visible = SuperPuTTY.Settings.ShowMenuBar;
         }
 
-        /// <summary>Check for a newer version of the SuperPuTTY Application</summary>
+        /// <summary>Check for a newer version of SuperXPuTTY</summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void checkForUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void checkForSuperXPuttyUpdates(object sender, EventArgs e)
         {
-            Log.Info("Checking for application update");
-            try {
+            Log.Info("Checking for SuperXPuTTY update");
+            try
+            {
                 httpRequest httpUpdateRequest = new httpRequest();
                 httpUpdateRequest.MakeRequest("https://api.github.com/repos/SilverGreen93/superputty/releases/latest", delegate (bool success, string content)
                 {
@@ -1856,12 +1858,12 @@ namespace SuperPutty
                         GitRelease latest = (GitRelease)js.ReadObject(ms);
                         ms.Close();
 
-                        Version latest_version = new Version(latest.version.Trim().Substring(1)); // skip the 'v' in front of v1.6.0.0
+                        Version latest_version = new Version(latest.version.Trim().Substring(1)); // skip the 'v' prefix
                         Version SuperPuTTY_version = new Version(SuperPuTTY.Version);
 
                         if (latest_version.CompareTo(SuperPuTTY_version) > 0)
                         {
-                            Log.Info("New application version found! " + latest.version);
+                            Log.Info("New SuperXPuTTY version found: " + latest.version);
 
                             if (Messenger.MessageBox("An updated version of SuperXPuTTY (" + latest.version + ") is available. Would you like to visit the download page to upgrade?",
                                 "SuperXPutty update found",
@@ -1873,27 +1875,125 @@ namespace SuperPutty
                         }
                         else
                         {
+                            Log.Info("No new SuperXPuTTY version found.");
+
                             if (sender.ToString().Equals(checkForUpdatesToolStripMenuItem.Text))
                             {
-                                Messenger.MessageBox("You are running the latest version of SuperXPutty", "SuperXPutty update check", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                Messenger.MessageBox("You are running the latest version of SuperXPuTTY", "SuperXPuTTY update check", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
                     }
                     else
                     {
                         Messenger.MessageBox("There was an error while checking for updates. Please try again later.", "Error during update check", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        Log.Warn("An error occurred trying to check for program updates: " + content);
+                        Log.Warn("An error occurred trying to check for SuperXPuTTY updates: " + content);
                     }
                 });
             }
             catch (System.Net.WebException ex)
             {
-                Log.Warn("An Exception occurred while trying to check for program updates: " + ex.ToString());
+                Log.Warn("An Exception occurred while trying to check for SuperXPuTTY updates: " + ex.ToString());
             }
             catch (System.FormatException ex)
             {
-                Log.Warn("An Exception occurred while trying to check for program updates: " + ex.ToString());
+                Log.Warn("An Exception occurred while trying to check for SuperXPuTTY updates: " + ex.ToString());
             }
+        }
+
+        private int ExtractPuttyPlusVersionNumber(string input)
+        {
+            // Define a regular expression to match "Plus R" followed by digits
+            Regex regex = new Regex(@"Plus R(\d+)");
+            Match match = regex.Match(input);
+
+            if (match.Success)
+            {
+                // Extract the number after "Plus R"
+                return int.Parse(match.Groups[1].Value);
+            }
+            else
+            {
+                throw new FormatException("The input string does not contain a valid 'Plus R' version number.");
+            }
+        }
+
+        /// <summary>Check for a newer version of PuTTY Plus</summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void checkForPuttyPlusUpdates(object sender, EventArgs e)
+        {
+            if (SuperPuTTY.Settings.PuttyExe == null || SuperPuTTY.Settings.PuttyExe == string.Empty)
+            {
+                // No PuTTY executable set. Ignore checking for updates.
+                return;
+            }
+
+            if (SuperPuTTY.PuTTYAppName != "PuTTY Plus")
+            {
+                // Update check only for PuTTY Plus
+                return;
+            }
+
+            Log.Info("Checking for PuTTY Plus update");
+            try
+            {
+                httpRequest httpUpdateRequest = new httpRequest();
+                httpUpdateRequest.MakeRequest("https://api.github.com/repos/SilverGreen93/putty/releases/latest", delegate (bool success, string content)
+                {
+                    if (success)
+                    {
+                        DataContractJsonSerializer js = new DataContractJsonSerializer(typeof(GitRelease));
+                        MemoryStream ms = new MemoryStream(Encoding.ASCII.GetBytes(content));
+                        GitRelease latest = (GitRelease)js.ReadObject(ms);
+                        ms.Close();
+
+                        int latest_version = Int32.Parse(latest.version.Trim().Substring(5)); // skip the 'PlusR' prefix
+                        string fileVersion = FileVersionInfo.GetVersionInfo(SuperPuTTY.Settings.PuttyExe).ProductVersion;
+                        int PuTTYPlus_version = ExtractPuttyPlusVersionNumber(fileVersion);
+
+                        if (latest_version > PuTTYPlus_version)
+                        {
+                            Log.Info("New PuTTY Plus version found: Plus R" + latest_version);
+
+                            if (Messenger.MessageBox("An updated version of PuTTY Plus (Plus R" + latest_version + ") is available. Would you like to visit the download page to upgrade?",
+                                "PuTTY Plus update found",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Question) == DialogResult.Yes)
+                            {
+                                Process.Start(latest.release_url);
+                            }
+                        }
+                        else
+                        {
+                            Log.Info("No new PuTTY Plus version found");
+
+                            //if (sender.ToString().Equals(checkForUpdatesToolStripMenuItem.Text))
+                            //{
+                            //    Messenger.MessageBox("You are running the latest version of PuTTY Plus", "PuTTY Plus update check", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            //}
+                        }
+                    }
+                    else
+                    {
+                        Messenger.MessageBox("There was an error while checking for PuTTY Plus updates. Please try again later.", "Error during update check", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        Log.Warn("An error occurred trying to check for PuTTY Plus updates: " + content);
+                    }
+                });
+            }
+            catch (System.Net.WebException ex)
+            {
+                Log.Warn("An Exception occurred while trying to check for PuTTY Plus updates: " + ex.ToString());
+            }
+            catch (System.FormatException ex)
+            {
+                Log.Warn("An Exception occurred while trying to check for PuTTY Plus updates: " + ex.ToString());
+            }
+        }
+
+        private void checkForUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            checkForSuperXPuttyUpdates(sender, e);
+            checkForPuttyPlusUpdates(sender, e);
         }
         #endregion
 
