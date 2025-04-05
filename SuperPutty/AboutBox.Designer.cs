@@ -194,9 +194,7 @@ namespace SuperPutty
             this.textBox1.Size = new System.Drawing.Size(700, 133);
             this.textBox1.TabIndex = 24;
             this.textBox1.TabStop = false;
-            this.textBox1.Text = "SuperPutty is a tabbed interface for the PuTTY SSH Client. It is can be used for " +
-    "both terminal sessions and file transfers both utilizing the secure SSH protocol" +
-    ".";
+            this.textBox1.Text = resources.GetString("textBox1.Text");
             // 
             // tabControl1
             // 
@@ -267,7 +265,7 @@ namespace SuperPutty
             this.labelCopyright.TabIndex = 30;
             this.labelCopyright.Text = "Copyright";
             // 
-            // AboutBox1
+            // AboutBox
             // 
             this.AcceptButton = this.okButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -285,12 +283,12 @@ namespace SuperPutty
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AboutBox1";
+            this.Name = "AboutBox";
             this.Padding = new System.Windows.Forms.Padding(12, 11, 12, 11);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "About SuperPuTTY";
+            this.Text = "About SuperXPuTTY";
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);

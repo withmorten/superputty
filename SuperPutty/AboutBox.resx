@@ -121,7 +121,7 @@
   <data name="logoPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGUAAABgCAYAAAAEsbx8AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAAAd0SU1FB9wHChcHL4lMVOsAAB+SSURBVHhe7Z0JdFVFtoaLAD7fc0IGCaNIv/eW
+        DgAACw4BQL7hQQAAAAd0SU1FB9wHChcHL4lMVOsAAB+SSURBVHhe7Z0JdFVFtoaLAD7fc0IGCaNIv/eW
         di+FZpB5SAghCUnIPDKjiLSI2NrdoiiI2C0q2t2oIJPIpEAzhTlMCUhklBkaREQEFAIIDi091Vv/PrXr
         1ql77s0liSFvLe5aP7nc6Zza39l7V+1T55QQ/o8qQogwIURVIUS1G/rJBPvCzrB30Ac+VF0IcbMQ4hYh
         xK1CiNtvqNx1m7LvfwohblJ293zgjf9QX6gthKgvhGgkhGiidM8NlVlsy8bKvnUUJNjdDwxcCMTuEEI0
@@ -300,5 +300,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.</value>
+  </data>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>SuperXPutty is a tabbed interface for the PuTTY SSH Client. It is can be used for both terminal sessions and file transfers both utilizing the secure SSH protocol.
+Besides PuTTY, other compatible applications can be used to connect to VNC, RDP, WSL etc.</value>
   </data>
 </root>
