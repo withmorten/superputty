@@ -1,3 +1,12 @@
+2.0.1.0
+ - Add update checker for PuTTY Plus
+ - Change menu names based on the PuTTY fork used
+ - Update some strings in About and Settings dialogs
+ - Add download link for PuTTY Plus
+ - Add hint for using '-pw' option by enabling it in Advanced Settings
+ - Fix crash if network connection is not available and auto-update check is enabled
+ - Fix update notification messages are displayed in the background
+
 2.0.0.0
  - Added dark theme
  - Added new protocol: Windows Subsystem for Linux
