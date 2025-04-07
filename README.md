@@ -18,7 +18,7 @@ Documentation is available at https://github.com/jimradford/superputty/wiki/Docu
 
 ## Features
 
-- Dark theme (2 variants).
+- Dark theme (2 variants), using [Dark Mode Forms](https://github.com/BlueMystical/Dark-Mode-Forms).
 - Supports protocols: Telnet, Rlogin, VNC, SSH, Serial, RDP, MinTTY, WSL, CMD, PS
 - Start/stop X11 server right from the applicaton.
 - Support for Windows Subsystem for Linux hosts.

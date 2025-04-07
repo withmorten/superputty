@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using static DarkModeForms.KeyValue;
@@ -97,6 +98,12 @@ namespace DarkModeForms
 			return MessageBox(Message, title, icon, buttons, pIsDarkMode);
 		}
 
+		public static DialogResult MessageBox(Form pOwner, string Message, string title, 
+			MessageBoxButtons buttons, MsgIcon icon = MsgIcon.None, bool pIsDarkMode = true)
+		{
+			return MessageBox(Message, title, icon, buttons, pIsDarkMode, owner: pOwner);
+		}
+
 		/// <summary>Displays a message window, also known as a dialog box, which presents a message to the user.</summary>
 		/// <param name="Message">The text to display in the message box.</param>
 		/// <param name="title">The text to display in the title bar of the message box.</param>
@@ -106,7 +113,7 @@ namespace DarkModeForms
 		public static DialogResult MessageBox(
 			string Message, string title, MsgIcon Icon,
 			MessageBoxButtons buttons = MessageBoxButtons.OK, bool pIsDarkMode = true,
-			MessageBoxDefaultButton defaultButton = MessageBoxDefaultButton.Button1)
+			MessageBoxDefaultButton defaultButton = MessageBoxDefaultButton.Button1, Form owner = null)
 		{
 			Form form = new Form
 			{
@@ -117,8 +124,12 @@ namespace DarkModeForms
 				Text = title,
 				Width = MESSAGEBOX_WIDTH,
 				Height = 170,
-				KeyPreview = true //<- allows the form to receive key events before they are passed to the controls
+				KeyPreview = true, //<- allows the form to receive key events before they are passed to the controls
 			};
+			if (owner != null)
+			{
+				form.Owner = owner;
+			}
 
 			DarkModeCS DMode = new DarkModeCS(form)
 			{ ColorMode = pIsDarkMode ? DarkModeCS.DisplayMode.DarkMode : DarkModeCS.DisplayMode.ClearMode };
