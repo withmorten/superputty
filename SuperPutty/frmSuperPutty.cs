@@ -167,6 +167,17 @@ namespace SuperPutty
             SuperPuTTY.StatusEvent += new Action<string>(delegate(String msg) { this.toolStripStatusLabelMessage.Text = msg; });
             SuperPuTTY.ReportStatus("Ready");
 
+            // Hook into LayoutChanging/Changed
+            SuperPuTTY.LayoutChanging += new EventHandler<LayoutChangedEventArgs>(SuperPuTTY_LayoutChanging);
+
+            // Low-Level Mouse and Keyboard hooks
+            llkp = KBHookCallback;
+            kbHookID = SetKBHook(llkp);
+            //llmp = MHookCallback;
+            //mHookID = SetMHook(llmp);
+
+            this.focusHelper = new ChildWindowFocusHelper(this);
+            this.focusHelper.Start();
 
             // Check for updates if enabled. (disabled if compiled with DEBUG)
             if (SuperPuTTY.Settings.AutoUpdateCheck)
@@ -179,17 +190,6 @@ namespace SuperPutty
                 checkForPuttyPlusUpdates(this, new EventArgs());
 #endif
             }
-            // Hook into LayoutChanging/Changed
-            SuperPuTTY.LayoutChanging += new EventHandler<LayoutChangedEventArgs>(SuperPuTTY_LayoutChanging);
-
-            // Low-Level Mouse and Keyboard hooks
-            llkp = KBHookCallback;
-            kbHookID = SetKBHook(llkp);
-            //llmp = MHookCallback;
-            //mHookID = SetMHook(llmp);
-
-            this.focusHelper = new ChildWindowFocusHelper(this);
-            this.focusHelper.Start();
 
             // Restore window location and size
             if (SuperPuTTY.Settings.RestoreWindowLocation)
