@@ -1967,7 +1967,7 @@ namespace SuperPutty
                         {
                             Log.Info("No new PuTTY Plus version found");
 
-                            if (sender.ToString().Equals(checkForUpdatesToolStripMenuItem.Text))
+                            if (sender.ToString().Equals(checkForPuTTYPlusUpdatesToolStripMenuItem.Text))
                             {
                                 ShowMessageBox("You are running the latest version of PuTTY Plus", "PuTTY Plus update check", MessageBoxButtons.OK, MsgIcon.Info);
                             }
