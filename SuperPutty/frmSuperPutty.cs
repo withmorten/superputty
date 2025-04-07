@@ -1865,10 +1865,10 @@ namespace SuperPutty
                         {
                             Log.Info("New SuperXPuTTY version found: " + latest.version);
 
-                            if (Messenger.MessageBox("An updated version of SuperXPuTTY (" + latest.version + ") is available. Would you like to visit the download page to upgrade?",
+                            if (ShowMessageBox("An updated version of SuperXPuTTY (" + latest.version + ") is available. Would you like to visit the download page to upgrade?",
                                 "SuperXPutty update found",
                                 MessageBoxButtons.YesNo,
-                                MessageBoxIcon.Question) == DialogResult.Yes)
+                                MsgIcon.Question) == DialogResult.Yes)
                             {
                                 Process.Start(latest.release_url);
                             }
@@ -1879,13 +1879,13 @@ namespace SuperPutty
 
                             if (sender.ToString().Equals(checkForUpdatesToolStripMenuItem.Text))
                             {
-                                Messenger.MessageBox("You are running the latest version of SuperXPuTTY", "SuperXPuTTY update check", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                ShowMessageBox("You are running the latest version of SuperXPuTTY", "SuperXPuTTY update check", MessageBoxButtons.OK, MsgIcon.Info);
                             }
                         }
                     }
                     else
                     {
-                        Messenger.MessageBox("There was an error while checking for updates. Please try again later.", "Error during update check", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        ShowMessageBox("There was an error while checking for updates. Please try again later.", "Error during update check", MessageBoxButtons.OK, MsgIcon.Warning);
                         Log.Warn("An error occurred trying to check for SuperXPuTTY updates: " + content);
                     }
                 });
@@ -1955,10 +1955,10 @@ namespace SuperPutty
                         {
                             Log.Info("New PuTTY Plus version found: Plus R" + latest_version);
 
-                            if (Messenger.MessageBox("An updated version of PuTTY Plus (Plus R" + latest_version + ") is available. Would you like to visit the download page to upgrade?",
+                            if (ShowMessageBox("An updated version of PuTTY Plus (Plus R" + latest_version + ") is available. Would you like to visit the download page to upgrade?",
                                 "PuTTY Plus update found",
                                 MessageBoxButtons.YesNo,
-                                MessageBoxIcon.Question) == DialogResult.Yes)
+                                MsgIcon.Question) == DialogResult.Yes)
                             {
                                 Process.Start(latest.release_url);
                             }
@@ -1967,15 +1967,15 @@ namespace SuperPutty
                         {
                             Log.Info("No new PuTTY Plus version found");
 
-                            //if (sender.ToString().Equals(checkForUpdatesToolStripMenuItem.Text))
-                            //{
-                            //    Messenger.MessageBox("You are running the latest version of PuTTY Plus", "PuTTY Plus update check", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            //}
+                            if (sender.ToString().Equals(checkForUpdatesToolStripMenuItem.Text))
+                            {
+                                ShowMessageBox("You are running the latest version of PuTTY Plus", "PuTTY Plus update check", MessageBoxButtons.OK, MsgIcon.Info);
+                            }
                         }
                     }
                     else
                     {
-                        Messenger.MessageBox("There was an error while checking for PuTTY Plus updates. Please try again later.", "Error during update check", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        ShowMessageBox("There was an error while checking for PuTTY Plus updates. Please try again later.", "Error during update check", MessageBoxButtons.OK, MsgIcon.Warning);
                         Log.Warn("An error occurred trying to check for PuTTY Plus updates: " + content);
                     }
                 });
@@ -1993,7 +1993,6 @@ namespace SuperPutty
         private void checkForUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             checkForSuperXPuttyUpdates(sender, e);
-            checkForPuttyPlusUpdates(sender, e);
         }
         #endregion
 
@@ -2236,6 +2235,35 @@ namespace SuperPutty
             {
                 StopXProcess();
             }
+        }
+
+        private DialogResult ShowMessageBox(string text, string caption, MessageBoxButtons buttons, MsgIcon icon)
+        {
+            if (this.InvokeRequired)
+            {
+                return (DialogResult)this.Invoke(new Func<DialogResult>(() => Messenger.MessageBox(this, text, caption, buttons, icon)));
+            }
+            else
+            {
+                return Messenger.MessageBox(this, text, caption, buttons, icon);
+            }
+        }
+
+        private void helpToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
+        {
+            if (SuperPuTTY.PuTTYAppName != "PuTTY Plus")
+            {
+                checkForPuTTYPlusUpdatesToolStripMenuItem.Visible = false;
+            }
+            else
+            {
+                checkForPuTTYPlusUpdatesToolStripMenuItem.Visible = true;
+            }
+        }
+
+        private void checkForPuTTYPlusUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            checkForPuttyPlusUpdates(sender, e);
         }
     }
 }
