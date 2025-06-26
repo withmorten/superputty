@@ -52,6 +52,7 @@
             this.closeOthersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeOthersToTheRightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyHostNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +62,7 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newSessionToolStripMenuItem,
             this.duplicateSessionToolStripMenuItem,
+            this.copyHostNameToolStripMenuItem,
             this.toolStripSeparator1,
             this.renameTabToolStripMenuItem,
             this.refreshToolStripMenuItem,
@@ -82,7 +84,7 @@
             this.closeOthersToTheRightToolStripMenuItem,
             this.closeAllToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(309, 476);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(309, 530);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // newSessionToolStripMenuItem
@@ -238,12 +240,19 @@
             this.closeAllToolStripMenuItem.Text = "Close all";
             this.closeAllToolStripMenuItem.Click += new System.EventHandler(this.closeAllToolStripMenuItem_Click);
             // 
+            // copyHostNameToolStripMenuItem
+            // 
+            this.copyHostNameToolStripMenuItem.Name = "copyHostNameToolStripMenuItem";
+            this.copyHostNameToolStripMenuItem.Size = new System.Drawing.Size(308, 26);
+            this.copyHostNameToolStripMenuItem.Text = "Copy host name";
+            this.copyHostNameToolStripMenuItem.Click += new System.EventHandler(this.copyHostNameToolStripMenuItem_Click);
+            // 
             // ctlPuttyPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1785, 265);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ctlPuttyPanel";
             this.TabPageContextMenuStrip = this.contextMenuStrip1;
             this.Text = "PuTTY Session";
@@ -278,6 +287,6 @@
         private System.Windows.Forms.ToolStripMenuItem closeOthersToTheRightToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeAllToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resetAndClearScrollbackToolStripMenuItem;
-
+        private System.Windows.Forms.ToolStripMenuItem copyHostNameToolStripMenuItem;
     }
 }

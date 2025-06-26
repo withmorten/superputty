@@ -498,5 +498,9 @@ namespace SuperPutty
 
         public string TextOverride { get; set; }
 
+        private void copyHostNameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(Session.Host);
+        }
     }
 }
