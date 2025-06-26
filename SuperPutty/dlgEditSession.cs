@@ -19,16 +19,17 @@
  * THE SOFTWARE.
  */
 
+using DarkModeForms;
+using log4net;
+using SuperPutty.Data;
+using SuperPutty.Gui;
+using SuperPutty.Utils;
 using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.Windows.Forms;
-using SuperPutty.Data;
-using SuperPutty.Utils;
-using SuperPutty.Gui;
-using log4net;
 using System.IO;
-using DarkModeForms;
+using System.Net;
+using System.Windows.Forms;
 
 namespace SuperPutty
 {
@@ -211,16 +212,25 @@ namespace SuperPutty
             {
                 this.textBoxPort.Enabled = false;
                 this.textBoxUsername.Enabled = false;
+                lblHostname.Text = "Host name (or IP):";
                 if (String.IsNullOrEmpty(host) || !host.StartsWith(CygtermStartInfo.LocalHost))
                 {
                     OldHostname = this.textBoxHostname.Text;
                     this.textBoxHostname.Text = CygtermStartInfo.LocalHost;
                 }
             }
+            else if (proto == ConnectionProtocol.Serial)
+            {
+                textBoxPort.Enabled = false;
+                textBoxUsername.Enabled = false;
+                lblHostname.Text = "Serial port:";
+                textBoxExtraArgs.Text = "-sercfg 115200,8,n,1,N";
+            }
             else
             {
                 this.textBoxPort.Enabled = true;
                 this.textBoxUsername.Enabled = true;
+                lblHostname.Text = "Host name (or IP):";
                 if (!string.IsNullOrEmpty(OldHostname))
                 {
                     this.textBoxHostname.Text = OldHostname;
