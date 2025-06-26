@@ -62,6 +62,7 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.copyHostNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripAddTreeItem.SuspendLayout();
             this.contextMenuStripFolder.SuspendLayout();
             this.panelSearch.SuspendLayout();
@@ -108,6 +109,7 @@
             this.connectInNewSuperPuTTYToolStripMenuItem,
             this.toolStripSeparator1,
             this.newSessionToolStripMenuItem,
+            this.copyHostNameToolStripMenuItem,
             this.createLikeToolStripMenuItem,
             this.settingsToolStripMenuItem,
             this.deleteToolStripMenuItem,
@@ -117,7 +119,7 @@
             this.fileZillaToolStripMenuItem});
             this.contextMenuStripAddTreeItem.Name = "contextMenuStripAddTreeItem";
             this.contextMenuStripAddTreeItem.ShowImageMargin = false;
-            this.contextMenuStripAddTreeItem.Size = new System.Drawing.Size(211, 256);
+            this.contextMenuStripAddTreeItem.Size = new System.Drawing.Size(211, 308);
             this.contextMenuStripAddTreeItem.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStripAddTreeItem_Opening);
             // 
             // connectToolStripMenuItem
@@ -349,6 +351,13 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // copyHostNameToolStripMenuItem
+            // 
+            this.copyHostNameToolStripMenuItem.Name = "copyHostNameToolStripMenuItem";
+            this.copyHostNameToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.copyHostNameToolStripMenuItem.Text = "Copy host name";
+            this.copyHostNameToolStripMenuItem.Click += new System.EventHandler(this.copyHostNameToolStripMenuItem_Click);
+            // 
             // SessionTreeview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -405,5 +414,6 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.ToolStripMenuItem winSCPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fileZillaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem copyHostNameToolStripMenuItem;
     }
 }

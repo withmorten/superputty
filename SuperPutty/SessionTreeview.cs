@@ -34,6 +34,7 @@ using WeifenLuo.WinFormsUI.Docking;
 using SuperPutty.Gui;
 using System.Text.RegularExpressions;
 using DarkModeForms;
+using Microsoft.VisualBasic;
 
 
 namespace SuperPutty
@@ -1182,6 +1183,13 @@ namespace SuperPutty
             {
                 this.ApplySearch(this.txtSearch.Text);
             }
+        }
+
+        private void copyHostNameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SessionData session;
+            session = (SessionData)treeView1.SelectedNode.Tag;
+            Clipboard.SetText(session.Host);
         }
     }
 
