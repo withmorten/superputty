@@ -8,8 +8,6 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using System.Diagnostics;
-using System.Xml.Linq;
 
 
 namespace DarkModeForms
