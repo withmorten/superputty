@@ -176,7 +176,9 @@
     <Compile Include="Scp\PscpClient.cs" />
     <Compile Include="Scp\RemoteBrowserModel.cs" />
     <Compile Include="Scripting\CloseSessionCommand.cs" />
-    <Compile Include="Scripting\frmPrivatePrompt.cs" />
+    <Compile Include="Scripting\frmPrivatePrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Scripting\OpenSessionCommand.cs" />
     <Compile Include="Scripting\PromptCommand.cs" />
     <Compile Include="Scripting\PwdpromptCommand.cs" />

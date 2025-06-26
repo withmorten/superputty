@@ -120,12 +120,12 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.checkPuttyEnableNewSessionMenu = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.checkShowDocumentIcons = new System.Windows.Forms.CheckBox();
             this.label15 = new System.Windows.Forms.Label();
             this.checkQuickSelectorCaseSensitiveSearch = new System.Windows.Forms.CheckBox();
             this.label13 = new System.Windows.Forms.Label();
             this.numericUpDownOpacity = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkShowDocumentIcons = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboSearchMode = new System.Windows.Forms.ComboBox();
             this.btnFont = new System.Windows.Forms.Button();
@@ -366,7 +366,7 @@
             // checkMinimizeToTray
             // 
             this.checkMinimizeToTray.AutoSize = true;
-            this.checkMinimizeToTray.Location = new System.Drawing.Point(89, 61);
+            this.checkMinimizeToTray.Location = new System.Drawing.Point(89, 152);
             this.checkMinimizeToTray.Margin = new System.Windows.Forms.Padding(4);
             this.checkMinimizeToTray.Name = "checkMinimizeToTray";
             this.checkMinimizeToTray.Size = new System.Drawing.Size(139, 24);
@@ -1213,38 +1213,26 @@
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.checkShowDocumentIcons);
-            this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.checkQuickSelectorCaseSensitiveSearch);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.numericUpDownOpacity);
             this.groupBox3.Controls.Add(this.checkMinimizeToTray);
+            this.groupBox3.Controls.Add(this.label15);
+            this.groupBox3.Controls.Add(this.checkQuickSelectorCaseSensitiveSearch);
             this.groupBox3.Location = new System.Drawing.Point(459, 264);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(304, 196);
+            this.groupBox3.Size = new System.Drawing.Size(304, 227);
             this.groupBox3.TabIndex = 40;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Misc";
-            // 
-            // checkShowDocumentIcons
-            // 
-            this.checkShowDocumentIcons.AutoSize = true;
-            this.checkShowDocumentIcons.Location = new System.Drawing.Point(89, 90);
-            this.checkShowDocumentIcons.Margin = new System.Windows.Forms.Padding(4);
-            this.checkShowDocumentIcons.Name = "checkShowDocumentIcons";
-            this.checkShowDocumentIcons.Size = new System.Drawing.Size(176, 24);
-            this.checkShowDocumentIcons.TabIndex = 39;
-            this.checkShowDocumentIcons.Text = "Show document icons";
-            this.checkShowDocumentIcons.UseVisualStyleBackColor = true;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(12, 121);
+            this.label15.Location = new System.Drawing.Point(12, 65);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(148, 20);
@@ -1254,7 +1242,7 @@
             // checkQuickSelectorCaseSensitiveSearch
             // 
             this.checkQuickSelectorCaseSensitiveSearch.AutoSize = true;
-            this.checkQuickSelectorCaseSensitiveSearch.Location = new System.Drawing.Point(89, 149);
+            this.checkQuickSelectorCaseSensitiveSearch.Location = new System.Drawing.Point(89, 93);
             this.checkQuickSelectorCaseSensitiveSearch.Margin = new System.Windows.Forms.Padding(4);
             this.checkQuickSelectorCaseSensitiveSearch.Name = "checkQuickSelectorCaseSensitiveSearch";
             this.checkQuickSelectorCaseSensitiveSearch.Size = new System.Drawing.Size(170, 24);
@@ -1266,7 +1254,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(12, 61);
+            this.label13.Location = new System.Drawing.Point(12, 120);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(49, 20);
@@ -1298,6 +1286,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.checkShowDocumentIcons);
             this.groupBox2.Controls.Add(this.checkRestrictFloatingWindows);
             this.groupBox2.Controls.Add(this.checkConfirmTabClose);
             this.groupBox2.Controls.Add(this.checkConstrainPuttyDocking);
@@ -1310,10 +1299,21 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(444, 185);
+            this.groupBox2.Size = new System.Drawing.Size(444, 216);
             this.groupBox2.TabIndex = 39;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tabs and docking";
+            // 
+            // checkShowDocumentIcons
+            // 
+            this.checkShowDocumentIcons.AutoSize = true;
+            this.checkShowDocumentIcons.Location = new System.Drawing.Point(95, 183);
+            this.checkShowDocumentIcons.Margin = new System.Windows.Forms.Padding(4);
+            this.checkShowDocumentIcons.Name = "checkShowDocumentIcons";
+            this.checkShowDocumentIcons.Size = new System.Drawing.Size(131, 24);
+            this.checkShowDocumentIcons.TabIndex = 39;
+            this.checkShowDocumentIcons.Text = "Show tab icons";
+            this.checkShowDocumentIcons.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
