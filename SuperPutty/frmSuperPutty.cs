@@ -1095,7 +1095,7 @@ namespace SuperPutty
                 {
                     Host = connStr.Host,
                     SessionName = connStr.Host,
-                    SessionId = SuperPuTTY.MakeUniqueSessionId(SessionData.CombineSessionIds("ConnectBar", connStr.Host)),
+                    SessionId = SuperPuTTY.MakeUniqueSessionId(SessionData.CombineSessionIds("QuickConnect", connStr.Host)),
                     Proto = proto,
                     Port = connStr.Port.GetValueOrDefault(dlgEditSession.GetDefaultPort(proto)),
                     Username = this.tbTxtBoxLogin.Text,
@@ -2264,6 +2264,11 @@ namespace SuperPutty
         private void checkForPuTTYPlusUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             checkForPuttyPlusUpdates(sender, e);
+        }
+
+        public SessionTreeview SessionTreeviewInstance
+        {
+            get { return this.sessions?.Instance; }
         }
     }
 }

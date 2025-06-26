@@ -73,7 +73,7 @@ namespace SuperPutty
             // 
             this.comboBoxProto.FormattingEnabled = true;
             this.comboBoxProto.Location = new System.Drawing.Point(151, 79);
-            this.comboBoxProto.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.comboBoxProto.Margin = new System.Windows.Forms.Padding(5);
             this.comboBoxProto.Name = "comboBoxProto";
             this.comboBoxProto.Size = new System.Drawing.Size(119, 28);
             this.comboBoxProto.TabIndex = 1;
@@ -83,7 +83,7 @@ namespace SuperPutty
             // textBoxExtraArgs
             // 
             this.textBoxExtraArgs.Location = new System.Drawing.Point(151, 216);
-            this.textBoxExtraArgs.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBoxExtraArgs.Margin = new System.Windows.Forms.Padding(5);
             this.textBoxExtraArgs.Name = "textBoxExtraArgs";
             this.textBoxExtraArgs.Size = new System.Drawing.Size(486, 27);
             this.textBoxExtraArgs.TabIndex = 6;
@@ -104,7 +104,7 @@ namespace SuperPutty
             // buttonSave
             // 
             this.buttonSave.Location = new System.Drawing.Point(450, 619);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(5);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(110, 38);
             this.buttonSave.TabIndex = 8;
@@ -117,7 +117,7 @@ namespace SuperPutty
             this.buttonCancel.CausesValidation = false;
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Location = new System.Drawing.Point(569, 619);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(5);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(110, 38);
             this.buttonCancel.TabIndex = 9;
@@ -140,7 +140,7 @@ namespace SuperPutty
             // 
             this.comboBoxPuttyProfile.FormattingEnabled = true;
             this.comboBoxPuttyProfile.Location = new System.Drawing.Point(445, 79);
-            this.comboBoxPuttyProfile.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.comboBoxPuttyProfile.Margin = new System.Windows.Forms.Padding(5);
             this.comboBoxPuttyProfile.Name = "comboBoxPuttyProfile";
             this.comboBoxPuttyProfile.Size = new System.Drawing.Size(193, 28);
             this.comboBoxPuttyProfile.TabIndex = 4;
@@ -161,7 +161,7 @@ namespace SuperPutty
             // textBoxUsername
             // 
             this.textBoxUsername.Location = new System.Drawing.Point(151, 168);
-            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(5);
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(486, 27);
             this.textBoxUsername.TabIndex = 5;
@@ -174,7 +174,7 @@ namespace SuperPutty
             // buttonImageSelect
             // 
             this.buttonImageSelect.Location = new System.Drawing.Point(599, 29);
-            this.buttonImageSelect.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.buttonImageSelect.Margin = new System.Windows.Forms.Padding(5);
             this.buttonImageSelect.Name = "buttonImageSelect";
             this.buttonImageSelect.Size = new System.Drawing.Size(40, 40);
             this.buttonImageSelect.TabIndex = 7;
@@ -184,7 +184,7 @@ namespace SuperPutty
             // buttonBrowse
             // 
             this.buttonBrowse.Location = new System.Drawing.Point(529, 264);
-            this.buttonBrowse.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.buttonBrowse.Margin = new System.Windows.Forms.Padding(5);
             this.buttonBrowse.Name = "buttonBrowse";
             this.buttonBrowse.Size = new System.Drawing.Size(110, 29);
             this.buttonBrowse.TabIndex = 15;
@@ -195,7 +195,7 @@ namespace SuperPutty
             // textBoxSPSLScriptFile
             // 
             this.textBoxSPSLScriptFile.Location = new System.Drawing.Point(151, 264);
-            this.textBoxSPSLScriptFile.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBoxSPSLScriptFile.Margin = new System.Windows.Forms.Padding(5);
             this.textBoxSPSLScriptFile.Name = "textBoxSPSLScriptFile";
             this.textBoxSPSLScriptFile.Size = new System.Drawing.Size(246, 27);
             this.textBoxSPSLScriptFile.TabIndex = 16;
@@ -219,7 +219,7 @@ namespace SuperPutty
             // buttonClearSPSLFile
             // 
             this.buttonClearSPSLFile.Location = new System.Drawing.Point(409, 264);
-            this.buttonClearSPSLFile.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.buttonClearSPSLFile.Margin = new System.Windows.Forms.Padding(5);
             this.buttonClearSPSLFile.Name = "buttonClearSPSLFile";
             this.buttonClearSPSLFile.Size = new System.Drawing.Size(110, 29);
             this.buttonClearSPSLFile.TabIndex = 18;
@@ -236,9 +236,9 @@ namespace SuperPutty
             this.groupBoxFileTransferOptions.Controls.Add(this.lbLocalPath);
             this.groupBoxFileTransferOptions.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.groupBoxFileTransferOptions.Location = new System.Drawing.Point(15, 480);
-            this.groupBoxFileTransferOptions.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBoxFileTransferOptions.Margin = new System.Windows.Forms.Padding(5);
             this.groupBoxFileTransferOptions.Name = "groupBoxFileTransferOptions";
-            this.groupBoxFileTransferOptions.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBoxFileTransferOptions.Padding = new System.Windows.Forms.Padding(5);
             this.groupBoxFileTransferOptions.Size = new System.Drawing.Size(664, 129);
             this.groupBoxFileTransferOptions.TabIndex = 19;
             this.groupBoxFileTransferOptions.TabStop = false;
@@ -249,7 +249,7 @@ namespace SuperPutty
             this.textBoxRemotePathSesion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxRemotePathSesion.Location = new System.Drawing.Point(151, 81);
-            this.textBoxRemotePathSesion.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBoxRemotePathSesion.Margin = new System.Windows.Forms.Padding(5);
             this.textBoxRemotePathSesion.Name = "textBoxRemotePathSesion";
             this.textBoxRemotePathSesion.Size = new System.Drawing.Size(486, 27);
             this.textBoxRemotePathSesion.TabIndex = 18;
@@ -268,7 +268,7 @@ namespace SuperPutty
             // 
             this.buttonBrowseLocalPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonBrowseLocalPath.Location = new System.Drawing.Point(529, 30);
-            this.buttonBrowseLocalPath.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.buttonBrowseLocalPath.Margin = new System.Windows.Forms.Padding(5);
             this.buttonBrowseLocalPath.Name = "buttonBrowseLocalPath";
             this.buttonBrowseLocalPath.Size = new System.Drawing.Size(110, 29);
             this.buttonBrowseLocalPath.TabIndex = 16;
@@ -281,7 +281,7 @@ namespace SuperPutty
             this.textBoxLocalPathSesion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxLocalPathSesion.Location = new System.Drawing.Point(151, 30);
-            this.textBoxLocalPathSesion.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBoxLocalPathSesion.Margin = new System.Windows.Forms.Padding(5);
             this.textBoxLocalPathSesion.Name = "textBoxLocalPathSesion";
             this.textBoxLocalPathSesion.Size = new System.Drawing.Size(366, 27);
             this.textBoxLocalPathSesion.TabIndex = 1;
@@ -311,7 +311,7 @@ namespace SuperPutty
             // 
             this.textBoxNote.AcceptsReturn = true;
             this.textBoxNote.Location = new System.Drawing.Point(24, 326);
-            this.textBoxNote.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBoxNote.Margin = new System.Windows.Forms.Padding(5);
             this.textBoxNote.Multiline = true;
             this.textBoxNote.Name = "textBoxNote";
             this.textBoxNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -332,7 +332,7 @@ namespace SuperPutty
             // textBoxSessionName
             // 
             this.textBoxSessionName.Location = new System.Drawing.Point(151, 36);
-            this.textBoxSessionName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBoxSessionName.Margin = new System.Windows.Forms.Padding(5);
             this.textBoxSessionName.Name = "textBoxSessionName";
             this.textBoxSessionName.Size = new System.Drawing.Size(359, 27);
             this.textBoxSessionName.TabIndex = 20;
@@ -346,14 +346,14 @@ namespace SuperPutty
             this.lblHostname.Location = new System.Drawing.Point(20, 128);
             this.lblHostname.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblHostname.Name = "lblHostname";
-            this.lblHostname.Size = new System.Drawing.Size(128, 20);
+            this.lblHostname.Size = new System.Drawing.Size(98, 20);
             this.lblHostname.TabIndex = 23;
-            this.lblHostname.Text = "Host name (or IP):";
+            this.lblHostname.Text = "Host address:";
             // 
             // textBoxHostname
             // 
             this.textBoxHostname.Location = new System.Drawing.Point(151, 124);
-            this.textBoxHostname.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBoxHostname.Margin = new System.Windows.Forms.Padding(5);
             this.textBoxHostname.Name = "textBoxHostname";
             this.textBoxHostname.Size = new System.Drawing.Size(239, 27);
             this.textBoxHostname.TabIndex = 22;
@@ -373,7 +373,7 @@ namespace SuperPutty
             // textBoxPort
             // 
             this.textBoxPort.Location = new System.Drawing.Point(545, 124);
-            this.textBoxPort.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBoxPort.Margin = new System.Windows.Forms.Padding(5);
             this.textBoxPort.Name = "textBoxPort";
             this.textBoxPort.Size = new System.Drawing.Size(93, 27);
             this.textBoxPort.TabIndex = 24;
@@ -426,9 +426,9 @@ namespace SuperPutty
             this.groupBox1.Controls.Add(this.buttonClearSPSLFile);
             this.groupBox1.Controls.Add(this.textBoxPort);
             this.groupBox1.Location = new System.Drawing.Point(15, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(664, 456);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
@@ -448,7 +448,7 @@ namespace SuperPutty
             this.Controls.Add(this.buttonSave);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "dlgEditSession";

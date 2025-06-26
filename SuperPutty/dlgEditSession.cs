@@ -212,7 +212,7 @@ namespace SuperPutty
             {
                 this.textBoxPort.Enabled = false;
                 this.textBoxUsername.Enabled = false;
-                lblHostname.Text = "Host name (or IP):";
+                lblHostname.Text = "Host address:";
                 if (String.IsNullOrEmpty(host) || !host.StartsWith(CygtermStartInfo.LocalHost))
                 {
                     OldHostname = this.textBoxHostname.Text;
@@ -230,7 +230,7 @@ namespace SuperPutty
             {
                 this.textBoxPort.Enabled = true;
                 this.textBoxUsername.Enabled = true;
-                lblHostname.Text = "Host name (or IP):";
+                lblHostname.Text = "Host address:";
                 if (!string.IsNullOrEmpty(OldHostname))
                 {
                     this.textBoxHostname.Text = OldHostname;

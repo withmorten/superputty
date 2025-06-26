@@ -19,6 +19,12 @@
  * THE SOFTWARE.
  */
 
+using DarkModeForms;
+using log4net;
+using Microsoft.VisualBasic;
+using SuperPutty.Data;
+using SuperPutty.Gui;
+using SuperPutty.Utils;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -26,15 +32,10 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Drawing;
 using System.Linq;
-using System.Windows.Forms;
-using log4net;
-using SuperPutty.Data;
-using SuperPutty.Utils;
-using WeifenLuo.WinFormsUI.Docking;
-using SuperPutty.Gui;
 using System.Text.RegularExpressions;
-using DarkModeForms;
-using Microsoft.VisualBasic;
+using System.Windows.Forms;
+using WeifenLuo.WinFormsUI.Docking;
+using static System.Collections.Specialized.BitVector32;
 
 
 namespace SuperPutty
@@ -324,41 +325,82 @@ namespace SuperPutty
         /// <param name="e">An Empty EventArgs object</param>
         private void CreateOrEditSessionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SessionData session = null;
-            TreeNode node = null;
-            TreeNode nodeRef = this.nodeRoot;
-            string title = null;
-            if (sender is ToolStripMenuItem)
+            if (!(sender is ToolStripMenuItem))
             {
-                ToolStripMenuItem menuItem = (ToolStripMenuItem)sender;
-                bool isFolderNode = IsFolderNode(treeView1.SelectedNode);
-                if (menuItem.Text.ToLower().Equals("new") || isFolderNode)
-                {
-                    session = new SessionData();
-                    nodeRef = isFolderNode ? treeView1.SelectedNode : treeView1.SelectedNode.Parent;
-                    title = "Create new session";
-                }
-                else if (menuItem == this.createLikeToolStripMenuItem)
-                {
-                    // copy as
-                    session = (SessionData) ((SessionData) treeView1.SelectedNode.Tag).Clone();
-                    session.SessionId = SuperPuTTY.MakeUniqueSessionId(session.SessionId);
-                    session.SessionName = SessionData.GetSessionNameFromId(session.SessionId);
-                    nodeRef = treeView1.SelectedNode.Parent;
-                    title = "Create new session like " + session.OldName;
-                }
-                else
-                {
-                    // edit, session node selected
-                    // We make a clone of the session since we do not want to directly edit the real object.
-                    session = (SessionData)((SessionData)treeView1.SelectedNode.Tag).Clone();
-                    node = treeView1.SelectedNode;
-                    nodeRef = node.Parent;
-                    title = "Edit session: " + session.SessionName;
-                }
+                return;
             }
 
-            dlgEditSession form = new dlgEditSession(session, this.treeView1.ImageList) {Text = title};
+            ToolStripMenuItem menuItem = (ToolStripMenuItem)sender;
+
+            if (menuItem == newSessionToolStripMenuItem)
+            {
+                // create new session
+                CreateOrEditSession(0, null);
+            }
+            else if (menuItem == createLikeToolStripMenuItem)
+            {
+                // copy as
+                SessionData session = (SessionData)((SessionData)treeView1.SelectedNode.Tag).Clone();
+                CreateOrEditSession(1, session);
+            }
+            else
+            {
+                // edit, session node selected
+                // We make a clone of the session since we do not want to directly edit the real object.
+                SessionData session = (SessionData)((SessionData)treeView1.SelectedNode.Tag).Clone();
+                CreateOrEditSession(2, session);
+            }
+        }
+
+
+        public void CreateOrEditSession(int mode, SessionData existingSession)
+        { 
+            SessionData session = existingSession;
+            TreeNode node = null;
+            TreeNode nodeRef = nodeRoot;
+            string title = null;
+
+            if (treeView1.SelectedNode == null)
+            {
+                treeView1.SelectedNode = nodeRoot;
+            }
+
+            bool isFolderNode = IsFolderNode(treeView1.SelectedNode);
+
+            if (mode == 0)
+            {
+                // create new session
+                session = new SessionData();
+                nodeRef = isFolderNode ? treeView1.SelectedNode : treeView1.SelectedNode.Parent;
+                title = "Create new session";
+            }
+            else if (mode == 1)
+            {
+                // copy as
+                if (session == null)
+                {
+                    Log.DebugFormat("session null");
+                    return;
+                }
+                session.SessionId = SuperPuTTY.MakeUniqueSessionId(session.SessionId);
+                session.SessionName = SessionData.GetSessionNameFromId(session.SessionId);
+                nodeRef = isFolderNode ? treeView1.SelectedNode : treeView1.SelectedNode.Parent;
+                title = "Create new session based on " + session.OldName;
+            }
+            else if (mode == 2)
+            {
+                if (session == null)
+                {
+                    Log.DebugFormat("session null");
+                    return;
+                }
+                // edit, session node selected
+                node = treeView1.SelectedNode;
+                nodeRef = node.Parent;
+                title = "Edit session: " + session.SessionName;
+            }
+
+            dlgEditSession form = new dlgEditSession(session, treeView1.ImageList) {Text = title};
             form.SessionNameValidator += delegate(string txt, out string error)
             {
                 bool IsValid = ValidateSessionNameChange(nodeRef, node, txt, out error);
@@ -382,7 +424,7 @@ namespace SuperPutty
                     TreeNode nodeNew = nodeRef.Nodes[session.SessionName];
                     if (nodeNew != null)
                     {
-                        this.treeView1.SelectedNode = nodeNew;
+                        treeView1.SelectedNode = nodeNew;
                     }
                 }
                 else
@@ -391,7 +433,7 @@ namespace SuperPutty
                     SessionData RealSession = (SessionData)treeView1.SelectedNode.Tag;
                     RealSession.CopyFrom(session);
                     RealSession.SessionName = session.SessionName;
-                    this.treeView1.SelectedNode = node;
+                    treeView1.SelectedNode = node;
                 }
 
                 //treeView1.ExpandAll();

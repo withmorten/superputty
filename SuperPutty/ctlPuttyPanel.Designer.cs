@@ -32,6 +32,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.newSessionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.duplicateSessionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyHostNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.renameTabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,7 +53,7 @@
             this.closeOthersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeOthersToTheRightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyHostNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveSessionAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +64,7 @@
             this.newSessionToolStripMenuItem,
             this.duplicateSessionToolStripMenuItem,
             this.copyHostNameToolStripMenuItem,
+            this.saveSessionAsToolStripMenuItem,
             this.toolStripSeparator1,
             this.renameTabToolStripMenuItem,
             this.refreshToolStripMenuItem,
@@ -84,7 +86,7 @@
             this.closeOthersToTheRightToolStripMenuItem,
             this.closeAllToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(309, 530);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(309, 556);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // newSessionToolStripMenuItem
@@ -99,6 +101,13 @@
             this.duplicateSessionToolStripMenuItem.Size = new System.Drawing.Size(308, 26);
             this.duplicateSessionToolStripMenuItem.Text = "Duplicate session";
             this.duplicateSessionToolStripMenuItem.Click += new System.EventHandler(this.duplicateSessionToolStripMenuItem_Click);
+            // 
+            // copyHostNameToolStripMenuItem
+            // 
+            this.copyHostNameToolStripMenuItem.Name = "copyHostNameToolStripMenuItem";
+            this.copyHostNameToolStripMenuItem.Size = new System.Drawing.Size(308, 26);
+            this.copyHostNameToolStripMenuItem.Text = "Copy host address";
+            this.copyHostNameToolStripMenuItem.Click += new System.EventHandler(this.copyHostNameToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -240,12 +249,12 @@
             this.closeAllToolStripMenuItem.Text = "Close all";
             this.closeAllToolStripMenuItem.Click += new System.EventHandler(this.closeAllToolStripMenuItem_Click);
             // 
-            // copyHostNameToolStripMenuItem
+            // saveSessionAsToolStripMenuItem
             // 
-            this.copyHostNameToolStripMenuItem.Name = "copyHostNameToolStripMenuItem";
-            this.copyHostNameToolStripMenuItem.Size = new System.Drawing.Size(308, 26);
-            this.copyHostNameToolStripMenuItem.Text = "Copy host name";
-            this.copyHostNameToolStripMenuItem.Click += new System.EventHandler(this.copyHostNameToolStripMenuItem_Click);
+            this.saveSessionAsToolStripMenuItem.Name = "saveSessionAsToolStripMenuItem";
+            this.saveSessionAsToolStripMenuItem.Size = new System.Drawing.Size(308, 26);
+            this.saveSessionAsToolStripMenuItem.Text = "Save session as...";
+            this.saveSessionAsToolStripMenuItem.Click += new System.EventHandler(this.saveSessionAsToolStripMenuItem_Click);
             // 
             // ctlPuttyPanel
             // 
@@ -288,5 +297,6 @@
         private System.Windows.Forms.ToolStripMenuItem closeAllToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resetAndClearScrollbackToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copyHostNameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveSessionAsToolStripMenuItem;
     }
 }

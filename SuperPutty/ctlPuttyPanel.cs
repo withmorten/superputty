@@ -502,5 +502,17 @@ namespace SuperPutty
         {
             Clipboard.SetText(Session.Host);
         }
+
+        private void saveSessionAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SessionData session = (SessionData)Session.Clone();
+            // Get an instance of the SessionTreeview to call the non-static method  
+            var mainForm = Application.OpenForms.OfType<frmSuperPutty>().FirstOrDefault();
+            if (mainForm != null)
+            {
+                var sessionTree = mainForm.SessionTreeviewInstance;
+                sessionTree?.CreateOrEditSession(1, session);
+            }
+        }
     }
 }
