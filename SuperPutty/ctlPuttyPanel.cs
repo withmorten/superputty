@@ -124,14 +124,15 @@ namespace SuperPutty
                 Session.Proto == ConnectionProtocol.PS ||
                 Session.Proto == ConnectionProtocol.WSL)
             {
-                this.toolStripPuttySep1.Visible = false;
-                this.eventLogToolStripMenuItem.Visible = false;
-                this.toolStripPuttySep2.Visible = false;
-                this.changeSettingsToolStripMenuItem.Visible = false;
-                this.copyAllToClipboardToolStripMenuItem.Visible = false;
-                this.restartSessionToolStripMenuItem.Visible = false;
-                this.clearScrollbackToolStripMenuItem.Visible = false;
-                this.resetTerminalToolStripMenuItem.Visible = false;
+                toolStripPuttySep1.Visible = false;
+                eventLogToolStripMenuItem.Visible = false;
+                toolStripPuttySep2.Visible = false;
+                changeSettingsToolStripMenuItem.Visible = false;
+                copyAllToClipboardToolStripMenuItem.Visible = false;
+                restartSessionToolStripMenuItem.Visible = false;
+                clearScrollbackToolStripMenuItem.Visible = false;
+                resetTerminalToolStripMenuItem.Visible = false;
+                resetAndClearScrollbackToolStripMenuItem.Visible = false;
                 aboutPuttyToolStripMenuItem.Visible = false;
                 toolStripSeparator4.Visible = false;
             }
@@ -506,6 +507,7 @@ namespace SuperPutty
         private void saveSessionAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SessionData session = (SessionData)Session.Clone();
+            session.SessionName = Text;
             // Get an instance of the SessionTreeview to call the non-static method  
             var mainForm = Application.OpenForms.OfType<frmSuperPutty>().FirstOrDefault();
             if (mainForm != null)
