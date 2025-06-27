@@ -1231,7 +1231,14 @@ namespace SuperPutty
         {
             SessionData session;
             session = (SessionData)treeView1.SelectedNode.Tag;
-            Clipboard.SetText(session.Host);
+            if (session.Port != 0)
+            {
+                Clipboard.SetText(session.Host + " " + session.Port);
+            }
+            else
+            {
+                Clipboard.SetText(session.Host);
+            }
         }
     }
 

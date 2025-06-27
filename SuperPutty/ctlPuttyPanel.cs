@@ -501,7 +501,14 @@ namespace SuperPutty
 
         private void copyHostNameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(Session.Host);
+            if (Session.Port != 0)
+            {
+                Clipboard.SetText(Session.Host + " " + Session.Port);
+            }
+            else
+            {
+                Clipboard.SetText(Session.Host);
+            }
         }
 
         private void saveSessionAsToolStripMenuItem_Click(object sender, EventArgs e)
