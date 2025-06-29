@@ -878,5 +878,17 @@ namespace SuperPutty.Properties {
                 this["Action_RestartSession_Shortcut"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AutostartX {
+            get {
+                return ((bool)(this["AutostartX"]));
+            }
+            set {
+                this["AutostartX"] = value;
+            }
+        }
     }
 }

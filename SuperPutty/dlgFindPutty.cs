@@ -202,6 +202,7 @@ namespace SuperPutty
             this.numericUpDown1.Value = SuperPuTTY.Settings.SaveCommandHistoryDays;
             this.checkBoxAllowPuttyPWArg.Checked = SuperPuTTY.Settings.AllowPlainTextPuttyPasswordArg;
             this.textBoxPuttyDefaultParameters.Text = SuperPuTTY.Settings.PuttyDefaultParameters;
+            chkAutostartX.Checked = SuperPuTTY.Settings.AutostartX;
 
             if (SuperPuTTY.IsFirstRun)
             {
@@ -422,6 +423,7 @@ namespace SuperPutty
                 SuperPuTTY.Settings.SaveCommandHistoryDays = (int)this.numericUpDown1.Value;
                 SuperPuTTY.Settings.AllowPlainTextPuttyPasswordArg = this.checkBoxAllowPuttyPWArg.Checked;
                 SuperPuTTY.Settings.PuttyDefaultParameters = this.textBoxPuttyDefaultParameters.Text;
+                SuperPuTTY.Settings.AutostartX = chkAutostartX.Checked;
 
                 bool warnThemeChange = false;
                 if (optDarkTheme.Checked && SuperPuTTY.Settings.InterfaceTheme != (int)InterfaceTheme.DarkTheme)

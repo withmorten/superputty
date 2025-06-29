@@ -200,5 +200,8 @@
     <Setting Name="Action_RestartSession_Shortcut" Type="System.Windows.Forms.Keys" Scope="User">
       <Value Profile="(Default)">Ctrl+Shift+R</Value>
     </Setting>
+    <Setting Name="AutostartX" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

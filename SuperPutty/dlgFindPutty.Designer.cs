@@ -120,10 +120,10 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.checkPuttyEnableNewSessionMenu = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.checkQuickSelectorCaseSensitiveSearch = new System.Windows.Forms.CheckBox();
             this.label13 = new System.Windows.Forms.Label();
             this.numericUpDownOpacity = new System.Windows.Forms.NumericUpDown();
+            this.label15 = new System.Windows.Forms.Label();
+            this.checkQuickSelectorCaseSensitiveSearch = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.checkShowDocumentIcons = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -132,13 +132,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.tabPageShortcuts = new System.Windows.Forms.TabPage();
             this.dataGridViewShortcuts = new System.Windows.Forms.DataGridView();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.keyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modifiersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shortcutStringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colClear = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.keyboardShortcutBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPageAdvanced = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -146,6 +141,12 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.panelBottom = new System.Windows.Forms.Panel();
             this.fontDialog = new System.Windows.Forms.FontDialog();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.keyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modifiersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shortcutStringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.keyboardShortcutBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.chkAutostartX = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabControl.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
@@ -161,12 +162,12 @@
             this.groupBox1.SuspendLayout();
             this.tabPageShortcuts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewShortcuts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.keyboardShortcutBindingSource)).BeginInit();
             this.tabPageAdvanced.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.panelBottom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.keyboardShortcutBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonOk
@@ -1228,28 +1229,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Misc";
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(12, 65);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(148, 20);
-            this.label15.TabIndex = 38;
-            this.label15.Text = "Open/Switch session:";
-            // 
-            // checkQuickSelectorCaseSensitiveSearch
-            // 
-            this.checkQuickSelectorCaseSensitiveSearch.AutoSize = true;
-            this.checkQuickSelectorCaseSensitiveSearch.Location = new System.Drawing.Point(89, 93);
-            this.checkQuickSelectorCaseSensitiveSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.checkQuickSelectorCaseSensitiveSearch.Name = "checkQuickSelectorCaseSensitiveSearch";
-            this.checkQuickSelectorCaseSensitiveSearch.Size = new System.Drawing.Size(170, 24);
-            this.checkQuickSelectorCaseSensitiveSearch.TabIndex = 37;
-            this.checkQuickSelectorCaseSensitiveSearch.Text = "Case-sensitive search";
-            this.checkQuickSelectorCaseSensitiveSearch.UseVisualStyleBackColor = true;
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -1283,6 +1262,28 @@
             0,
             0,
             0});
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(12, 65);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(148, 20);
+            this.label15.TabIndex = 38;
+            this.label15.Text = "Open/Switch session:";
+            // 
+            // checkQuickSelectorCaseSensitiveSearch
+            // 
+            this.checkQuickSelectorCaseSensitiveSearch.AutoSize = true;
+            this.checkQuickSelectorCaseSensitiveSearch.Location = new System.Drawing.Point(89, 93);
+            this.checkQuickSelectorCaseSensitiveSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.checkQuickSelectorCaseSensitiveSearch.Name = "checkQuickSelectorCaseSensitiveSearch";
+            this.checkQuickSelectorCaseSensitiveSearch.Size = new System.Drawing.Size(170, 24);
+            this.checkQuickSelectorCaseSensitiveSearch.TabIndex = 37;
+            this.checkQuickSelectorCaseSensitiveSearch.Text = "Case-sensitive search";
+            this.checkQuickSelectorCaseSensitiveSearch.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -1403,6 +1404,109 @@
             this.dataGridViewShortcuts.TabIndex = 0;
             this.dataGridViewShortcuts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewShortcuts_CellClick);
             // 
+            // colEdit
+            // 
+            this.colEdit.HeaderText = "";
+            this.colEdit.MinimumWidth = 6;
+            this.colEdit.Name = "colEdit";
+            this.colEdit.ReadOnly = true;
+            this.colEdit.Text = "Edit";
+            this.colEdit.UseColumnTextForButtonValue = true;
+            this.colEdit.Width = 50;
+            // 
+            // colClear
+            // 
+            this.colClear.HeaderText = "";
+            this.colClear.MinimumWidth = 6;
+            this.colClear.Name = "colClear";
+            this.colClear.ReadOnly = true;
+            this.colClear.Text = "Clear";
+            this.colClear.UseColumnTextForButtonValue = true;
+            this.colClear.Width = 50;
+            // 
+            // tabPageAdvanced
+            // 
+            this.tabPageAdvanced.Controls.Add(this.groupBox9);
+            this.tabPageAdvanced.Controls.Add(this.groupBox5);
+            this.tabPageAdvanced.Controls.Add(this.groupBox4);
+            this.tabPageAdvanced.Location = new System.Drawing.Point(4, 29);
+            this.tabPageAdvanced.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPageAdvanced.Name = "tabPageAdvanced";
+            this.tabPageAdvanced.Size = new System.Drawing.Size(772, 514);
+            this.tabPageAdvanced.TabIndex = 2;
+            this.tabPageAdvanced.Text = "Advanced";
+            this.tabPageAdvanced.UseVisualStyleBackColor = true;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.checkBoxAllowPuttyPWArg);
+            this.groupBox9.Location = new System.Drawing.Point(4, 160);
+            this.groupBox9.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox9.Size = new System.Drawing.Size(762, 60);
+            this.groupBox9.TabIndex = 45;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Security";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Controls.Add(this.comboBoxActivatorType);
+            this.groupBox5.Controls.Add(this.label6);
+            this.groupBox5.Location = new System.Drawing.Point(4, 228);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox5.Size = new System.Drawing.Size(762, 66);
+            this.groupBox5.TabIndex = 29;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Focus";
+            // 
+            // comboBoxActivatorType
+            // 
+            this.comboBoxActivatorType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxActivatorType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxActivatorType.FormattingEnabled = true;
+            this.comboBoxActivatorType.Location = new System.Drawing.Point(99, 21);
+            this.comboBoxActivatorType.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxActivatorType.Name = "comboBoxActivatorType";
+            this.comboBoxActivatorType.Size = new System.Drawing.Size(655, 28);
+            this.comboBoxActivatorType.TabIndex = 1;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Controls.Add(this.chkAutostartX);
+            this.groupBox4.Controls.Add(this.checkBoxCheckForUpdates);
+            this.groupBox4.Controls.Add(this.checkEnableKeyboardShortcuts);
+            this.groupBox4.Controls.Add(this.checkEnableControlTabSwitching);
+            this.groupBox4.Controls.Add(this.checkSingleInstanceMode);
+            this.groupBox4.Controls.Add(this.checkExitConfirmation);
+            this.groupBox4.Controls.Add(this.checkRestoreWindow);
+            this.groupBox4.Location = new System.Drawing.Point(4, 4);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox4.Size = new System.Drawing.Size(762, 148);
+            this.groupBox4.TabIndex = 28;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Application behavior";
+            // 
+            // panelBottom
+            // 
+            this.panelBottom.Controls.Add(this.buttonCancel);
+            this.panelBottom.Controls.Add(this.buttonOk);
+            this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelBottom.Location = new System.Drawing.Point(6, 553);
+            this.panelBottom.Margin = new System.Windows.Forms.Padding(4);
+            this.panelBottom.Name = "panelBottom";
+            this.panelBottom.Size = new System.Drawing.Size(780, 34);
+            this.panelBottom.TabIndex = 39;
+            // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
@@ -1441,111 +1545,21 @@
             this.shortcutStringDataGridViewTextBoxColumn.Name = "shortcutStringDataGridViewTextBoxColumn";
             this.shortcutStringDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // colEdit
-            // 
-            this.colEdit.HeaderText = "";
-            this.colEdit.MinimumWidth = 6;
-            this.colEdit.Name = "colEdit";
-            this.colEdit.ReadOnly = true;
-            this.colEdit.Text = "Edit";
-            this.colEdit.UseColumnTextForButtonValue = true;
-            this.colEdit.Width = 50;
-            // 
-            // colClear
-            // 
-            this.colClear.HeaderText = "";
-            this.colClear.MinimumWidth = 6;
-            this.colClear.Name = "colClear";
-            this.colClear.ReadOnly = true;
-            this.colClear.Text = "Clear";
-            this.colClear.UseColumnTextForButtonValue = true;
-            this.colClear.Width = 50;
-            // 
             // keyboardShortcutBindingSource
             // 
             this.keyboardShortcutBindingSource.DataSource = typeof(SuperPutty.Data.KeyboardShortcut);
             // 
-            // tabPageAdvanced
+            // chkAutostartX
             // 
-            this.tabPageAdvanced.Controls.Add(this.groupBox9);
-            this.tabPageAdvanced.Controls.Add(this.groupBox5);
-            this.tabPageAdvanced.Controls.Add(this.groupBox4);
-            this.tabPageAdvanced.Location = new System.Drawing.Point(4, 29);
-            this.tabPageAdvanced.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPageAdvanced.Name = "tabPageAdvanced";
-            this.tabPageAdvanced.Size = new System.Drawing.Size(772, 514);
-            this.tabPageAdvanced.TabIndex = 2;
-            this.tabPageAdvanced.Text = "Advanced";
-            this.tabPageAdvanced.UseVisualStyleBackColor = true;
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.checkBoxAllowPuttyPWArg);
-            this.groupBox9.Location = new System.Drawing.Point(4, 126);
-            this.groupBox9.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox9.Size = new System.Drawing.Size(762, 60);
-            this.groupBox9.TabIndex = 45;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Security";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox5.Controls.Add(this.comboBoxActivatorType);
-            this.groupBox5.Controls.Add(this.label6);
-            this.groupBox5.Location = new System.Drawing.Point(4, 194);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox5.Size = new System.Drawing.Size(762, 66);
-            this.groupBox5.TabIndex = 29;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Focus";
-            // 
-            // comboBoxActivatorType
-            // 
-            this.comboBoxActivatorType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxActivatorType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxActivatorType.FormattingEnabled = true;
-            this.comboBoxActivatorType.Location = new System.Drawing.Point(99, 21);
-            this.comboBoxActivatorType.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxActivatorType.Name = "comboBoxActivatorType";
-            this.comboBoxActivatorType.Size = new System.Drawing.Size(655, 28);
-            this.comboBoxActivatorType.TabIndex = 1;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox4.Controls.Add(this.checkBoxCheckForUpdates);
-            this.groupBox4.Controls.Add(this.checkEnableKeyboardShortcuts);
-            this.groupBox4.Controls.Add(this.checkEnableControlTabSwitching);
-            this.groupBox4.Controls.Add(this.checkSingleInstanceMode);
-            this.groupBox4.Controls.Add(this.checkExitConfirmation);
-            this.groupBox4.Controls.Add(this.checkRestoreWindow);
-            this.groupBox4.Location = new System.Drawing.Point(4, 4);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Size = new System.Drawing.Size(762, 115);
-            this.groupBox4.TabIndex = 28;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Application behavior";
-            // 
-            // panelBottom
-            // 
-            this.panelBottom.Controls.Add(this.buttonCancel);
-            this.panelBottom.Controls.Add(this.buttonOk);
-            this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottom.Location = new System.Drawing.Point(6, 553);
-            this.panelBottom.Margin = new System.Windows.Forms.Padding(4);
-            this.panelBottom.Name = "panelBottom";
-            this.panelBottom.Size = new System.Drawing.Size(780, 34);
-            this.panelBottom.TabIndex = 39;
+            this.chkAutostartX.AutoSize = true;
+            this.chkAutostartX.Location = new System.Drawing.Point(19, 110);
+            this.chkAutostartX.Margin = new System.Windows.Forms.Padding(4);
+            this.chkAutostartX.Name = "chkAutostartX";
+            this.chkAutostartX.Size = new System.Drawing.Size(216, 24);
+            this.chkAutostartX.TabIndex = 31;
+            this.chkAutostartX.Text = "Autostart X server on launch";
+            this.toolTip.SetToolTip(this.chkAutostartX, "Ask for confirmation before closing SuperPutty");
+            this.chkAutostartX.UseVisualStyleBackColor = true;
             // 
             // dlgFindPutty
             // 
@@ -1592,7 +1606,6 @@
             this.groupBox1.PerformLayout();
             this.tabPageShortcuts.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewShortcuts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.keyboardShortcutBindingSource)).EndInit();
             this.tabPageAdvanced.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
@@ -1601,6 +1614,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.panelBottom.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.keyboardShortcutBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1723,5 +1737,6 @@
         private System.Windows.Forms.LinkLabel linkXorg;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.CheckBox chkAutostartX;
     }
 }

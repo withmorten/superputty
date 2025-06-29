@@ -191,6 +191,20 @@ namespace SuperPutty
 #endif
             }
 
+            // Start X server if enabled.
+            if (SuperPuTTY.Settings.AutostartX)
+            {
+                if (IsXRunning())
+                {
+                    Log.Info("X server already running");
+                }
+                else
+                {
+                    Log.Info("Starting X server");
+                    StartXProcess();
+                }
+            }
+
             // Restore window location and size
             if (SuperPuTTY.Settings.RestoreWindowLocation)
             {
