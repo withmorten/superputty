@@ -239,6 +239,33 @@ namespace SuperPutty
                 if (proto != ConnectionProtocol.Raw)
                     this.textBoxPort.Text = dlgEditSession.GetDefaultPort(proto).ToString(System.Globalization.CultureInfo.InvariantCulture);
             }
+
+            // Default icons
+            switch (proto)
+            {
+                case ConnectionProtocol.SSH:
+                case ConnectionProtocol.Rlogin:
+                    buttonImageSelect.ImageKey = "computer";
+                    break;
+                case ConnectionProtocol.Telnet:
+                case ConnectionProtocol.Serial:
+                case ConnectionProtocol.Raw:
+                    buttonImageSelect.ImageKey = "application_osx_terminal";
+                    break;
+                case ConnectionProtocol.VNC:
+                case ConnectionProtocol.RDP:
+                    buttonImageSelect.ImageKey = "map";
+                    break;
+                case ConnectionProtocol.WINCMD:
+                case ConnectionProtocol.PS:
+                case ConnectionProtocol.Cygterm:
+                case ConnectionProtocol.Mintty:
+                    buttonImageSelect.ImageKey = "application_xp_terminal";
+                    break;
+                case ConnectionProtocol.WSL:
+                    buttonImageSelect.ImageKey = "ubuntu";
+                    break;
+            }
         }
 
         public static int GetDefaultPort(ConnectionProtocol protocol)
