@@ -467,26 +467,29 @@ namespace SuperPutty
         {
             ToolStripMenuItem menuItem = (ToolStripMenuItem) sender;
             string[] tags = ((ToolStripMenuItem)sender).Tag.ToString().Split(';');
-            uint[] commands = new uint[tags.Length];
+
             for (int i = 0; i < tags.Length; ++i)
             {
-                commands[i] = Convert.ToUInt32(tags[i], 16);
-                Log.DebugFormat("Sending Putty Command: menu={2}, tag={0}, command={1}", tags[i], commands[i], menuItem.Text);
+                uint command = Convert.ToUInt32(tags[i], 16);
+                Log.DebugFormat("Sending Putty Command from: menu={2}, tag={0}, command={1}", tags[i], command, menuItem.Text);
+                SendPuttyCommand(command);
             }
+        }
+
+        internal void SendPuttyCommand(uint command)
+        {
+            Log.DebugFormat("Sending Putty Command: command={0}", command);
 
             ThreadPool.QueueUserWorkItem(delegate
             {
                 try
                 {
-                    this.SetFocusToChildApplication("MenuHandler");
-                    for (int i = 0; i < commands.Length; ++i)
-                    {
-                        NativeMethods.SendMessage(AppPanel.AppWindowHandle, (uint)NativeMethods.WM.SYSCOMMAND, commands[i], 0);
-                    }
+                    SetFocusToChildApplication("SendPuttyCommand");
+                    NativeMethods.SendMessage(AppPanel.AppWindowHandle, (uint)NativeMethods.WM.SYSCOMMAND, command, 0);
                 }
                 catch (Exception ex)
                 {
-                    Log.ErrorFormat("Error sending command menu command to embedded putty", ex);
+                    Log.ErrorFormat("Error sending putty command to embedded putty", ex);
                 }
             });
         }

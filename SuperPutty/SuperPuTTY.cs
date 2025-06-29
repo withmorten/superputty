@@ -909,7 +909,8 @@ namespace SuperPutty
         /// <summary>Open Script Editor Window</summary>
         OpenScriptEditor,
         /// <summary>Rename active tab</summary>
-        RenameTab
+        RenameTab,
+        RestartSession
     }
     #endregion
 

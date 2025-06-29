@@ -197,5 +197,8 @@
     <Setting Name="ShowDocumentIcons" Provider="SuperPutty.Utils.PortableSettingsProvider" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="Action_RestartSession_Shortcut" Type="System.Windows.Forms.Keys" Scope="User">
+      <Value Profile="(Default)">Ctrl+Shift+R</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

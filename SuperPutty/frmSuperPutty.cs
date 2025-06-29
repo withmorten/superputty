@@ -1675,7 +1675,7 @@ namespace SuperPutty
                     KeyEventWindowActivator.ActivateForm(this);
                     toolStripButtonRunScript_Click(this, EventArgs.Empty);
                     break;
-                case SuperPuttyAction.RenameTab:                    
+                case SuperPuttyAction.RenameTab:
                     if (activePanel != null && activePanel.Session != null)
                     {
                         dlgRenameItem dialog = new dlgRenameItem
@@ -1686,10 +1686,18 @@ namespace SuperPutty
 
                         if (dialog.ShowDialog(this) == DialogResult.OK)
                         {
-                            activePanel.Text = activePanel.TextOverride = dialog.ItemName;                            
-                        }                        
+                            activePanel.Text = activePanel.TextOverride = dialog.ItemName;
+                        }
                     }
                     break;
+
+                case SuperPuttyAction.RestartSession:
+                    if (activePanel != null && activePanel.Session != null)
+                    {
+                        activePanel.SendPuttyCommand(0x0040);
+                    }
+                    break;
+
                 default:
                     success = false;
                     break;
