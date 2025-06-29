@@ -217,8 +217,6 @@ namespace SuperPutty
             }
             this.dataGridViewShortcuts.DataSource = this.Shortcuts;
 
-            PuttyDefParamLbl.Text = SuperPuTTY.PuTTYAppName + " default parameters:";
-
             // set theme Radio boxes and Interface theme
             switch (SuperPuTTY.Settings.InterfaceTheme)
             {
