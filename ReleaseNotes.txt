@@ -1,3 +1,16 @@
+2.1.0.0
+ - Add an option to copy host and port with right click on saved session or open tab
+ - Add an option to save a session directly from a QuickConnect open tab
+ - Add a configurable shortcut to reconnect to a dead session
+ - Add a configurable shortcut to clear scrollback
+ - Add a configurable shortcut to reset the terminal
+ - Add a configurable shortcut to copy all text to clipboard
+ - Add an option to autostart the X server on application launch
+ - Choose a suitable icon for new session automatically, depending on protocol
+ - Show tab icons by default (activate in settings for existing users)
+ - Show default extra arguments for Serial session
+ - Removed unused SSH.NET package dependency
+
 2.0.1.0
  - Add update checker for PuTTY Plus
  - Change menu names based on the PuTTY fork used
