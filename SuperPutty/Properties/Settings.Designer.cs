@@ -890,5 +890,41 @@ namespace SuperPutty.Properties {
                 this["AutostartX"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("None")]
+        public global::System.Windows.Forms.Keys Action_ResetTerminal_Shortcut {
+            get {
+                return ((global::System.Windows.Forms.Keys)(this["Action_ResetTerminal_Shortcut"]));
+            }
+            set {
+                this["Action_ResetTerminal_Shortcut"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("None")]
+        public global::System.Windows.Forms.Keys Action_ClearScrollback_Shortcut {
+            get {
+                return ((global::System.Windows.Forms.Keys)(this["Action_ClearScrollback_Shortcut"]));
+            }
+            set {
+                this["Action_ClearScrollback_Shortcut"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("None")]
+        public global::System.Windows.Forms.Keys Action_CopyAllToClipboard_Shortcut {
+            get {
+                return ((global::System.Windows.Forms.Keys)(this["Action_CopyAllToClipboard_Shortcut"]));
+            }
+            set {
+                this["Action_CopyAllToClipboard_Shortcut"] = value;
+            }
+        }
     }
 }

@@ -1712,6 +1712,27 @@ namespace SuperPutty
                     }
                     break;
 
+                case SuperPuttyAction.ClearScrollback:
+                    if (activePanel != null && activePanel.Session != null)
+                    {
+                        activePanel.SendPuttyCommand(0x0060);
+                    }
+                    break;
+
+                case SuperPuttyAction.ResetTerminal:
+                    if (activePanel != null && activePanel.Session != null)
+                    {
+                        activePanel.SendPuttyCommand(0x0070);
+                    }
+                    break;
+
+                case SuperPuttyAction.CopyAllToClipboard:
+                    if (activePanel != null && activePanel.Session != null)
+                    {
+                        activePanel.SendPuttyCommand(0x0170);
+                    }
+                    break;
+
                 default:
                     success = false;
                     break;

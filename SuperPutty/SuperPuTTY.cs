@@ -910,7 +910,10 @@ namespace SuperPutty
         OpenScriptEditor,
         /// <summary>Rename active tab</summary>
         RenameTab,
-        RestartSession
+        RestartSession,
+        ClearScrollback,
+        ResetTerminal,
+        CopyAllToClipboard
     }
     #endregion
 
