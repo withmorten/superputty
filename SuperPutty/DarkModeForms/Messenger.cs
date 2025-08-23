@@ -60,7 +60,7 @@ namespace DarkModeForms
 		/// <returns>It is a modal window, blocking other actions in the application until the user closes it.</returns>
 		public static DialogResult MessageBox(
 			string Message, string title, MessageBoxButtons buttons = MessageBoxButtons.OK,
-			MessageBoxIcon icon = MessageBoxIcon.Information, bool pIsDarkMode = true)
+			MessageBoxIcon icon = MessageBoxIcon.Information, bool pIsDarkMode = false)
 		{
 			//Debug.WriteLine(icon.ToString());
 
@@ -86,20 +86,20 @@ namespace DarkModeForms
 
 
 		public static DialogResult MessageBox(string Message, string title, MessageBoxButtons buttons,
-			MessageBoxIcon icon, MessageBoxDefaultButton DefaultButton, bool pIsDarkMode = true)
+			MessageBoxIcon icon, MessageBoxDefaultButton DefaultButton, bool pIsDarkMode = false)
 		{
 			_defaultButton = DefaultButton;
 			return MessageBox(Message, title, buttons, icon, pIsDarkMode);
 		}
 
 		public static DialogResult MessageBox(string Message, string title, MessageBoxButtons buttons = MessageBoxButtons.OK,
-											  MsgIcon icon = MsgIcon.None, bool pIsDarkMode = true)
+											  MsgIcon icon = MsgIcon.None, bool pIsDarkMode = false)
 		{
 			return MessageBox(Message, title, icon, buttons, pIsDarkMode);
 		}
 
 		public static DialogResult MessageBox(Form pOwner, string Message, string title, 
-			MessageBoxButtons buttons, MsgIcon icon = MsgIcon.None, bool pIsDarkMode = true)
+			MessageBoxButtons buttons, MsgIcon icon = MsgIcon.None, bool pIsDarkMode = false)
 		{
 			return MessageBox(Message, title, icon, buttons, pIsDarkMode, owner: pOwner);
 		}
@@ -112,7 +112,7 @@ namespace DarkModeForms
 		/// <returns>It is a modal window, blocking other actions in the application until the user closes it.</returns>
 		public static DialogResult MessageBox(
 			string Message, string title, MsgIcon Icon,
-			MessageBoxButtons buttons = MessageBoxButtons.OK, bool pIsDarkMode = true,
+			MessageBoxButtons buttons = MessageBoxButtons.OK, bool pIsDarkMode = false,
 			MessageBoxDefaultButton defaultButton = MessageBoxDefaultButton.Button1, Form owner = null)
 		{
 			Form form = new Form
@@ -132,7 +132,7 @@ namespace DarkModeForms
 			}
 
 			DarkModeCS DMode = new DarkModeCS(form)
-			{ ColorMode = pIsDarkMode ? DarkModeCS.DisplayMode.DarkMode : DarkModeCS.DisplayMode.ClearMode };
+			{ ColorMode = DarkModeCS.DisplayMode.ClearMode };
 			DMode.ApplyTheme(pIsDarkMode);
 
 			Base64Icons _Icons = new Base64Icons();
@@ -442,7 +442,7 @@ namespace DarkModeForms
 		/// <returns>OK si el usuario acepta. By BlueMystic @2024</returns>
 		public static DialogResult InputBox(
 			string title, string promptText, ref List<KeyValue> Fields,
-			MsgIcon Icon = 0, MessageBoxButtons buttons = MessageBoxButtons.OK, bool pIsDarkMode = true)
+			MsgIcon Icon = 0, MessageBoxButtons buttons = MessageBoxButtons.OK, bool pIsDarkMode = false)
 		{
 			Form form = new Form
 			{
@@ -455,7 +455,7 @@ namespace DarkModeForms
 				Height = 170
 			};
 
-			DarkModeCS DMode = new DarkModeCS(form) { ColorMode = pIsDarkMode ? DarkModeCS.DisplayMode.DarkMode : DarkModeCS.DisplayMode.ClearMode };
+			DarkModeCS DMode = new DarkModeCS(form) { ColorMode = DarkModeCS.DisplayMode.ClearMode };
 			DMode.ApplyTheme(pIsDarkMode);
 
 			// Error Management & Icon Library:
@@ -990,29 +990,7 @@ namespace DarkModeForms
 		/// <param name="pDefault">Default to return if Current lang is not supported.</param>
 		public static string GetCurrentLanguage(string pDefault = "en")
 		{
-			string _ret = pDefault;
-			string CurrentLanguage = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-			if (IsCurrentLanguageSupported(new List<string> { "en", "es", "fr", "de", "ru", "ko", "pt" }, CurrentLanguage))
-			{
-				_ret = CurrentLanguage;
-			}
-			if (CurrentLanguage.ToLowerInvariant().Equals("zh"))
-			{
-				var LangVariable = CultureInfo.CurrentCulture.Name;
-				if (string.Equals(LangVariable, "zh-CN") || string.Equals(LangVariable, "zh-SG") || string.Equals(LangVariable, "zh-Hans"))
-				{
-					_ret = "zh-Hans";
-				}
-				else if (string.Equals(LangVariable, "zh-TW") || string.Equals(LangVariable, "zh-HK") || string.Equals(LangVariable, "zh-MO") || string.Equals(LangVariable, "zh-Hant"))
-				{
-					_ret = "zh-Hant";
-				}
-				else
-				{
-					_ret = "zh-Hans";
-				}
-			}
-			return _ret;
+			return pDefault;
 		}
 
 		/// <summary>Return the Translations for the desired language (if supported).</summary>
@@ -1024,15 +1002,6 @@ namespace DarkModeForms
 
 			Dictionary<string, string> ButtonTranslations = new Dictionary<string, string> {
 				{ "en", "OK|Cancel|Yes|No|Continue|Retry|Abort|Ignore|Try Again" },
-				{ "es", "Aceptar|Cancelar|Sí|No|Continuar|Reintentar|Abortar|Ignorar|Intentar" },
-				{ "fr", "Accepter|Annuler|Oui|Non|Continuer|Réessayer|Abandonner|Ignorer|Essayer" },
-				{ "de", "Akzeptieren|Abbrechen|Ja|Nein|Weiter|Wiederholen|Abbrechen|Ignorieren|Versuchen" },
-				{ "ru", "Принять|Отменить|Да|Нет|Продолжить|Повторить|Прервать|Игнорировать|Пытаться" },
-				{ "ko", "확인|취소|예|아니오|계속|다시 시도|중단|무시|써 보다" },
-				{ "pt", "Aceitar|Cancelar|Sim|Não|Continuar|Tentar novamente|Abortar|Ignorar|Tentar" },
-				{ "zh-Hans", "确定|取消|是|否|继续|重试|中止|忽略|尝试" },
-				{ "zh-Hant", "確定|取消|是|否|繼續|重試|中止|忽略|嘗試" }
-				/* Add here you own language button translations */
 			  };
 
 			string raw = ButtonTranslations[pLanguage];

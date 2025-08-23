@@ -200,7 +200,7 @@
     <Setting Name="Action_RestartSession_Shortcut" Type="System.Windows.Forms.Keys" Scope="User">
       <Value Profile="(Default)">Ctrl+Shift+R</Value>
     </Setting>
-    <Setting Name="AutostartX" Type="System.Boolean" Scope="User">
+    <Setting Name="AutostartX" Provider="SuperPutty.Utils.PortableSettingsProvider" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="Action_ResetTerminal_Shortcut" Type="System.Windows.Forms.Keys" Scope="User">

@@ -1558,7 +1558,7 @@
             this.chkAutostartX.Size = new System.Drawing.Size(216, 24);
             this.chkAutostartX.TabIndex = 31;
             this.chkAutostartX.Text = "Autostart X server on launch";
-            this.toolTip.SetToolTip(this.chkAutostartX, "Ask for confirmation before closing SuperPutty");
+            this.toolTip.SetToolTip(this.chkAutostartX, "Autostart X server on launch");
             this.chkAutostartX.UseVisualStyleBackColor = true;
             // 
             // dlgFindPutty

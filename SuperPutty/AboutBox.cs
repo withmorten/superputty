@@ -33,7 +33,7 @@ namespace SuperPutty
             {
                 new DarkModeCS(this)
                 {
-                    ColorMode = DarkModeCS.DisplayMode.DarkMode,
+                    ColorMode = DarkModeCS.DisplayMode.ClearMode,
                     ColorizeIcons = false
                 };
             }

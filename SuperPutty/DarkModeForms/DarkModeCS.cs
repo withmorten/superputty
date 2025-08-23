@@ -351,7 +351,7 @@ namespace DarkModeForms
 				_IsDarkMode = isDarkMode(); //<- Gets the current color mode from Windows
 				if (ColorMode != DisplayMode.SystemDefault)
 				{
-					_IsDarkMode = ColorMode == DisplayMode.DarkMode;
+					_IsDarkMode = false;
 				}
 
 				ApplyTheme(_IsDarkMode);
@@ -368,7 +368,7 @@ namespace DarkModeForms
 				_IsDarkMode = isDarkMode(); //<- Gets the current color mode from Windows
 				if (ColorMode != DisplayMode.SystemDefault)
 				{
-					_IsDarkMode = ColorMode == DisplayMode.DarkMode;
+					_IsDarkMode = false;
 				}
 
 				ApplyTheme(_IsDarkMode);
@@ -391,7 +391,7 @@ namespace DarkModeForms
 
 		/// <summary>Apply the Theme into the Window and all its controls.</summary>
 		/// <param name="pIsDarkMode">'true': apply Dark Mode, 'false': apply Clear Mode</param>
-		public void ApplyTheme(bool pIsDarkMode = true)
+		public void ApplyTheme(bool pIsDarkMode = false)
 		{
 			try
 			{
@@ -444,7 +444,7 @@ namespace DarkModeForms
 			_IsDarkMode = isDarkMode(); //<- Gets the current color mode from Windows
 			if (ColorMode != DisplayMode.SystemDefault)
 			{
-				_IsDarkMode = ColorMode == DisplayMode.DarkMode;
+				_IsDarkMode = false;
 			}
 
 			ApplyTheme(_IsDarkMode);

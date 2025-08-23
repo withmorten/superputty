@@ -18,7 +18,7 @@ namespace SuperPutty.Gui
             {
                 new DarkModeCS(this)
                 {
-                    ColorMode = DarkModeCS.DisplayMode.DarkMode,
+                    ColorMode = DarkModeCS.DisplayMode.ClearMode,
                     ColorizeIcons = false
                 };
             }
