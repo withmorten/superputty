@@ -718,6 +718,11 @@ namespace SuperPutty.Data
         /// <returns>A string in uri format containing connection information to this sessions host</returns>
         public override string ToString()
         {
+            if (this.Proto == ConnectionProtocol.Mintty)
+            {
+                return this.Host;
+            }
+
             if (this.Proto == ConnectionProtocol.Cygterm || this.Proto == ConnectionProtocol.Mintty)
             {
                 return string.Format("{0}://{1}", this.Proto.ToString().ToLower(), this.Host);
