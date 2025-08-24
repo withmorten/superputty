@@ -435,7 +435,8 @@ namespace SuperPutty
                 // We use this to save the last docking location and to close the panel
                 PuttyClosedCallback callback = delegate
                 {
-                    if (panel != null)
+                    NumActiveSessions--;
+					if (panel != null)
                     {
                         // save the last dockstate (if it has been changed)
                         if (session.LastDockstate != panel.DockState
@@ -460,6 +461,7 @@ namespace SuperPutty
                 };
 
                 try {
+                    NumActiveSessions++;
                     panel = new ctlPuttyPanel(session, callback);
 
                     ApplyDockRestrictions(panel);
@@ -830,6 +832,7 @@ namespace SuperPutty
         public static string Version { get { return Assembly.GetExecutingAssembly().GetName().Version.ToString(); } }
 
         internal static Settings Settings { get { return Settings.Default; } }
+        public static int NumActiveSessions { get; set; }
         public static frmSuperPutty MainForm { get; set; }        
         public static string LayoutsDir { get { return Path.Combine(Settings.SettingsFolder, "layouts"); } }
         public static LayoutData CurrentLayout { get; private set; }

@@ -351,7 +351,7 @@ namespace SuperPutty
 
         private void frmSuperPutty_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (SuperPuTTY.Settings.ExitConfirmation && !forceClose)
+            if (SuperPuTTY.NumActiveSessions != 0 || SuperPuTTY.Settings.ExitConfirmation && !forceClose)
             {
                 if (Messenger.MessageBox("Exit " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Name + "?",
                     "Exit confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
