@@ -231,7 +231,7 @@ namespace SuperPutty
 
             puTTYConfigurationToolStripMenuItem.Text = "&" + SuperPuTTY.PuTTYAppName + " configuration";
             aboutSuperPuTTYToolStripMenuItem.Text = "About " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Name;
-            Text = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name;
+            Text = "SuperMSYS";
 
             DockPanel.Theme.Skin.DockPaneStripSkin.TextFont = new Font("Segoe UI", 10.0f, FontStyle.Regular);
         }
@@ -305,7 +305,7 @@ namespace SuperPutty
 
         void UpdateWindowText(string text)
         {
-            this.Text = string.Format(System.Reflection.Assembly.GetExecutingAssembly().GetName().Name + " - {0}", text);
+            this.Text = string.Format("{0} - SuperMSYS", text);
         }
 
         private void frmSuperPutty_Load(object sender, EventArgs e)
@@ -375,7 +375,7 @@ namespace SuperPutty
         {
             if (this.DockPanel.ActiveDocument == null)
             {
-                this.Text = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name;
+                this.Text = "SuperMSYS";
             }
             else
             {

@@ -878,7 +878,7 @@ namespace SuperPutty
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmSuperPutty";
-            this.Text = "SuperXPuTTY";
+            this.Text = "SuperMSYS";
             this.Activated += new System.EventHandler(this.frmSuperPutty_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmSuperPutty_FormClosing);
             this.Load += new System.EventHandler(this.frmSuperPutty_Load);
