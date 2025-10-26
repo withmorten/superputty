@@ -58,6 +58,7 @@ namespace SuperPutty.Utils
                 MinttyStartInfo mintty = new MinttyStartInfo(session);
                 this.Args = mintty.Args;
                 this.WorkingDir = mintty.StartingDir;
+                this.Mintty = mintty;
             }
             else if (session.Proto == ConnectionProtocol.VNC)
             {
@@ -167,5 +168,6 @@ namespace SuperPutty.Utils
         public string WorkingDir { get; private set; }
         public string Executable { get; private set; }
 
+		public MinttyStartInfo Mintty { get; set; }
     }
 }

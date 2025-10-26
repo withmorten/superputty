@@ -35,7 +35,6 @@ namespace SuperPutty.Utils
     {
         private static readonly ILog Log = LogManager.GetLogger(typeof(MinttyStartInfo));
 
-        public const string LocalHost = "localhost";
         private SessionData session;
 
         public MinttyStartInfo(SessionData session)
@@ -43,27 +42,21 @@ namespace SuperPutty.Utils
             this.session = session;
             this.Args = "--nodaemon ";
 
-            // parse host args and starting dir
-            Match m = Regex.Match(session.Host, LocalHost + ":(.*)");
-            String dir = m.Success ? m.Groups[1].Value : null;
-            bool exists = false;
-            if (dir != null)
+            if (session.Host.Contains(@":\") && Directory.Exists(session.Host))
             {
-                exists = Directory.Exists(dir);
-                Log.DebugFormat("Parsed dir from host. Host={0}, Dir={1}, Exists={2}", session.Host, dir, exists);
+                this.StartingDir = session.Host;
+                this.MSystem = session.Username;
+                this.MSysCon = "mintty.exe";
             }
-            if (dir != null && exists)
-            {
-                // start bash...will start in process start dir
-                // >mintty.exe /bin/env CHERE_INVOKING=1 /bin/bash -l
-                this.StartingDir = dir;
-            }
+
             // Handle any extra args
             this.Args += session.ExtraArgs;
         }
 
         public string Args { get; set; }
         public string StartingDir { get; set; }
+        public string MSystem { get; set; }
+        public string MSysCon { get; set; }
 
     }
 }

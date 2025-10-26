@@ -31,6 +31,7 @@ using System.Collections.Generic;
 using SuperPutty.Utils;
 using System.Text;
 using DarkModeForms;
+using SuperPutty.Data;
 
 namespace SuperPutty
 {
@@ -56,6 +57,7 @@ namespace SuperPutty
         private List<NativeMethods.WinEventDelegate> lpfnWinEventProcs = new List<NativeMethods.WinEventDelegate>();
         private WindowActivator m_windowActivator = null;
         private SuperPutty.Data.ConnectionProtocol proto;
+        public MinttyStartInfo mintty;
 
         internal PuttyClosedCallback m_CloseCallback;
 
@@ -461,7 +463,8 @@ DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
                         {
                             FileName = ApplicationName,
                             Arguments = ApplicationParameters,
-                            WindowStyle = ProcessWindowStyle.Maximized
+                            WindowStyle = ProcessWindowStyle.Maximized,
+                            UseShellExecute = !(proto == ConnectionProtocol.Mintty && mintty.MSystem != null),
                         }
                     };
 
@@ -474,6 +477,12 @@ DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
                     m_Process.Exited += delegate {
                         m_CloseCallback(true);
                     };
+
+                    if (!m_Process.StartInfo.UseShellExecute)
+                    {
+                        m_Process.StartInfo.Environment["MSYSTEM"] = mintty.MSystem;
+                        m_Process.StartInfo.Environment["MSYSCON"] = mintty.MSysCon;
+                    }
 
                     m_Process.Start();
 
