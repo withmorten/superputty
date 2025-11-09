@@ -51,7 +51,16 @@ namespace SuperPutty.Utils
 
             // Handle any extra args
             this.Args += session.ExtraArgs;
-        }
+
+			if (session.Port != 0)
+			{
+				this.Args += " /usr/bin/sh -cl \"\"$@\"\" sh ssh -p " + session.Port + " " + session.Host;
+			}
+            else
+            {
+                this.Args += " -";
+            }
+		}
 
         public string Args { get; set; }
         public string StartingDir { get; set; }
