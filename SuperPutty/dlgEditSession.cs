@@ -61,6 +61,7 @@ namespace SuperPutty
                 this.textBoxSessionName.Text = Session.SessionName;
                 this.textBoxHostname.Text = Session.Host;
                 this.textBoxPort.Text = Session.Port.ToString();
+                this.checkBoxStrictHostKeyChecking.Checked = Session.StrictHostKeyChecking;
                 this.textBoxExtraArgs.Text = Session.ExtraArgs;
                 this.textBoxUsername.Text = Session.Username;
                 this.textBoxSPSLScriptFile.Text = Session.SPSLFileName;
@@ -182,6 +183,7 @@ namespace SuperPutty
                 Session.Port     = 0;
             else
                 Session.Port     = int.Parse(textBoxPort.Text.Trim());
+            Session.StrictHostKeyChecking = checkBoxStrictHostKeyChecking.Checked;
             Session.Username     = textBoxUsername.Text.Trim();
             Session.SessionId    = SessionData.CombineSessionIds(SessionData.GetSessionParentId(Session.SessionId), Session.SessionName);
             Session.ImageKey     = buttonImageSelect.ImageKey;

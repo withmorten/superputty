@@ -55,6 +55,11 @@ namespace SuperPutty.Utils
 			if (session.Port != 0)
 			{
 				this.Args += " /usr/bin/sh -cl \"\"$@\"\" sh ssh -p " + session.Port + " " + session.Host;
+
+                if (!session.StrictHostKeyChecking)
+                {
+                    this.Args += " -o StrictHostKeyChecking=no";
+                }
 			}
             else
             {

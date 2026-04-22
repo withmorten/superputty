@@ -64,6 +64,7 @@ namespace SuperPutty
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBoxStrictHostKeyChecking = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.groupBoxFileTransferOptions.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -403,6 +404,7 @@ namespace SuperPutty
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBoxStrictHostKeyChecking);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.textBoxNote);
@@ -433,6 +435,18 @@ namespace SuperPutty
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Connection details";
+            // 
+            // checkBox1
+            // 
+            this.checkBoxStrictHostKeyChecking.AutoSize = true;
+            this.checkBoxStrictHostKeyChecking.Checked = true;
+            this.checkBoxStrictHostKeyChecking.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBoxStrictHostKeyChecking.Location = new System.Drawing.Point(394, 126);
+            this.checkBoxStrictHostKeyChecking.Name = "strictHostKeyCheckingCheckBox";
+            this.checkBoxStrictHostKeyChecking.Size = new System.Drawing.Size(55, 19);
+            this.checkBoxStrictHostKeyChecking.TabIndex = 30;
+            this.checkBoxStrictHostKeyChecking.Text = "SHKC";
+            this.checkBoxStrictHostKeyChecking.UseVisualStyleBackColor = true;
             // 
             // dlgEditSession
             // 
@@ -502,5 +516,6 @@ namespace SuperPutty
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxPort;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox checkBoxStrictHostKeyChecking;
     }
 }

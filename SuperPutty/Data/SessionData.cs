@@ -178,6 +178,19 @@ namespace SuperPutty.Data
             }
         }
 
+        private bool _StrictHostKeyChecking = true;
+        [XmlAttribute]
+        [DisplayName("StrictHostKeyChecking")]
+        [Description("Enable or disable Strict Host Key Checking for mintty.")]
+        public bool StrictHostKeyChecking
+		{
+            get { return _StrictHostKeyChecking; }
+            set 
+            {
+                UpdateField(ref _StrictHostKeyChecking, value, "StrictHostKeyChecking");
+            }
+        }
+
         private ConnectionProtocol _Proto;
         [XmlAttribute]
         [DisplayName("Connection Type")]
