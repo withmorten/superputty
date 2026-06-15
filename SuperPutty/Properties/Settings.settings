@@ -198,7 +198,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="Action_RestartSession_Shortcut" Provider="SuperPutty.Utils.PortableSettingsProvider" Type="System.Windows.Forms.Keys" Scope="User">
-      <Value Profile="(Default)">Ctrl+Shift+R</Value>
+      <Value Profile="(Default)">None</Value>
     </Setting>
     <Setting Name="AutostartX" Provider="SuperPutty.Utils.PortableSettingsProvider" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

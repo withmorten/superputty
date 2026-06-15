@@ -843,8 +843,8 @@ namespace SuperPutty.Properties {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(SuperPutty.Utils.PortableSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-		[global::System.Configuration.SettingsProviderAttribute(typeof(SuperPutty.Utils.PortableSettingsProvider))]
 		[global::System.Configuration.DefaultSettingValueAttribute("2")]
         public int InterfaceTheme {
             get {
@@ -869,9 +869,9 @@ namespace SuperPutty.Properties {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(SuperPutty.Utils.PortableSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-		[global::System.Configuration.SettingsProviderAttribute(typeof(SuperPutty.Utils.PortableSettingsProvider))]
-		[global::System.Configuration.DefaultSettingValueAttribute("Ctrl+Shift+R")]
+        [global::System.Configuration.DefaultSettingValueAttribute("None")]
         public global::System.Windows.Forms.Keys Action_RestartSession_Shortcut {
             get {
                 return ((global::System.Windows.Forms.Keys)(this["Action_RestartSession_Shortcut"]));
@@ -882,8 +882,8 @@ namespace SuperPutty.Properties {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(SuperPutty.Utils.PortableSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-		[global::System.Configuration.SettingsProviderAttribute(typeof(SuperPutty.Utils.PortableSettingsProvider))]
 		[global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool AutostartX {
             get {
@@ -895,8 +895,8 @@ namespace SuperPutty.Properties {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(SuperPutty.Utils.PortableSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-		[global::System.Configuration.SettingsProviderAttribute(typeof(SuperPutty.Utils.PortableSettingsProvider))]
 		[global::System.Configuration.DefaultSettingValueAttribute("None")]
         public global::System.Windows.Forms.Keys Action_ResetTerminal_Shortcut {
             get {
@@ -908,8 +908,8 @@ namespace SuperPutty.Properties {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(SuperPutty.Utils.PortableSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-		[global::System.Configuration.SettingsProviderAttribute(typeof(SuperPutty.Utils.PortableSettingsProvider))]
 		[global::System.Configuration.DefaultSettingValueAttribute("None")]
         public global::System.Windows.Forms.Keys Action_ClearScrollback_Shortcut {
             get {
@@ -921,8 +921,8 @@ namespace SuperPutty.Properties {
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(SuperPutty.Utils.PortableSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-		[global::System.Configuration.SettingsProviderAttribute(typeof(SuperPutty.Utils.PortableSettingsProvider))]
 		[global::System.Configuration.DefaultSettingValueAttribute("None")]
         public global::System.Windows.Forms.Keys Action_CopyAllToClipboard_Shortcut {
             get {
