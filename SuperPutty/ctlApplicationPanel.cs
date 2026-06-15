@@ -86,6 +86,7 @@ DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
             this.ApplicationParameters = "";
             this.ApplicationWorkingDirectory = "";
             this.proto = proto;
+            this.BackColor = System.Drawing.Color.Black;
             this.bgWinTracker = new System.ComponentModel.BackgroundWorker();
             this.bgWinTracker.WorkerSupportsCancellation = true;
 
@@ -164,8 +165,9 @@ DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         {
             bool result = false;
             if (proto == Data.ConnectionProtocol.VNC ||
-                proto == Data.ConnectionProtocol.RDP)
-            {/* If we don't move the window on tab refocus, the contents will be offset depending on screen DPI */
+                proto == Data.ConnectionProtocol.RDP ||
+				proto == Data.ConnectionProtocol.Mintty)
+			{/* If we don't move the window on tab refocus, the contents will be offset depending on screen DPI */
                 this.MoveWindow("RestoreTabSwitch");
             }
             if (this.ExternalProcessCaptured && NativeMethods.GetForegroundWindow() != this.m_AppWin)
